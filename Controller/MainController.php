@@ -1,7 +1,9 @@
 <?php
 
 namespace Controller;
+
 use Cool\BaseController;
+use Model\PostManager;
 
 class MainController extends BaseController
 {

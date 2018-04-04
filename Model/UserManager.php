@@ -1,6 +1,8 @@
 <?php
 
-require_once('Cool/DBManager.php');
+namespace Model;
+use Cool\BaseController;
+use Cool\DBManager;
 
 class UserManager
 {
