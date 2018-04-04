@@ -29,7 +29,7 @@ class UserManager
             $pdo = $dbm->getPdo();
             $hashedPwd = password_hash($password, PASSWORD_BCRYPT);
 
-            $stmt = $pdo->prepare("INSERT INTO `users` (`id`, `pseudo`, `password`, `firstname`, `lastname`, `email`) VALUES (NULL, :pseudo, :password, :firstname, :lastname, :email)");
+            $stmt = $pdo->prepare("INSERT INTO `users` (`id`, `pseudo`, `password`, `firstname`, `lastname`, `email`, `rank_id`) VALUES (NULL, :pseudo, :password, :firstname, :lastname, :email, 1)");
             $stmt->bindParam(':pseudo', $pseudo);
             $stmt->bindParam(':password', $hashedPwd);
             $stmt->bindParam(':firstname', $firstname);
@@ -58,7 +58,8 @@ class UserManager
             return $errors;
         } else {
             $_SESSION['username'] = $user;
-            return $user;
+            $_SESSION['rank_id'] = $result['rank_id'];
+            return $_SESSION;
         }
     }
 }

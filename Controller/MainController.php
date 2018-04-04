@@ -12,12 +12,13 @@ class MainController extends BaseController
         $arr = [
             'user' => $_SESSION
         ];
+        var_dump($_SESSION);
         return $this->render('home.html.twig', $arr);
     }
     
     public function registerAction()
     {
-        if (isset($_SESSION)){
+        if (isset($_SESSION['username'])){
             $this->redirectToRoute('home');
         }
         else {
@@ -47,7 +48,7 @@ class MainController extends BaseController
     }
 
     public function loginAction(){
-        if(isset($_SESSION)){
+        if(isset($_SESSION['username'])){
             return $this->redirectToRoute('home');
         }
         if(isset($_POST['pseudo']) && isset($_POST['password'])
