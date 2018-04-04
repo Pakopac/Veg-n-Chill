@@ -1,11 +1,12 @@
 <?php
 
-require_once('Routing/Router.php');
 require_once('vendor/autoload.php');
 
 use Symfony\Component\Yaml\Yaml;
+use Routing\Router;
 
 $config = Yaml::parseFile('config/config.yml');
+$params = Yaml::parseFile('config/parameters.yml');
 
 $loader = new Twig_Loader_Filesystem('views');
 $twig = new Twig_Environment($loader, array(

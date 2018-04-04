@@ -1,7 +1,7 @@
 <?php
 
-require_once('Cool/BaseController.php');
-require_once('Model/UserManager.php');
+namespace Controller;
+use Cool\BaseController;
 
 class MainController extends BaseController
 {
@@ -9,6 +9,7 @@ class MainController extends BaseController
     {
         return $this->render('home.html.twig');
     }
+    
     public function registerAction()
     {
         if (isset($_SESSION['pseudo'])){
