@@ -2,6 +2,8 @@ homepage_route: "home"
 routes:
     home: "Main:home"
     register: "Main:register"
+    login: "Main:login"
+    logout: "Main:logout"
     article: "Main:article"
     addArticle: "Main:addArticle"
     viewArticle: "Main:viewArticle"

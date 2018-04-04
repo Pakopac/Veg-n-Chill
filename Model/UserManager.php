@@ -40,4 +40,25 @@ class UserManager
         }
         return $errors;
     }
+
+    public function loginUser($user, $password)
+    {
+        $dbm = DBManager::getInstance();
+        $pdo = $dbm->getPdo();
+
+        $stmt = $pdo->prepare("SELECT * FROM users 
+        WHERE pseudo = :username");
+        $stmt->bindParam(':username', $user);
+
+        $stmt->execute();
+        $result = $stmt->fetch();
+
+        if(!password_verify($password, $result['password'])){
+            $errors = 'Invalid username or password';
+            return $errors;
+        } else {
+            $_SESSION['username'] = $user;
+            return $user;
+        }
+    }
 }

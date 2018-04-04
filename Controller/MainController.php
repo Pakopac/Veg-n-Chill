@@ -4,12 +4,16 @@ namespace Controller;
 
 use Cool\BaseController;
 use Model\PostManager;
+use Model\UserManager;
 
 class MainController extends BaseController
 {
     public function homeAction()
     {
-        return $this->render('home.html.twig');
+        $arr = [
+            'user' => $_SESSION
+        ];
+        return $this->render('home.html.twig', $arr);
     }
     
     public function registerAction()
@@ -42,6 +46,37 @@ class MainController extends BaseController
             return $this->render('register.html.twig');
         }
     }
+
+    public function loginAction(){
+        if(isset($_POST['pseudo']) && isset($_POST['password'])
+        && $_SERVER['REQUEST_METHOD'] === 'POST')
+        {
+            $username = htmlentities($_POST['pseudo']);
+            $password = $_POST['password'];
+            $manager = new UserManager();
+            $getUserData = $manager->loginUser($username, $password);
+            if ($getUserData === "Invalid username or password"){
+                $arr = [
+                    'errors' => $getUserData
+                ];
+                var_dump($getUserData);
+                return $this->render('login.html.twig', $arr);
+            } else {
+                $arr = [
+                    'user' => $_SESSION
+                ];
+                $this->redirect('?action=home');
+                return $this->render('login.html.twig', $arr);
+            }
+        }
+        return $this->render('login.html.twig');
+    }
+
+    public function logoutAction(){
+        session_destroy();
+        return $this->redirect('?action=home');
+    }
+
     public function articleAction()
     {
         $manager = new PostManager();
@@ -64,6 +99,7 @@ class MainController extends BaseController
         return $this->render('viewArticle.html.twig', $data);
 
     }
+
     public function addArticleAction()
     {
         if(isset($_POST['title']) && isset($_POST['content'])){
@@ -74,7 +110,6 @@ class MainController extends BaseController
 
             $this->redirectToRoute('article');
         }
-
         return $this->render('addArticle.html.twig');
     }
 }
