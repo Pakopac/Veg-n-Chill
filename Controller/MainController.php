@@ -63,7 +63,7 @@ class MainController extends BaseController
                 $arr = [
                     'user' => $_SESSION
                 ];
-                $this->redirect('?action=home');
+                $this->redirectToRoute('home');
                 return $this->render('login.html.twig', $arr);
             }
         }
