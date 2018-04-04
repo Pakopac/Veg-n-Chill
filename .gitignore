@@ -3,3 +3,4 @@
 composer.phar
 /config/parameters.yml
 .idea
+.DS_Store
