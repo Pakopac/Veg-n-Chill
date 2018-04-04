@@ -2,9 +2,7 @@
 {% block page_title %}{{ parent() }} - Login{% endblock %}
 
 {% block content %}
-    {% for error in errors %}
-        <div class="errors">{{ error }}</div>
-    {% endfor %}
+    <div class="errors">{{ errors }}</div>
     <p class="register">Login</p>
     <form method="POST" action="?action=login">
         <input type="text" name="pseudo" placeholder="Pseudo"><br>

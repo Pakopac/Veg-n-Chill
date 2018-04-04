@@ -58,7 +58,6 @@ class MainController extends BaseController
                 $arr = [
                     'errors' => $getUserData
                 ];
-                var_dump($getUserData);
                 return $this->render('login.html.twig', $arr);
             } else {
                 $arr = [

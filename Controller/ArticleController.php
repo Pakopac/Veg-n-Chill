@@ -13,7 +13,8 @@ class ArticleController extends BaseController
         $posts = $manager->getAllPosts();
 
         $data = [
-            'posts' => $posts
+            'posts' => $posts,
+            'user' => $_SESSION
         ];
 
         return $this->render('article.html.twig', $data);
@@ -24,6 +25,7 @@ class ArticleController extends BaseController
         $post = $postManager->getPostById(intval($_GET['id']));
         $data = [
             'article'   => $post,
+            'user' => $_SESSION
         ];
 
         return $this->render('viewArticle.html.twig', $data);
@@ -40,6 +42,9 @@ class ArticleController extends BaseController
 
             $this->redirectToRoute('article');
         }
-        return $this->render('addArticle.html.twig');
+        $arr = [
+            'user' => $_SESSION
+        ];
+        return $this->render('addArticle.html.twig', $arr);
     }
 }
