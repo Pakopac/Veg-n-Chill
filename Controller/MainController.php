@@ -17,7 +17,7 @@ class MainController extends BaseController
     
     public function registerAction()
     {
-        if (isset($_SESSION['pseudo'])){
+        if (isset($_SESSION)){
             $this->redirectToRoute('home');
         }
         else {
@@ -47,6 +47,9 @@ class MainController extends BaseController
     }
 
     public function loginAction(){
+        if(isset($_SESSION)){
+            return $this->redirectToRoute('home');
+        }
         if(isset($_POST['pseudo']) && isset($_POST['password'])
         && $_SERVER['REQUEST_METHOD'] === 'POST')
         {
