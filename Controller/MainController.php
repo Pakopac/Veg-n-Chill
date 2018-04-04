@@ -12,7 +12,6 @@ class MainController extends BaseController
         $arr = [
             'user' => $_SESSION
         ];
-        var_dump($_SESSION);
         return $this->render('home.html.twig', $arr);
     }
     

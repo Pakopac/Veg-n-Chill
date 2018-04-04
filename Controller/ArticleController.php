@@ -34,17 +34,22 @@ class ArticleController extends BaseController
 
     public function addArticleAction()
     {
-        if(isset($_POST['title']) && isset($_POST['content'])){
-            $title = $_POST['title'];
-            $content = $_POST['content'];
-            $manager = new PostManager();
-            $posts = $manager->addPost($title, $content);
-
-            $this->redirectToRoute('article');
+        if($_SESSION['rank_id'] == 1 || !isset($_SESSION['rank_id'])){
+            $this->redirectToRoute('home');
         }
-        $arr = [
-            'user' => $_SESSION
-        ];
-        return $this->render('addArticle.html.twig', $arr);
+        else {
+            if (isset($_POST['title']) && isset($_POST['content'])) {
+                $title = $_POST['title'];
+                $content = $_POST['content'];
+                $manager = new PostManager();
+                $posts = $manager->addPost($title, $content);
+
+                $this->redirectToRoute('article');
+            }
+            $arr = [
+                'user' => $_SESSION
+            ];
+            return $this->render('addArticle.html.twig', $arr);
+        }
     }
 }
