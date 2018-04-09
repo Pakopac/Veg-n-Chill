@@ -64,4 +64,18 @@ class ArticleController extends BaseController
 
         return $this->render('deleteArticle.html.twig', $data);
     }
+
+    public function editArticleAction()
+    {
+        $postManager = new PostManager();
+        $showPost = $postManager->showArticle(intval($_GET['id']));
+        $datas = [
+            'datas' => $showPost
+        ];
+        if(isset($_POST['submitEditArticle']) && isset($_GET['id'])){
+            $postManager->editArticle($_POST['editArticle'], intval($_GET['id']));
+            return $this->redirectToRoute('article');
+        }
+        return $this->render('editArticle.html.twig', $datas);
+    }
 }

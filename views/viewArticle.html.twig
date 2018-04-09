@@ -9,8 +9,8 @@
         <div>{{ article['content']|raw|nl2br }}</div>
     </article>
     <a href="?action=deleteArticle&amp;id={{ article['id'] }}">delete</a>
+    <a href="?action=editArticle&amp;id={{ article['id'] }}">edit</a>
     {% for comment in comments %}
-        <br>
         <div>
             {{ comment[2]|raw  }}
         </div>

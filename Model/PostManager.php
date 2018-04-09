@@ -52,4 +52,32 @@ class PostManager
         $stmt = $pdo->prepare("DELETE FROM posts WHERE id = :id ");
         $stmt->execute([':id' => $id]);
     }
+
+    public function showArticle($id)
+    {
+        $dbm = DBManager::getInstance();
+        $pdo = $dbm->getPdo();
+        $pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+
+        $stmt = $pdo->prepare("SELECT * FROM posts WHERE id = :id");
+        $stmt->bindParam(":id", $id);
+        $stmt->execute();
+        $result = $stmt->fetch();
+
+        return $result;
+    }
+
+    public function editArticle($content, $id)
+    {
+        $dbm = DBManager::getInstance();
+        $pdo = $dbm->getPdo();
+        $pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+
+        $stmt = $pdo->prepare("UPDATE posts SET content = :content WHERE id = :id");
+        $stmt->bindParam(":id", $id);
+        $stmt->bindParam(":content", $content);
+        $result = $stmt->execute();
+
+        return $result;
+    }
 }

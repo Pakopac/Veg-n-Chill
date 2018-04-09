@@ -1,0 +1,13 @@
+{% extends 'layout.html.twig' %}
+
+{% block page_title %}Editing - {{ datas['title']|raw }}{% endblock %}
+
+{% block content %}
+    <h1>Editing : {{ datas['title']|raw }}</h1>
+    <article>
+        <form action="?action=editArticle&amp;id={{ datas['id'] }}" method="POST">
+            <textarea name="editArticle">{{ datas['content']|raw|nl2br }}</textarea>
+            <button name="submitEditArticle">Submit the edition</button>
+        </form>
+    </article>
+{% endblock %}
