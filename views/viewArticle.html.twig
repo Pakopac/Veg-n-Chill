@@ -8,6 +8,7 @@
     <article>
         <div>{{ article['content']|raw|nl2br }}</div>
     </article>
+    <a href="?action=deleteArticle&amp;id={{ article['id'] }}">delete</a>
     {% for comment in comments %}
         <br>
         <div>

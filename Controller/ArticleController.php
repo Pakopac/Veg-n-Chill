@@ -29,7 +29,6 @@ class ArticleController extends BaseController
         ];
 
         return $this->render('viewArticle.html.twig', $data);
-
     }
 
     public function addArticleAction()
@@ -51,5 +50,18 @@ class ArticleController extends BaseController
             ];
             return $this->render('addArticle.html.twig', $arr);
         }
+    }
+
+    public function deleteArticleAction()
+    {
+        $postManager = new PostManager();
+        $post = $postManager->deletePost(intval($_GET['id']));
+        $data = [
+            'article'   => $post,
+            'user' => $_SESSION
+        ];
+        $this->redirectToRoute("article");
+
+        return $this->render('deleteArticle.html.twig', $data);
     }
 }

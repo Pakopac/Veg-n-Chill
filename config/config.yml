@@ -7,3 +7,4 @@ routes:
     article: "Article:article"
     addArticle: "Article:addArticle"
     viewArticle: "Article:viewArticle"
+    deleteArticle: "Article:deleteArticle"

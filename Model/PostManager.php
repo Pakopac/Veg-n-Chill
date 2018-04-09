@@ -42,4 +42,14 @@ class PostManager
 
         return $post;
     }
+
+    public function deletePost($id)
+    {
+        $dbm = DBManager::getInstance();
+        $pdo = $dbm->getPdo();
+        $pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+
+        $stmt = $pdo->prepare("DELETE FROM posts WHERE id = :id ");
+        $stmt->execute([':id' => $id]);
+    }
 }
