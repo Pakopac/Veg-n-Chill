@@ -54,14 +54,19 @@ class ArticleController extends BaseController
 
     public function deleteArticleAction()
     {
-        $postManager = new PostManager();
-        $post = $postManager->deletePost(intval($_GET['id']));
-        $data = [
-            'article'   => $post,
-            'user' => $_SESSION
-        ];
-        $this->redirectToRoute("article");
+        if($_SESSION['rank_id'] == 1 || !isset($_SESSION['rank_id'])){
+            $this->redirectToRoute('article');
+        }
+        else {
+            $postManager = new PostManager();
+            $post = $postManager->deletePost(intval($_GET['id']));
+            $data = [
+                'article' => $post,
+                'user' => $_SESSION
+            ];
+            $this->redirectToRoute("article");
 
-        return $this->render('deleteArticle.html.twig', $data);
+            return $this->render('deleteArticle.html.twig', $data);
+        }
     }
 }

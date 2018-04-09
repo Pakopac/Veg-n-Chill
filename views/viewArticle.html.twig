@@ -8,7 +8,9 @@
     <article>
         <div>{{ article['content']|raw|nl2br }}</div>
     </article>
+    {% if user['rank_id'] == 3 or user['rank_id'] == 2 %}
     <a href="?action=deleteArticle&amp;id={{ article['id'] }}">delete</a>
+    {% endif %}
     {% for comment in comments %}
         <br>
         <div>
