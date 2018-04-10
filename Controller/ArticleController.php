@@ -4,6 +4,7 @@ namespace Controller;
 
 use Cool\BaseController;
 use Model\PostManager;
+use Model\CommentManager;
 
 class ArticleController extends BaseController
 {
@@ -22,13 +23,19 @@ class ArticleController extends BaseController
     public function viewArticleAction()
     {
         $postManager = new PostManager();
-        $post = $postManager->getPostById(intval($_GET['id']));
-        $data = [
-            'article'   => $post,
-            'user' => $_SESSION
-        ];
-
-        return $this->render('viewArticle.html.twig', $data);
+        if(isset($_POST['comment'])) {
+            $post = $postManager->getPostById(intval($_GET['id']));
+            $commentsManager = new CommentManager();
+            $commentsManager->addComment(intval($_GET['id']), $_POST['comment']);
+            $getComments = $commentsManager->getCommentsByPost(intval($_GET['id']));
+            $data = [
+                'article' => $post,
+                'user' => $_SESSION,
+                'comments' => $getComments
+            ];
+            return $this->render('viewArticle.html.twig', $data);
+        }
+        return $this->render('viewArticle.html.twig');
     }
 
     public function addArticleAction()

@@ -8,6 +8,9 @@
     <article>
         <div>{{ article['content']|raw|nl2br }}</div>
     </article>
+    <br>
+    <br>
+    <hr>
     {% if user['rank_id'] == 3 or user['rank_id'] == 2 %}
     <a href="?action=deleteArticle&amp;id={{ article['id'] }}">delete</a>
     {% endif %}
@@ -16,5 +19,12 @@
         <div>
             {{ comment[2]|raw  }}
         </div>
+        <hr>
     {% endfor %}
+    <br>comments:
+    <form method="POST">
+    <input name="comment" type="text">
+    <button>enter</button>
+    </form>
+    <hr>
 {% endblock %}

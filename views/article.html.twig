@@ -10,6 +10,5 @@
             <h2>{{ loop.index }} <a href="?action=viewArticle&amp;id={{ article['id'] }}">{{ article['title'] }}</a></h2>
             <div>{{ article['content']|nl2br }}</div>
         </article>
-        <hr>
     {% endfor %}
 {% endblock %}
