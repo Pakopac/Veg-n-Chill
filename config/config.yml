@@ -8,3 +8,4 @@ routes:
     addArticle: "Article:addArticle"
     viewArticle: "Article:viewArticle"
     deleteArticle: "Article:deleteArticle"
+    editArticle: "Article:editArticle"

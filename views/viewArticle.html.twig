@@ -13,9 +13,9 @@
     <hr>
     {% if user['rank_id'] == 3 or user['rank_id'] == 2 %}
     <a href="?action=deleteArticle&amp;id={{ article['id'] }}">delete</a>
+    <a href="?action=editArticle&amp;id={{ article['id'] }}">edit</a>
     {% endif %}
     {% for comment in comments %}
-        <br>
         <div>
             {{ comment[2]|raw  }}
         </div>
