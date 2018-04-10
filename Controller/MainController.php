@@ -46,7 +46,8 @@ class MainController extends BaseController
         }
     }
 
-    public function loginAction(){
+    public function loginAction()
+    {
         if(isset($_SESSION['username'])){
             return $this->redirectToRoute('home');
         }

@@ -79,7 +79,7 @@ class ArticleController extends BaseController
         ];
         if(isset($_POST['submitEditArticle']) && isset($_GET['id'])){
             $postManager->editArticle($_POST['editArticle'], intval($_GET['id']));
-            return $this->redirectToRoute('article');
+            return $this->redirectToRoute('viewArticle', "id=".$_GET['id']);
         }
         return $this->render('editArticle.html.twig', $datas);
     }
