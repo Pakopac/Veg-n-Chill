@@ -9,3 +9,4 @@ routes:
     viewArticle: "Article:viewArticle"
     deleteArticle: "Article:deleteArticle"
     editArticle: "Article:editArticle"
+    addComment: "Comment:addComment"

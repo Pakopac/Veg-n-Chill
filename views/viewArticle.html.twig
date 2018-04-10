@@ -22,9 +22,9 @@
         <hr>
     {% endfor %}
     <br>comments:
-    <form method="POST">
+    <form action="?action=addComment&amp;id={{ article['id'] }}" method="POST">
     <input name="comment" type="text">
-    <button>enter</button>
+    <button name="btn-comment">enter</button>
     </form>
     <hr>
 {% endblock %}

@@ -23,19 +23,16 @@ class ArticleController extends BaseController
     public function viewArticleAction()
     {
         $postManager = new PostManager();
-        if(isset($_POST['comment'])) {
-            $post = $postManager->getPostById(intval($_GET['id']));
-            $commentsManager = new CommentManager();
-            $commentsManager->addComment(intval($_GET['id']), $_POST['comment']);
-            $getComments = $commentsManager->getCommentsByPost(intval($_GET['id']));
-            $data = [
-                'article' => $post,
-                'user' => $_SESSION,
-                'comments' => $getComments
-            ];
-            return $this->render('viewArticle.html.twig', $data);
-        }
-        return $this->render('viewArticle.html.twig');
+        $commentManager = new CommentManager();
+        $post = $postManager->getPostById(intval($_GET['id']));
+        $getComments = $commentManager->getCommentsByPost(intval($_GET['id']));
+        $arr = [
+            'article' => $post,
+            'article' => $post,
+            'user' => $_SESSION,
+            'comments' => $getComments
+        ];
+        return $this->render('viewArticle.html.twig', $arr);
     }
 
     public function addArticleAction()
