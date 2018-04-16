@@ -18,6 +18,18 @@
     {% for comment in comments %}
         <div>
             {{ comment[2]|raw  }}
+            <form name="formRateComment" method="POST" action="?action=viewArticle&amp;id={{ article['id'] }}" class="formRateComment">
+                <div class="idComment">{{ comment[0] }}</div>
+                <select class="selectRateComment" name="rate">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+                <button>Enter</button>
+            </form>
+            <div class="rate"></div>
         </div>
         <hr>
     {% endfor %}
@@ -27,4 +39,31 @@
     <button name="btn-comment">enter</button>
     </form>
     <hr>
+    <script>
+        window.onload = function () {
+            var formRateComment = document.querySelectorAll('.formRateComment');
+            var selectRateComment = document.querySelectorAll('.selectRateComment');
+            var selectValue = 1;
+
+            for (var i=0; i<selectRateComment.length; i++) {
+                selectRateComment[i].onchange = function () {
+                    return selectValue = this.value;
+                };
+            }
+            for (var i=0; i<formRateComment.length; i++) {
+                if(localStorage.getItem("rate " + document.querySelectorAll('.idComment')[i].innerHTML)){
+                    formRateComment[i].style.display = 'none';
+                    var rate = document.querySelectorAll('.rate');
+                    rate[i].innerHTML = "rate: " + localStorage.getItem("rate " + document.querySelectorAll('.idComment')[i].innerHTML)
+                }
+                else {
+                    formRateComment[i].onsubmit = function () {
+                        var idComment = this.querySelector('.idComment').innerHTML;
+                        localStorage.setItem("rate " + idComment, selectValue);
+                        this.style.display = 'none';
+                    };
+                }
+            }
+        }
+    </script>
 {% endblock %}
