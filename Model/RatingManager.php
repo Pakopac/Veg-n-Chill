@@ -71,6 +71,7 @@ class RatingManager
             $lastAvg = $this->getLastAvg($id);
             
             $newRate = ((intval($lastAvg) * intval($total)) + intval($action)) / (intval($total) + 1);
+            ceil($newRate);
 
             $stmt = $pdo->prepare('UPDATE posts SET ratings = :newRate WHERE id = :id');
             $stmt->bindParam(':newRate', $newRate);
