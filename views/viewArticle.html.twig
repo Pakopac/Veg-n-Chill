@@ -9,6 +9,14 @@
         <div>{{ article['content']|raw|nl2br }}</div>
     </article>
     <br>
+    <div class="ratings">
+        <button id="btn-one-star" value="1"><i id="one-star" class="far fa-star"></i></button>
+        <button id="btn-two-stars" value="2"><i id="two-stars" class="far fa-star"></i></button>
+        <button id="btn-three-stars" value="3"><i id="three-stars" class="far fa-star"></i></button>
+        <button id="btn-four-stars" value="4"><i id="four-stars" class="far fa-star"></i></button>
+        <button id="btn-five-stars" value="5"><i id="five-star" class="far fa-star"></i></button>
+        <input type="hidden" id="article-id" value="{{ article['id'] }}"></button>
+    </div>
     <br>
     <hr>
     {% if user['rank_id'] == 3 or user['rank_id'] == 2 %}
@@ -27,4 +35,8 @@
     <button name="btn-comment">enter</button>
     </form>
     <hr>
+{% endblock %}
+{% block script %}
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css">
+<script src="./assets/scripts/ratings.js"></script>
 {% endblock %}

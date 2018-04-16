@@ -10,3 +10,4 @@ routes:
     deleteArticle: "Article:deleteArticle"
     editArticle: "Article:editArticle"
     addComment: "Comment:addComment"
+    rateArticle: "Article:rateArticle"

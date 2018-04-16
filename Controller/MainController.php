@@ -34,9 +34,7 @@ class MainController extends BaseController
                 $UserManager = new UserManager();
                 $errors = $UserManager->registerUser($firstname, $lastname, $pseudo, $email, $password, $repeatPassword);
                 if ($errors === []) {
-                    $data = ['user' => $_SESSION];
-                    $this->redirectToRoute('home');
-                    return $this->render('layout.html.twig', $data);
+                    return $this->redirectToRoute('home');
                 } else {
                     $data = ['errors' => $errors];
                     return $this->render('register.html.twig', $data);

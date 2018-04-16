@@ -5,6 +5,7 @@ namespace Controller;
 use Cool\BaseController;
 use Model\PostManager;
 use Model\CommentManager;
+use Model\RatingManager;
 
 class ArticleController extends BaseController
 {
@@ -27,7 +28,6 @@ class ArticleController extends BaseController
         $post = $postManager->getPostById(intval($_GET['id']));
         $getComments = $commentManager->getCommentsByPost(intval($_GET['id']));
         $arr = [
-            'article' => $post,
             'article' => $post,
             'user' => $_SESSION,
             'comments' => $getComments
@@ -86,5 +86,11 @@ class ArticleController extends BaseController
             return $this->redirectToRoute('viewArticle', "id=".$_GET['id']);
         }
         return $this->render('editArticle.html.twig', $datas);
+    }
+
+    public function rateArticleAction()
+    {
+        $ratingManager = new RatingManager();
+        $rateArticle = $ratingManager->rateArticle($_POST['rating'], intval($_GET['id']));
     }
 }
