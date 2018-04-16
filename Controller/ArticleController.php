@@ -92,5 +92,7 @@ class ArticleController extends BaseController
     {
         $ratingManager = new RatingManager();
         $rateArticle = $ratingManager->rateArticle($_POST['rating'], intval($_GET['id']));
+
+        return $rateArticle;
     }
 }
