@@ -16,7 +16,7 @@ class RatingManager
 
         $stmt = $pdo->prepare("UPDATE posts SET likes = likes + 1 WHERE id = :id");
         $stmt->bindParam(":id", $id);
-        $stmt->execute();
+        $result = $stmt->execute();
         
         return $result;
     }
@@ -29,7 +29,7 @@ class RatingManager
 
         $stmt = $pdo->prepare("UPDATE posts SET dislikes = dislikes + 1 WHERE id = :id");
         $stmt->bindParam(":id", $id);
-        $stmt->execute();
+        $result = $stmt->execute();
         
         return $result;
     }
