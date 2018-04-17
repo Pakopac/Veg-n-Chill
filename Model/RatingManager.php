@@ -7,40 +7,29 @@ use Cool\BaseController;
 
 class RatingManager
 {
-    public function getTotal($id)
+
+    public function updateLike($id)
     {
         $dbm = DBManager::getInstance();
         $pdo = $dbm->getPdo();
         $pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
 
-        $stmt = $pdo->query("SELECT total_votes FROM posts");
-        $result = $stmt->fetch();
-        return $result;
-    }
-
-    public function getLastAvg($id)
-    {
-        $dbm = DBManager::getInstance();
-        $pdo = $dbm->getPdo();
-        $pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
-
-        $stmt = $pdo->prepare("SELECT ratings FROM posts WHERE id = :id");
+        $stmt = $pdo->prepare("UPDATE posts SET likes = likes + 1 WHERE id = :id");
         $stmt->bindParam(":id", $id);
         $stmt->execute();
-        $result = $stmt->fetch();
-
+        
         return $result;
     }
 
-    public function updateTotal($id)
+    public function updateDislike($id)
     {
         $dbm = DBManager::getInstance();
         $pdo = $dbm->getPdo();
         $pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
 
-        $stmt = $pdo->prepare("UPDATE posts SET total_votes = total_votes + 1 WHERE id = :id");
+        $stmt = $pdo->prepare("UPDATE posts SET dislikes = dislikes + 1 WHERE id = :id");
         $stmt->bindParam(":id", $id);
-        $result = $stmt->execute();
+        $stmt->execute();
         
         return $result;
     }
@@ -50,41 +39,30 @@ class RatingManager
         $dbm = DBManager::getInstance();
         $pdo = $dbm->getPdo();
         $pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+        $ratings = $_POST['rating'];
 
-        $total = $this->getTotal($id);
+        if($ratings === "like"){
+            $this->updateLike($_GET['id']);
 
-        if($total['total_votes'] == 0){
-            $stmt = $pdo->prepare("UPDATE posts SET ratings = :action WHERE id = :id");
-            $stmt->bindParam(':action', $action);
-            $stmt->bindParam(':id', $id);
-            $stmt->execute();
-
-            $this->updateTotal($id);
-            
-            $results = [
-                'status' => 'Ok',
-                'message' => 'Everything is okay !'
+            $status = [
+                "status" => "ok",
+                "message" => "Thanks for liking !",
             ];
-            return json_encode($results);
+            return json_encode($status);
+        } else if ($ratings === "dislike"){
+            $this->updateDislike($_GET['id']);
+
+            $status = [
+                "status" => "ok",
+                "message" => "Sad :(",
+            ];
+            return json_encode($status);
         } else {
-            $total = $this->getTotal($id);
-            $lastAvg = $this->getLastAvg($id);
-            
-            $newRate = ((intval($lastAvg) * intval($total)) + intval($action)) / (intval($total) + 1);
-            ceil($newRate);
-
-            $stmt = $pdo->prepare('UPDATE posts SET ratings = :newRate WHERE id = :id');
-            $stmt->bindParam(':newRate', $newRate);
-            $stmt->bindParam(':id', $id);
-            $stmt->execute();
-
-            $data = $this->updateTotal($id);
-
-            $results = [
-                'status' => 'Ok',
-                'message' => 'Everything is okay !'
+            $status = [
+                "status" => "failed",
+                "message" => "Whoops, there is something inconveniant that arrived"
             ];
-            return json_encode($results);
+            return json_encode($status);
         }
     }
 }

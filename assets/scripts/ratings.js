@@ -24,30 +24,15 @@ function sendRating(rating, id){
 }
 
 window.addEventListener('load', () => {
-    let oneStar = document.querySelector('#btn-one-star');
-    let twoStars = document.querySelector('#btn-two-stars');
-    let threeStars = document.querySelector('#btn-three-stars');
-    let fourStars = document.querySelector('#btn-four-stars');
-    let fiveStars = document.querySelector('#btn-five-stars');
+    let like = document.querySelector('#btn-like');
+    let dislike = document.querySelector('#btn-dislike');
     let articleId = document.querySelector('#article-id').value;
 
-    oneStar.addEventListener('click', () => {
-        sendRating(oneStar.value, articleId);
+    like.addEventListener('click', () => {
+        sendRating(like.value, articleId);
     });
 
-    twoStars.addEventListener('click', () => {
-        sendRating(twoStars.value, articleId);
-    });
-
-    threeStars.addEventListener('click', () => {
-        sendRating(threeStars.value, articleId);
-    });
-
-    fourStars.addEventListener('click', () => {
-        sendRating(fourStars.value, articleId);
-    });
-
-    fiveStars.addEventListener('click', () => {
-        sendRating(fiveStars.value, articleId);
+    dislike.addEventListener('click', () => {
+        sendRating(dislike.value, articleId);
     });
 });
