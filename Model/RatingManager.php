@@ -53,13 +53,13 @@ class RatingManager
 
         $total = $this->getTotal($id);
 
-        if($total['total_votes'] == 0){
+        if($total['total_votes'] == NULL){
             $stmt = $pdo->prepare("UPDATE posts SET ratings = :action WHERE id = :id");
             $stmt->bindParam(':action', $action);
             $stmt->bindParam(':id', $id);
             $stmt->execute();
 
-            $this->updateTotal($total, $id);
+            $this->updateTotal($id);
             
             $results = [
                 'status' => 'Ok',
