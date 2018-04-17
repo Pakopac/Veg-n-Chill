@@ -12,7 +12,7 @@
     <div class="ratings">
         <button id="btn-like" value="like"><i class="far fa-thumbs-up"></i></button>
         <button id="btn-dislike" value="dislike"><i class="far fa-thumbs-down"></i></button>
-        <input type="hidden" id="article-id" value="{{ article['id'] }}"></button>
+        <input type="hidden" id="article-id" value="{{ article['id'] }}">
     </div>
     <br>
     <hr>
@@ -22,19 +22,17 @@
     {% endif %}
     {% for comment in comments %}
         <div>
-            {{ comment[2]|raw  }}
-            <form name="formRateComment" method="POST" action="?action=viewArticle&amp;id={{ article['id'] }}" class="formRateComment">
-                <div class="idComment">{{ comment[0] }}</div>
-                <select class="selectRateComment" name="rate">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                </select>
-                <button>Enter</button>
+            {{ comment[2]|raw }}
+            <br><br>REPLY:
+            {% for rep in reply %}
+                {% if comment[0] == rep[1] %}
+                    <br>{{ rep[2]|raw }}
+                {% endif %}
+            {% endfor %}
+            <br><form method="POST" action="?action=addComment&amp;id={{ article['id'] }}&amp;idComment={{ comment[0] }}">
+            comment :<input type="text" name="subComment">
+            <button name="btn-subComment">Enter</button>
             </form>
-            <div class="rate"></div>
         </div>
         <hr>
     {% endfor %}

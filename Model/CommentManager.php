@@ -12,7 +12,12 @@ class CommentManager
         $pdo = $dbm->getPdo();
         $pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
 
-        $stmt = $pdo->prepare("INSERT INTO comments (id, post_id, message) VALUES (NULL, :id, :comment)");
+        if(isset($_GET['idComment'])) {
+            $stmt = $pdo->prepare("INSERT INTO comments (id, post_id, message, `type`) VALUES (NULL, :id, :comment, 'reply')");
+        }
+        else{
+            $stmt = $pdo->prepare("INSERT INTO comments (id, post_id, message, `type`) VALUES (NULL, :id, :comment, 'comment')");
+        }
         $stmt->bindParam(':id', $id);
         $stmt->bindParam(':comment', $comment);
 
@@ -23,10 +28,21 @@ class CommentManager
         $dbm = DBManager::getInstance();
         $pdo = $dbm->getPdo();
 
-        $result = $pdo->prepare("SELECT * FROM comments WHERE post_id = :id");
+        $result = $pdo->prepare("SELECT * FROM comments WHERE post_id = :id AND `type` = 'comment'");
         $result->execute([':id' => $id]);
-        $post = $result->fetchall();
+        $comment = $result->fetchall();
 
-        return $post;
+        return $comment;
+    }
+    public function getReplyByComments()
+    {
+        $dbm = DBManager::getInstance();
+        $pdo = $dbm->getPdo();
+
+        $result = $pdo->prepare("SELECT * FROM comments WHERE `type` = 'reply'");
+        $result -> execute();
+        $reply = $result->fetchAll();
+
+        return $reply;
     }
 }

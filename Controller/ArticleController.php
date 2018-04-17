@@ -27,11 +27,13 @@ class ArticleController extends BaseController
         $commentManager = new CommentManager();
         $post = $postManager->getPostById(intval($_GET['id']));
         $getComments = $commentManager->getCommentsByPost(intval($_GET['id']));
-        $arr = [
-            'article' => $post,
-            'user' => $_SESSION,
-            'comments' => $getComments
-        ];
+        $getReply = $commentManager->getReplyByComments();
+            $arr = [
+                'article' => $post,
+                'user' => $_SESSION,
+                'reply' => $getReply,
+                'comments' => $getComments
+            ];
         return $this->render('viewArticle.html.twig', $arr);
     }
 
