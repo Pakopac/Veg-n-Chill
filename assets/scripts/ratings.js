@@ -2,8 +2,8 @@ function json(response){
     return response.json();
 }
 
-function sendRating(rating, id){
-    let url = `?action=rateArticle&rating=${rating}&id=${id}`;
+function sendRating(action, rating, id){
+    let url = `?action=${action}&rating=${rating}&id=${id}`;
     fetch(url, {
         method: 'post',
         headers: {
@@ -29,10 +29,10 @@ window.addEventListener('load', () => {
     let articleId = document.querySelector('#article-id').value;
 
     like.addEventListener('click', () => {
-        sendRating(like.value, articleId);
+        sendRating('rateArticle', like.value, articleId);
     });
 
     dislike.addEventListener('click', () => {
-        sendRating(dislike.value, articleId);
+        sendRating('rateArticle', dislike.value, articleId);
     });
 });
