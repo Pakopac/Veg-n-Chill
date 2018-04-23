@@ -4,6 +4,7 @@ namespace Controller;
 
 use Cool\BaseController;
 use Model\CommentManager;
+use Model\RatingManager;
 
 class CommentController extends BaseController
 {
@@ -19,5 +20,11 @@ class CommentController extends BaseController
             $commentsManager->addComment(intval($_GET['idComment']), $_POST['subComment']);
             return $this->redirectToRoute('viewArticle', 'id='.intval($_GET['id']));
         }
+    }
+    public function rateCommentAction()
+    {
+        $ratingManager = new RatingManager();
+        $rateComment = $ratingManager->rateComment($_POST['rating'], $_POST['id']);
+        return $rateComment;
     }
 }

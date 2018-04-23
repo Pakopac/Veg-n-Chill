@@ -11,3 +11,4 @@ routes:
     editArticle: "Article:editArticle"
     addComment: "Comment:addComment"
     rateArticle: "Article:rateArticle"
+    rateComment: "Comment:rateComment"

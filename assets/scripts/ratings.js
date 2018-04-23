@@ -3,6 +3,7 @@ function json(response){
 }
 
 function sendRating(action, rating, id){
+    console.log(action, rating, id);
     let url = `?action=${action}&rating=${rating}&id=${id}`;
     fetch(url, {
         method: 'post',
@@ -27,6 +28,9 @@ window.addEventListener('load', () => {
     let like = document.querySelector('#btn-like');
     let dislike = document.querySelector('#btn-dislike');
     let articleId = document.querySelector('#article-id').value;
+    let likeComment = document.querySelectorAll('.btn-like-comment');
+    let dislikeComment = document.querySelectorAll('.btn-dislike-comment');
+    let commentId = document.querySelectorAll('.comment-id').value;
 
     like.addEventListener('click', () => {
         sendRating('rateArticle', like.value, articleId);
@@ -34,5 +38,16 @@ window.addEventListener('load', () => {
 
     dislike.addEventListener('click', () => {
         sendRating('rateArticle', dislike.value, articleId);
+    });
+
+    for (var i in likeComment) {
+        likeComment.addEventListener('click', () => {
+            console.log(this.value);
+            sendRating('rateComment', likeComment.value, commentId);
+        })
+    }
+
+    dislikeComment.addEventListener('click', () => {
+        sendRating('rateComment', dislikeComment.value, commentId);
     });
 });
