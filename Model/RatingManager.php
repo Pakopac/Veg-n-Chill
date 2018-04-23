@@ -13,9 +13,9 @@ class RatingManager
         $dbm = DBManager::getInstance();
         $pdo = $dbm->getPdo();
         $pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
-        if($action === "likes"){
+        if($action === "like"){
             $stmt = $pdo->prepare("UPDATE posts SET likes = likes + 1 WHERE id = :id");
-        } else if($action === "dislikes"){
+        } else if($action === "dislike"){
             $stmt = $pdo->prepare("UPDATE posts SET dislikes = dislikes + 1 WHERE id = :id");
         }
         $stmt->bindParam(":id", $id);
@@ -31,7 +31,7 @@ class RatingManager
         $pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
         $ratings = $_POST['rating'];
 
-        if($ratings === "likes"){
+        if($ratings == "like"){
             $this->updateState($ratings, $_GET['id']);
 
             $status = [
@@ -39,7 +39,7 @@ class RatingManager
                 "message" => "Thanks for liking !"
             ];
             return json_encode($status);
-        } else if ($ratings === "dislikes"){
+        } else if ($ratings == "dislike"){
             $this->updateState($ratings, $_GET['id']);
 
             $status = [
