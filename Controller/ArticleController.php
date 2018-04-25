@@ -39,7 +39,7 @@ class ArticleController extends BaseController
 
     public function addArticleAction()
     {
-        if($_SESSION['rank_id'] == 1 || !isset($_SESSION['rank_id'])){
+        if($_SESSION['rank_id'] == 1 || empty($_SESSION['rank_id'])){
             $this->redirectToRoute('home');
         }
         else {
@@ -47,7 +47,7 @@ class ArticleController extends BaseController
                 $title = $_POST['title'];
                 $content = $_POST['content'];
                 $manager = new PostManager();
-                $posts = $manager->addPost($title, $content);
+                $posts = $manager->addPost($title, $content, $_SESSION['author_id']);
 
                 $this->redirectToRoute('article');
             }

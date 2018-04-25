@@ -18,15 +18,16 @@ class PostManager
         return $posts;
     }
 
-    public function addPost($title, $content)
+    public function addPost($title, $content, $authorID)
     {
         $dbm = DBManager::getInstance();
         $pdo = $dbm->getPdo();
         $pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
 
-        $stmt = $pdo->prepare("INSERT INTO posts (id, title, content) VALUES (NULL, :title, :content)");
+        $stmt = $pdo->prepare("INSERT INTO posts (id, title, content, author_id) VALUES (NULL, :title, :content, :author)");
         $stmt->bindParam(':title', $title);
         $stmt->bindParam(':content', $content);
+        $stmt->bindParam(':author', $authorID);
 
         $stmt->execute();
     }
