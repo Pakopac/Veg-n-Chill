@@ -3,6 +3,7 @@ function json(response){
 }
 
 function sendRating(action, rating, id){
+    console.log(action, rating, id);
     let url = `?action=${action}&rating=${rating}&id=${id}`;
     fetch(url, {
         method: 'post',
