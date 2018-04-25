@@ -17,7 +17,7 @@
     </div>
     <br>
     <hr>
-    {% if user['rank_id'] == 3 or user['rank_id'] == 2 %}
+    {% if user['rank_id'] == 3 or user['rank_id'] == 2 and user['author_id'] == article['author_id'] %}
     <a href="?action=deleteArticle&amp;id={{ article['id'] }}">delete</a>
     <a href="?action=editArticle&amp;id={{ article['id'] }}">edit</a>
     {% endif %}
