@@ -59,6 +59,7 @@ class UserManager
         } else {
             $_SESSION['username'] = $user;
             $_SESSION['rank_id'] = $result['rank_id'];
+            $_SESSION['author_id'] = $result['id'];
             return $_SESSION;
         }
     }
