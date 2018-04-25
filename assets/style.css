@@ -1,4 +1,36 @@
-small
-{
-    color: purple;
+@font-face {
+    font-family: "Montserrat-Regular";
+    src: url("./fonts/Montserrat-Regular.ttf");
+}
+.AdminTitle{
+    display: flex;
+    flex-direction: row;
+}
+h1{
+    font-family: annabelle, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    margin-left: 20px;
+    color: #00ACC1;
+}
+.backgroundNav{
+    margin-top: 10px;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    background: #AEFBFF;
+}
+.adminNav{
+    margin-left: 5%;
+    display: flex;
+    flex-direction: row;
+}
+.adminNav a{
+    font-family: "Montserrat-Regular";
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #AAAAAA;
+}
+.adminNav a:hover{
+    background: #DBFDFF;
 }
