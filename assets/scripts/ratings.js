@@ -28,6 +28,9 @@ window.addEventListener('load', () => {
     let dislike = document.querySelector('#btn-dislike');
     let articleId = document.querySelector('#article-id').value;
 
+    let dislikeComment = document.querySelectorAll('.btn-dislike-comment');
+    let likeComment = document.querySelectorAll('.btn-like-comment');
+
     like.addEventListener('click', () => {
         sendRating('rateArticle', like.value, articleId);
     });
@@ -35,4 +38,16 @@ window.addEventListener('load', () => {
     dislike.addEventListener('click', () => {
         sendRating('rateArticle', dislike.value, articleId);
     });
+    fctLikeComment(dislikeComment, 'dislike');
+    fctLikeComment(likeComment, 'like');
+
+
 });
+let commentId = document.querySelectorAll('.comment-id');
+function fctLikeComment(action, rating) {
+    for (let i = 0; i < action.length; i++){
+        action[i].addEventListener('click', () => {
+            sendRating('rateComment', rating, commentId[i].value);
+        })
+    }
+}

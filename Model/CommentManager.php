@@ -12,7 +12,7 @@ class CommentManager
         $pdo = $dbm->getPdo();
         $pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
 
-        if(isset($_GET['idComment'])) {
+        if(isset($_GET['idComment'])    ) {
             $stmt = $pdo->prepare("INSERT INTO comments (id, post_id, message, `type`) VALUES (NULL, :id, :comment, 'reply')");
         }
         else{
