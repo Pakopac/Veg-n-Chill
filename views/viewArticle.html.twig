@@ -60,31 +60,4 @@
 {% block script %}
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css">
 <script src="./assets/scripts/ratings.js"></script>
-    <script>
-        window.onload = function () {
-            var formRateComment = document.querySelectorAll('.formRateComment');
-            var selectRateComment = document.querySelectorAll('.selectRateComment');
-            var selectValue = 1;
-
-            for (var i=0; i<selectRateComment.length; i++) {
-                selectRateComment[i].onchange = function () {
-                    return selectValue = this.value;
-                };
-            }
-            for (var i=0; i<formRateComment.length; i++) {
-                if(localStorage.getItem("rate " + document.querySelectorAll('.idComment')[i].innerHTML)){
-                    formRateComment[i].style.display = 'none';
-                    var rate = document.querySelectorAll('.rate');
-                    rate[i].innerHTML = "rate: " + localStorage.getItem("rate " + document.querySelectorAll('.idComment')[i].innerHTML)
-                }
-                else {
-                    formRateComment[i].onsubmit = function () {
-                        var idComment = this.querySelector('.idComment').innerHTML;
-                        localStorage.setItem("rate " + idComment, selectValue);
-                        this.style.display = 'none';
-                    };
-                }
-            }
-        }
-    </script>
 {% endblock %}

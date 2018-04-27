@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Admin - {% block page_title %}{% endblock %}</title>
     <link rel="stylesheet" href="assets/style.css">
+    <script src="./assets/scripts/scriptAdmin.js"></script>
 </head>
 <body>
     <div class="AdminTitle">
@@ -13,12 +14,12 @@
     <div class="backgroundNav">
         <nav class="adminNav">
             <a href="?action=homeAdmin">Acceuil</a>
-            <a href="?action=generalAdmin">Générale</a>
+            <a href="?action=generalAdmin">Général</a>
             <a href="?action=displayAdmin">Affichage</a>
             <a href="?action=usersAdmin">Utilisateurs et groupes</a>
-            {% block content %}{% endblock %}
-            {% block script %}{% endblock %}
         </nav>
     </div>
+    {% block content %}{% endblock %}
+    {% block script %}{% endblock %}
 </body>
 </html>

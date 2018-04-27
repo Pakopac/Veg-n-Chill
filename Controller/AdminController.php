@@ -8,18 +8,30 @@ class AdminController extends BaseController
 {
     public function homeAction()
     {
-        return $this->render('admin/home.html.twig');
+        $arr = [
+            'user' => $_SESSION
+        ];
+        return $this->render('admin/home.html.twig',$arr);
     }
     public function generalAction()
     {
-        return $this->render('admin/general.html.twig');
+        $arr = [
+            'user' => $_SESSION
+        ];
+        return $this->render('admin/general.html.twig',$arr);
     }
     public function displayAction()
     {
-        return $this->render('admin/display.html.twig');
+        $arr = [
+            'user' => $_SESSION
+        ];
+        return $this->render('admin/display.html.twig',$arr);
     }
     public function usersAction()
     {
-        return $this->render('admin/users.html.twig');
+        $arr = [
+            'user' => $_SESSION
+        ];
+        return $this->render('admin/users.html.twig',$arr);
     }
 }

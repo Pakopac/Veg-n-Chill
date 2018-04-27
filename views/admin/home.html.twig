@@ -3,5 +3,95 @@
 {% block page_title %}Acceuil{% endblock %}
 
 {% block content %}
+    <div class="msgHomeAdmin">Bienvenue dans votre Panneau d'administration {{ user['username'] }}</div>
+    <div class="blocksHomeAdmin">
+        <div class="blockHomeAdminLeft">
+            <fieldset class="blockNotePad">
+                <legend>Bloc-note</legend>
+                <div class="notePad">
+                    <button id="btnNotePad">Activer</button>
+                </div>
+                <textarea id="textNotePad"></textarea>
+            </fieldset>
+            <div class="blockRecentMember">
+                <fieldset class="recentMember">
+                    <ul class="rencentMemberContent">
+                        <li>Pseudo</li>
+                        <li>example@example.com</li>
+                        <li>12/12</li>
+                    </ul>
+                    <ul class="rencentMemberContent">
+                        <li>Pseudo</li>
+                        <li>example@example.com</li>
+                        <li>12/12</li>
+                    </ul>
 
+                    <legend>Membre récents</legend>
+                </fieldset>
+            </div>
+            <div class="blockSearchUser">
+                <fieldset class="searchUser">
+                    <legend>Recherche un utilisateur</legend>
+                    <input type="text">
+                    <button>Chercher</button>
+                </fieldset>
+            </div>
+        </div>
+        <div class="blockHomeAdminRight">
+            <fieldset>
+                <legend>Statistiques</legend>
+                <ul class="headerStats">
+                    <li>Statistiques du site</li>
+                    <li>Valeur</li>
+                    <li>Statistique du site</li>
+                    <li>Valeur</li>
+                </ul>
+                <table>
+                <tr class="statsContent">
+                    <td>Commentaires</td>
+                    <td>14</td>
+                    <td>Commentaires par jours</td>
+                    <td>5</td>
+                </tr>
+                <tr class="statsContent">
+                    <td>Nombres d'utilisateurs</td>
+                    <td>10</td>
+                    <td>Articles par jours</td>
+                    <td>4</td>
+                </tr>
+                <tr class="statsContent">
+                    <td>Ouverture du site</td>
+                    <td>Jeu 26 avril 2018</td>
+                    <td>Utilisateurs par jours</td>
+                    <td>2</td>
+                </tr>
+                <tr class="statsContent">
+                    <td>Nombres d'articles</td>
+                    <td>10</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                </table>
+            </fieldset>
+            <fieldset>
+                <legend>Qui est en ligne?</legend>
+                <div class="textInligne">Il y a en tout <span class="bold">1</span> utilisateur en ligne :
+                <span class="bold">1</span> membre <span class="bold">0</span> invisibles <span class="bold">0</span> invités</div>
+                    <ul class="headerStats inLigne">
+                        <li></li>
+                        <li>Connexion</li>
+                        <li>Dernière activité</li>
+                        <li>Localisation sur le site</li>
+                        <li>Adresse IP</li>
+                    </ul>
+                    <ul class="InligneContent">
+                        <li>Pseudo</li>
+                        <li>lundi 30 avril 2018 - 15:35</li>
+                        <li>lundi 30 avril 2018 16:04</li>
+                        <li>Est sur la page d'accueil</li>
+                        <li>163.5.220.21</li>
+                    </ul>
+            </fieldset>
+        </div>
+    </div>
 {% endblock %}
