@@ -13,7 +13,7 @@ How to install the website ?
 1. First, go to `terminal`
 2. Then, run ``sudo apt install composer``
 3. Wait 'till it's finished.
-4. Then, as Windows, go to the project root, and do ```composer install``
+4. Then, as Windows, go to the project root, and do ```composer install```
 5. YAY ! IT WORKS
 
 # How to install it on a MacOS
