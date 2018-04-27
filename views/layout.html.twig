@@ -17,6 +17,9 @@
             {% if user['rank_id'] == 3 or user['rank_id'] == 2%}
             <a href="?action=addArticle">add article</a>
             {% endif %}
+            {% if user['rank_id'] == 3 %}
+            <a href='?action=homeAdmin'>Go to admin panel</a>
+            {% endif %}
             <a href="?action=logout">Logout</a>
         {% else %}
             <a href="?action=login">Login into this super blog</a>

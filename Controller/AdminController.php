@@ -8,6 +8,9 @@ class AdminController extends BaseController
 {
     public function homeAction()
     {
+        if($_SESSION['rank_id'] != 3){
+            $this->redirectToRoute('home');
+        }
         $arr = [
             'user' => $_SESSION
         ];
@@ -15,6 +18,9 @@ class AdminController extends BaseController
     }
     public function generalAction()
     {
+        if($_SESSION['rank_id'] != 3){
+            $this->redirectToRoute('home');
+        }
         $arr = [
             'user' => $_SESSION
         ];
@@ -22,6 +28,9 @@ class AdminController extends BaseController
     }
     public function displayAction()
     {
+        if($_SESSION['rank_id'] != 3){
+            $this->redirectToRoute('home');
+        }
         $arr = [
             'user' => $_SESSION
         ];
@@ -29,6 +38,9 @@ class AdminController extends BaseController
     }
     public function usersAction()
     {
+        if($_SESSION['rank_id'] != 3){
+            $this->redirectToRoute('home');
+        }
         $arr = [
             'user' => $_SESSION
         ];

@@ -10,6 +10,8 @@ routes:
     deleteArticle: "Article:deleteArticle"
     editArticle: "Article:editArticle"
     addComment: "Comment:addComment"
+    editComment: "Comment:editComment"
+    deleteComment: "Comment:deleteComment"
     rateArticle: "Article:rateArticle"
     rateComment: "Comment:rateComment"
     homeAdmin: "Admin:home"

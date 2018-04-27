@@ -24,6 +24,11 @@
     {% for comment in comments %}
         <div>
             {{ comment[2]|raw }}
+            <input type="hidden" value="{{ comment['id'] }}">
+            <div class='commentManagement'>
+                <a href='?action=editComment&amp;id={{ comment['id'] }}'>Edit comment</a>
+                <a href='?action=deleteComment&amp;id={{ comment['id'] }}'>Delete comment</a>
+            </div>
             <div class="ratingsComments">
                 <button class="btn-like-comment" value="like"><i class="far fa-thumbs-up"></i></button>
                 <button class="btn-dislike-comment" value="dislike"><i class="far fa-thumbs-down"></i></button>

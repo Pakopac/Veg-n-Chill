@@ -21,6 +21,34 @@ class CommentController extends BaseController
             return $this->redirectToRoute('viewArticle', 'id='.intval($_GET['id']));
         }
     }
+
+    public function editCommentAction()
+    {
+        $postManager = new CommentManager();
+        $showComment = $postManager->showComment(intval($_GET['id']));
+        $datas = [
+            'datas' => $showComment
+        ];
+        if(isset($_POST['submit-edit-comment']) && isset($_GET['id'])){
+            $postManager->editComment($_POST['edit-comment'], intval($_GET['id']));
+            return $this->redirectToRoute('viewArticle', "id=".$showComment['post_id']);
+        }
+        return $this->render('editComment.html.twig', $datas);
+    }
+
+    public function deleteCommentAction()
+    {
+        $commentManager = new CommentManager();
+        $comment = $commentManager->deleteComment(intval($_GET['id']));
+        $data = [
+            'article' => $post,
+            'user' => $_SESSION
+        ];
+        $this->redirectToRoute("article");
+
+        return $this->render('deleteArticle.html.twig', $data);
+    }
+
     public function rateCommentAction()
     {
         $ratingManager = new RatingManager();

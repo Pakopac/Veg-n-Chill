@@ -45,4 +45,41 @@ class CommentManager
 
         return $reply;
     }
+
+    public function showComment($id)
+    {
+        $dbm = DBManager::getInstance();
+        $pdo = $dbm->getPdo();
+        $pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+
+        $stmt = $pdo->prepare("SELECT * FROM comments WHERE id = :id");
+        $stmt->bindParam(":id", $id);
+        $stmt->execute();
+        $result = $stmt->fetch();
+
+        return $result;
+    }
+
+    public function editComment($content, $id){
+        $dbm = DBManager::getInstance();
+        $pdo = $dbm->getPdo();
+        $pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+
+        $stmt = $pdo->prepare("UPDATE comments SET message = :content WHERE id = :id");
+        $stmt->bindParam(":id", $id);
+        $stmt->bindParam(":content", $content);
+        $result = $stmt->execute();
+
+        return $result;
+    }
+
+    public function deleteComment($id)
+    {
+        $dbm = DBManager::getInstance();
+        $pdo = $dbm->getPdo();
+        $pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+
+        $stmt = $pdo->prepare("DELETE FROM comments WHERE id = :id ");
+        $stmt->execute([':id' => $id]);
+    }
 }
