@@ -1,4 +1,180 @@
-small
-{
-    color: purple;
+@font-face {
+    font-family: "Montserrat-Regular";
+    src: url("fonts/Montserrat-Regular.ttf");
+}
+@font-face {
+    font-family: "Lato-Regular";
+    src: url("fonts/Lato-Regular.ttf");
+}
+li{
+    list-style-type: none;
+}
+.AdminTitle{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+h1{
+    font-family: annabelle, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    margin-left: 20px;
+    color: #00ACC1;
+}
+.backgroundNav{
+    margin-top: 10px;
+    position: relative;
+    width: 100vw;
+    left: -10px;
+    background: #AEFBFF;
+}
+.adminNav{
+    font-size: 1.5em;
+    margin-left: 5%;
+    display: flex;
+    flex-direction: row;
+}
+.adminNav a{
+    font-family: "Montserrat-Regular";
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #AAAAAA;
+}
+.adminNav a:hover{
+    text-decoration: none;
+    background: #DBFDFF;
+}
+.msgHomeAdmin{
+    color: #858585;
+    font-size: 1.5em;
+    margin: 50px 0 50px 70px;
+}
+.blocksHomeAdmin{
+    display: flex;
+    flex-direction: row;
+}
+.blockHomeAdminLeft, .blockHomeAdminRight{
+    display: flex;
+    flex-direction: column;
+}
+.blockHomeAdminLeft{
+    width: 20VW;
+}
+.blockHomeAdminRight{
+    width: 60vw;
+}
+fieldset{
+    margin-top: 20px;
+    border-radius: 10px;
+    font-family: "Lato-Regular";
+    font-size: 1.3em;
+    color: #0DB0C4;
+    margin-left: 30px;
+    width: 100%;
+    background: #F3F3F3;
+    border: 0;
+}
+.notePad{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+fieldset button{
+    padding: 5px 20px;
+    font-family: "Montserrat-Regular";
+    border: 0;
+    border-radius: 5px;
+    color: #858585;
+    background: #AEFBFF;
+    cursor: pointer;
+}
+#textNotePad{
+    display: none;
+    min-height: 30vh;
+    min-width: 100%;
+    margin-top: 10px;
+}
+.rencentMemberContent{
+    margin-left: -50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: 0.6em;
+    color: #9F9F9F;
+}
+.searchUser{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.searchUser input{
+    border: 0;
+    border-radius: 10px;
+}
+.blockHomeAdminRight fieldset{
+    margin-top: 50px;
+    margin-left: 150px;
+}
+.headerStats{
+    border-radius: 10px;
+    margin-top: -5px;
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    color: #AAAAAA;
+    background: #AEFBFF;
+}
+header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.navHeaderMain{
+    font-size: 1.5em;
+    width: 65%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.navHeaderMain a{
+    text-decoration: none;
+    color: #707070;
+}
+.navHeaderMain a:hover{
+    text-decoration: underline green;
+}
+.statsContent{
+    border-collapse: collapse;
+    font-size: 0.6em;
+    color: #AAAAAA;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.statsContent td{
+    text-align: center;
+    margin-left: 50px;
+    height: 30px;
+    width: 200px;
+}
+.textInligne{
+    margin-bottom: 20px;
+    margin-left: 60px;
+    color: #AAAAAA;
+}
+.bold{
+    font-weight: bold;
+    color: #7B7B7B;
+}
+.InligneContent{
+    margin-left: -50px;
+    font-size: 0.6em;
+    color: #AAAAAA;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.inLigne{
+    padding-left: 100px;
 }

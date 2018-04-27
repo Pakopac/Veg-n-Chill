@@ -6,17 +6,25 @@
     <link rel="stylesheet" href="assets/style.css">
   </head>
   <body>
-    <a href="?action=home">home</a>
-    {% if user['username'] is defined %}
-        {% if user['rank_id'] == 3 or user['rank_id'] == 2%}
-        <a href="?action=addArticle">add article</a>
+  <header>
+      <div class="AdminTitle">
+          <img src="./assets/images/logo_sloth.svg" width="80px">
+          <h1>Veg'n'Chill</h1>
+      </div>
+      <nav class="navHeaderMain">
+        <a href="?action=home">home</a>
+        {% if user['username'] is defined %}
+            {% if user['rank_id'] == 3 or user['rank_id'] == 2%}
+            <a href="?action=addArticle">add article</a>
+            {% endif %}
+            <a href="?action=logout">Logout</a>
+        {% else %}
+            <a href="?action=login">Login into this super blog</a>
+            <a href="?action=register">register</a>
         {% endif %}
-        <a href="?action=logout">Logout</a>
-    {% else %}
-        <a href="?action=login">Login into this super blog</a>
-        <a href="?action=register">register</a>
-    {% endif %}
-    <a href="?action=article">article</a>
+        <a href="?action=article">article</a>
+      </nav>
+  </header>
     {% block content %}{% endblock %}
     {% block script %}{% endblock %}
   </body>

@@ -12,3 +12,7 @@ routes:
     addComment: "Comment:addComment"
     rateArticle: "Article:rateArticle"
     rateComment: "Comment:rateComment"
+    homeAdmin: "Admin:home"
+    generalAdmin: "Admin:general"
+    displayAdmin: "Admin:display"
+    usersAdmin: "Admin:users"
