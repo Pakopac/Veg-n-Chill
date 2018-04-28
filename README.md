@@ -29,4 +29,9 @@ How to install the website ?
 * Then, after importing database, go to the ``config`` directory, and edit the file ```parameters.yml``` to setup your database credentials and making all these beauty to work
 * Aaaaand that's it !
 
+# How to contact us ?
+You can contact the developpment team by sending us a mail here on the next adresses :
+* Yanis Bendahmane : me@yanisbendahmane.fr
+* Lilian Pacaud : lilian.pacaud@supinternet.fr
+
 > Have fun, and thanks for downloading our project :smiley:
