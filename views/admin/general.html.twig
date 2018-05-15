@@ -3,5 +3,123 @@
 {% block page_title %}Général{% endblock %}
 
 {% block content %}
+<div class="blocksGeneralAdmin">
+    <div class="board">
+        <div class="titleBoard">Tableau de bord</div>
+        <div class="subTitleBoard">Site</div>
+        <ul class="contentBoard">
+            <li><a href="?action=article">Articles</a></li>
+            <li><a href="#">Pages</a></li>
+            <li><a href="#">Commentaires</a></li>
+            <li><a href="#">Suppression du site</a></li>
+            <li><a href="#">Sécurité</a></li>
+        </ul>
+        <div class="subTitleBoard">Commentaires et email</div>
+        <ul class="contentBoard">
+            <li>Configuration</li>
+            <li>E-mail et contact</li>
+            <li>Annonces</li>
+            <li>Médias</li>
+        </ul>
+    </div>
+    <div class="blockGeneralAdminRight">
+        <h2 class="generalAdminTitle">Général</h2>
+        <div class="blockPagesSubPages">
+            <fieldset class="pages">
+                <legend class="titlePage">Pages</legend>
+                <div class="blockTitlePagesSubPages">
+                    <ul class="headersAdmin pageTitleName">
+                        <li>Nom de la Page</li>
+                    </ul>
+                    <ul class="headersAdmin pageTitleArticle">
+                        <li>Articles</li>
+                    </ul>
+                </div>
+                <table class="statsContent">
+                    <tr>
+                        <td>Actualité</td>
+                        <td>9</td>
+                    </tr>
+                    <tr>
+                        <td>#FoodAddict</td>
+                        <td>9</td>
+                    </tr>
+                    <tr>
+                        <td>How To Vegan</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>Qui Sommes Nous?</td>
+                        <td>1</td>
+                    </tr>
+                </table>
+            </fieldset>
+            <fieldset class="subPages">
+                <legend class="titleSubPage">Sous-Pages</legend>
+                <div class="blockTitlePagesSubPages">
+                <ul class="headersAdmin pageTitleName">
+                    <li>Nom de la Page</li>
+                </ul>
+                <ul class="headersAdmin pageTitleArticle">
+                    <li>Articles</li>
+                </ul>
+                </div>
+                <table class="statsContent">
+                    <tr>
+                        <td>Actualité</td>
+                        <td>9</td>
+                    </tr>
+                    <tr>
+                        <td>#FoodAddict</td>
+                        <td>9</td>
+                    </tr>
+                    <tr>
+                        <td>How To Vegan</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>Qui Sommes Nous?</td>
+                        <td>1</td>
+                    </tr>
+                </table>
+            </fieldset>
+        </div>
+        <fieldset class="blockGeneral">
+            <legend class="titleGeneral">Général</legend>
+            <ul class="headersAdmin">
+                <li>Statistiques</li>
+                <li>Valeur</li>
+                <li>Statistiques</li>
+                <li>Valeurs</li>
+            </ul>
+            <table class="statsContent">
+                <tr>
+                    <td>Nombres d'action d'administration</td>
+                    <td>114</td>
+                    <td>Nombres de pages</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>Nombres d'action de modération</td>
+                    <td>10</td>
+                    <td>Nombres de sous pages</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td>Nombre de mots censurés</td>
+                    <td>8</td>
+                    <td>Nombres d'articles</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>Nombres de nom d'utilisateurs censurés</td>
+                    <td>6</td>
+                    <td>Nombres de commentaires</td>
+                    <td>1</td>
+                </tr>
+            </table>
+        </fieldset>
+    </div>
 
+</div>
 {% endblock %}
