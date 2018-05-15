@@ -183,7 +183,7 @@ header{
 .inLigne{
     padding-left: 100px;
 }
-.generalAdminTitle{
+.adminTitle{
     color: #858585;
 }
 .blocksGeneralAdmin{
@@ -231,6 +231,9 @@ header{
     width: 80%;
     margin-left: 2vw;
 }
+.displayTitleStats{
+    width: 50%;
+}
 .blockGeneralAdminRight{
     display: flex;
     flex-direction: column;
@@ -244,4 +247,14 @@ header{
     display: flex;
     flex-direction: row;
     align-items: center;
+}
+.displayAdminRight .adminTitle{
+    margin-left: 35px;
+}
+.displayContent td{
+    width: 1000px;
+}
+.displayAdminRight{
+    margin-top: -150px;
+    width: 70%;
 }

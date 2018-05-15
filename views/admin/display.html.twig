@@ -3,5 +3,61 @@
 {% block page_title %}Affichage{% endblock %}
 
 {% block content %}
-
+    <div class="blocksGeneralAdmin">
+        <div class="board displayNav">
+            <div class="titleBoard">Affichage</div>
+            <div class="subTitleBoard">Images et couleurs</div>
+            <ul class="contentBoard">
+                <li><a href="#">Gestion des images</a></li>
+                <li><a href="#">Couleurs</a></li>
+            </ul>
+            <div class="subTitleBoard">Avatars</div>
+            <ul class="contentBoard">
+                <li><a href="#">Gestion des avatars</a></li>
+                <li><a href="#">Smiley</a></li>
+            </ul>
+            <div class="subTitleBoard">Templates</div>
+            <ul class="contentBoard">
+                <li><a href="#">Général</a></li>
+                <li><a href="#">Galerie</a></li>
+                <li><a href="#">Calendrier</a></li>
+                <li><a href="#">Groupe</a></li>
+                <li><a href="#">Profil</a></li>
+                <li><a href="#">Modération</a></li>
+                <li><a href="#">Poster</a></li>
+                <li><a href="#">Version mobile</a></li>
+            </ul>
+        </div>
+        <div class="displayAdminRight">
+            <h2 class="adminTitle">Affichage</h2>
+            <fieldset class="blockGeneral">
+                <legend class="titleGeneral">Affichage</legend>
+                <div class="blockTitlePagesSubPages">
+                    <ul class="headersAdmin pageTitleName">
+                        <li>Statistiques</li>
+                    </ul>
+                    <ul class="headersAdmin pageTitleArticle">
+                        <li>Valeur</li>
+                    </ul>
+                </div>
+                <table class="statsContent displayContent">
+                    <tr>
+                        <td>Smiley</td>
+                        <td>61</td>
+                    </tr>
+                    <tr>
+                        <td>Avatars personnels</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>Templates modifiées et publiées</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>Templates modifiées et en attentes</td>
+                        <td>6</td>
+                    </tr>
+                </table>
+            </fieldset>
+        </div>
 {% endblock %}
