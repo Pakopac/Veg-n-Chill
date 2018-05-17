@@ -25,18 +25,14 @@ h1{
     margin-left: 20px;
     color: #00ACC1;
 }
-.backgroundNav{
-    margin-top: 10px;
-    position: relative;
-    width: 100vw;
-    left: -10px;
-    background: #AEFBFF;
-}
 .adminNav{
     font-size: 1.5em;
-    margin-left: 5%;
     display: flex;
     flex-direction: row;
+    background: #AEFBFF;
+    margin: 0 -8px;
+    padding-left: 5%;
+    width: 100%;
 }
 .adminNav a{
     font-family: "Montserrat-Regular";
@@ -184,6 +180,7 @@ header{
     padding-left: 100px;
 }
 .adminTitle{
+    font-family: "Courgette-Regular";
     color: #858585;
 }
 .blocksGeneralAdmin{
@@ -231,6 +228,9 @@ header{
     width: 80%;
     margin-left: 2vw;
 }
+.displayNav{
+    margin-top: 50px;
+}
 .displayTitleStats{
     width: 50%;
 }
@@ -257,4 +257,30 @@ header{
 .displayAdminRight{
     margin-top: -150px;
     width: 70%;
+}
+.UsersNav{
+    margin-top: 80px;
+    height: 350px;
+}
+.titleUserAdmin{
+    margin-left: 15%;
+    color: #858585;
+}
+.blockUsers{
+    display: flex;
+    flex-direction: row;
+}
+.blockMidUsers{
+    width: 500px;
+}
+.blockRightUsers{
+    margin-top: 50px;
+    margin-left: 100px;
+    width: 1000px;
+}
+.blockActivPost{
+    width: 600px;
+}
+.searchUserAdminUser{
+    width: 300px;
 }

@@ -30,6 +30,7 @@ let likeComment = document.querySelectorAll('.btn-like-comment');
 let dislikeComment = document.querySelectorAll('.btn-dislike-comment');
 let commentId = document.querySelectorAll('.comment-id');
 let voteComment = document.querySelectorAll('.voteComment');
+console.log(like);
 
 window.addEventListener('load', () => {
 
