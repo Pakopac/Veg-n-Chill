@@ -133,7 +133,8 @@ header{
 }
 .navHeaderMain{
     font-size: 1.5em;
-    width: 65%;
+    width: 59%;
+    margin: 0 5%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -143,6 +144,20 @@ header{
     color: #707070;
 }
 .navHeaderMain a:hover{
+    text-decoration: underline green;
+}
+.headerProfil{
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+}
+.headerProfil a{
+    font-size: 1.5em;
+    margin: 10px;
+    text-decoration: none;
+    color: #707070;
+}
+.headerProfil a:hover{
     text-decoration: underline green;
 }
 .statsContent{
@@ -283,4 +298,11 @@ header{
 }
 .searchUserAdminUser{
     width: 300px;
+}
+.imgBurgerHome{
+    width: 100vw;
+    height: 1000px;
+    background-image: url("./images/Vegan-Black-Bean-Burger-with-Beets-and-Quinoa%20copie.svg");
+    background-repeat: no-repeat;
+    margin: 0 -8px;
 }
