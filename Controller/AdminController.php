@@ -28,7 +28,7 @@ class AdminController extends BaseController
         $arr = [
             'user' => $_SESSION
         ];
-        return $this->render('admin/general.html.twig',$arr);
+        return $this->render('admin/general.html.twig', $arr);
     }
     public function displayAction()
     {
@@ -38,7 +38,7 @@ class AdminController extends BaseController
         $arr = [
             'user' => $_SESSION
         ];
-        return $this->render('admin/display.html.twig',$arr);
+        return $this->render('admin/display.html.twig', $arr);
     }
     public function usersAction()
     {
@@ -48,6 +48,6 @@ class AdminController extends BaseController
         $arr = [
             'user' => $_SESSION
         ];
-        return $this->render('admin/users.html.twig',$arr);
+        return $this->render('admin/users.html.twig', $arr);
     }
 }

@@ -25,18 +25,14 @@ h1{
     margin-left: 20px;
     color: #00ACC1;
 }
-.backgroundNav{
-    margin-top: 10px;
-    position: relative;
-    width: 100vw;
-    left: -10px;
-    background: #AEFBFF;
-}
 .adminNav{
     font-size: 1.5em;
-    margin-left: 5%;
     display: flex;
     flex-direction: row;
+    background: #AEFBFF;
+    margin: 0 -8px;
+    padding-left: 5%;
+    width: 100%;
 }
 .adminNav a{
     font-family: "Montserrat-Regular";
@@ -131,13 +127,14 @@ fieldset button{
     background: #AEFBFF;
 }
 header{
-    display: flex;
+    display: flex !important;
     flex-direction: row;
     align-items: center;
 }
 .navHeaderMain{
     font-size: 1.5em;
-    width: 65%;
+    width: 59%;
+    margin: 0 5%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -147,6 +144,20 @@ header{
     color: #707070;
 }
 .navHeaderMain a:hover{
+    text-decoration: underline green;
+}
+.headerProfil{
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+}
+.headerProfil a{
+    font-size: 1.5em;
+    margin: 10px;
+    text-decoration: none;
+    color: #707070;
+}
+.headerProfil a:hover{
     text-decoration: underline green;
 }
 .statsContent{
@@ -184,6 +195,7 @@ header{
     padding-left: 100px;
 }
 .adminTitle{
+    font-family: "Courgette-Regular";
     color: #858585;
 }
 .blocksGeneralAdmin{
@@ -231,6 +243,9 @@ header{
     width: 80%;
     margin-left: 2vw;
 }
+.displayNav{
+    margin-top: 50px;
+}
 .displayTitleStats{
     width: 50%;
 }
@@ -257,4 +272,37 @@ header{
 .displayAdminRight{
     margin-top: -150px;
     width: 70%;
+}
+.UsersNav{
+    margin-top: 80px;
+    height: 350px;
+}
+.titleUserAdmin{
+    margin-left: 15%;
+    color: #858585;
+}
+.blockUsers{
+    display: flex;
+    flex-direction: row;
+}
+.blockMidUsers{
+    width: 500px;
+}
+.blockRightUsers{
+    margin-top: 50px;
+    margin-left: 100px;
+    width: 1000px;
+}
+.blockActivPost{
+    width: 600px;
+}
+.searchUserAdminUser{
+    width: 300px;
+}
+.imgBurgerHome{
+    width: 100vw;
+    height: 1000px;
+    background-image: url("./images/Vegan-Black-Bean-Burger-with-Beets-and-Quinoa%20copie.svg");
+    background-repeat: no-repeat;
+    margin: 0 -8px;
 }

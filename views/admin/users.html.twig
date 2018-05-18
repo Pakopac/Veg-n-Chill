@@ -3,5 +3,138 @@
 {% block page_title %}Utilisateurs et groupes{% endblock %}
 
 {% block content %}
+    <div class="blockUsers">
+        <div class="board UsersNav">
+            <div class="titleBoard">Utilisateur et groupes</div>
+            <div class="subTitleBoard">Utilisateurs</div>
+            <ul class="contentBoard">
+                <li><a href="#">Gestion des utilisateurs</a></li>
+                <li><a href="#">Options des utilisateurs</a></li>
+                <li><a href="#">Profils</a></li>
+                <li><a href="#">Utilisateurs spéciaux</a></li>
+                <li><a href="#">Utilisateurs inactifs</a></li>
+                <li><a href="#">Traiter les utilisateurs</a></li>
+                <li><a href="#">Contrôle du banissement</a></li>
+            </ul>
+            <div class="subTitleBoard">Rangs</div>
+            <ul class="contentBoard">
+                <li><a href="#">Administration des rangs</a></li>
+            </ul>
+        </div>
+        <div class="blockMidUsers">
+        <h2 class="titleUserAdmin adminTitle">Utilisateurs et groupes</h2>
+        <fieldset class="blockGeneral blockUserAdmin">
+            <legend class="titleGeneral">Membres récents</legend>
+            <div class="blockTitlePagesSubPages">
+                <ul class="headersAdmin pageTitleName">
+                    <li>Utilisateur</li>
+                </ul>
+                <ul class="headersAdmin pageTitleArticle">
+                    <li>Email</li>
+                </ul>
+                <ul class="headersAdmin pageTitleArticle">
+                    <li>Enregistrement</li>
+                </ul>
+            </div>
+            <table class="statsContent displayContent">
+                <tr>
+                    <td>Pseudo</td>
+                    <td>exemple@exmple.com</td>
+                    <td>12/12/12</td>
+                </tr>
+                <tr>
+                    <td>Pseudo</td>
+                    <td>exemple@exmple.com</td>
+                    <td>12/12/12</td>
+                </tr>
+                <tr>
+                    <td>Pseudo</td>
+                    <td>exemple@exmple.com</td>
+                    <td>12/12/12</td>
+                </tr>
+            </table>
+        </fieldset>
+            <div class="blockSearchUser searchUserAdminUser">
+                <fieldset class="searchUser">
+                    <legend>Recherche un utilisateur</legend>
+                    <input type="text">
+                    <button>Chercher</button>
+                </fieldset>
+            </div>
+        </div>
+        <div class="blockRightUsers">
+            <fieldset class="blockGeneral blockUserAdmin">
+                <legend class="titleGeneral">Posteurs les plus actifs</legend>
+                <div class="blockTitlePagesSubPages">
+                    <ul class="headersAdmin pageTitleName">
+                        <li>Utilisateur</li>
+                    </ul>
+                    <ul class="headersAdmin pageTitleArticle">
+                        <li>Commentaires</li>
+                    </ul>
+                    <ul class="headersAdmin pageTitleArticle">
+                        <li>Email</li>
+                    </ul>
+                    <ul class="headersAdmin pageTitleArticle">
+                        <li>Enregistrement</li>
+                    </ul>
+                </div>
+                <table class="statsContent displayContent">
+                    <tr>
+                        <td>Pseudo</td>
+                        <td>13</td>
+                        <td>exemple@exmple.com</td>
+                        <td>12/12/12</td>
+                    </tr>
+                    <tr>
+                        <td>Pseudo</td>
+                        <td>13</td>
+                        <td>exemple@exmple.com</td>
+                        <td>12/12/12</td>
+                    </tr>
+                    <tr>
+                        <td>Pseudo</td>
+                        <td>13</td>
+                        <td>exemple@exmple.com</td>
+                        <td>12/12/12</td>
+                    </tr>
+                </table>
+            </fieldset>
+            <fieldset class="blockGeneral blockActivPost">
+                <legend class="titleGeneral">Rangs</legend>
+                <div class="blockTitlePagesSubPages">
+                    <ul class="headersAdmin pageTitleName">
+                        <li>Titre du rang</li>
+                    </ul>
+                    <ul class="headersAdmin pageTitleArticle">
+                        <li>Membres</li>
+                    </ul>
 
+                </div>
+                <table class="statsContent displayContent">
+                    <tr>
+                        <td>Admin</td>
+                        <td>8</td>
+
+                    </tr>
+                    <tr>
+                        <td>Rédacteurs</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>Développeurs</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>Design</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>Marketing</td>
+                        <td>2</td>
+                    </tr>
+                </table>
+            </fieldset>
+        </div>
+    </div>
 {% endblock %}

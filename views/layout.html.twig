@@ -4,38 +4,76 @@
     <meta charset="UTF-8">
     <title>{% block page_title %}{% endblock %}</title>
     <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="./assets/login.css">
 </head>
 <body>
-    <header>
-        <div class="AdminTitle">
-            <img src="./assets/images/logo_sloth.svg" width="80px">
-            <h1>Veg'n'Chill</h1>
-        </div>
-        <nav class="navHeaderMain">
-            <a href="?action=home">home</a>
-            {% if user['username'] is defined %} {% if user['rank_id'] == 3 or user['rank_id'] == 2%}
+<header>
+    <div class="AdminTitle">
+        <img src="./assets/images/logo_sloth.svg" width="80px">
+        <h1>Veg'n'Chill</h1>
+    </div>
+    <nav class="navHeaderMain">
+        <a href="?action=home">Accueil</a>
+        <a href="?action=article">Actualités</a>
+        <a href="#">How to vegan?</a>
+        <a href="#">#FoodAddict</a>
+        <a href="#">A propos</a>
+        {% if user['username'] is defined %}
+        <a href="?action=logout">Logout</a>
+            {% if user['rank_id'] == 3 or user['rank_id'] == 2%}
             <a href="?action=addArticle">add article</a>
-            {% endif %} {% if user['rank_id'] == 3 %}
+            {% endif %}{% if user['rank_id'] == 3 %}
             <a href='?action=homeAdmin'>Go to admin panel</a>
             {% endif %}
-            <a href="?action=logout">Logout</a>
-            {% else %}
-            <a href="?action=login">Login into this super blog</a>
-            <a href="?action=register">register</a>
-            {% endif %}
-            <a href="?action=article">article</a>
-        </nav>
-    </header>
-    {% block content %}{% endblock %}
-    {% block script %}
-    <!-- include libraries(jQuery, bootstrap) -->
-    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet">
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
-    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
+        {% else %}
+        {% endif %}
+    </nav>
+    <div class="headerProfil">
+        <img src="./assets/images/mon_compte.svg" width="50px" height="50px">
+        {% if user['username'] is defined %}
+        <a class="btn account" href="#TODO-ACCOUNT">Mon Espace</a>
+        {% else %}
+        <a class="btn login" href="#popup-login">Se connecter</a>
+        {% endif %}
+        
+    </div>
+</header>
+<div id="popup-login" class="overlay">
+    <div class="popup">
+        <h2 class="login-title">LOGIN</h2>
+        <h2 class="register-title">REGISTER</h2>
+        <a class="close" href="#">&times;</a>
+        <div class="content-login">
+            <form name="login" method="POST" action="?action=login">
+                <input type="text" name="pseudo" placeholder="Pseudo"><br>
+                <input type="password" name="password" placeholder="Password"><br>
+                <button class="btn">Login</button>
+            </form>
+        </div>
+        <div class="content-register">
+            <form name="register" method="POST" action="?action=register">
+                <input type="text" name="firstname" placeholder="Firstname"><br>
+                <input type="text" name="lastname" placeholder="Lastname"><br>
+                <input type="email" name="email" placeholder="email"><br>
+                <input type="text" name="pseudo" placeholder="Pseudo"><br>
+                <input type="password" name="password" placeholder="Password"><br>
+                <input type="password" name="repeatPassword" placeholder="Repeat Password"><br>
+                <button class="btn">Register</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% block content %}{% endblock %}
+{% block script %}
+<!-- include libraries(jQuery, bootstrap) -->
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet">
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
 
-    <!-- include summernote css/js -->
-    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js"></script>
-    {% endblock %}
+<!-- include summernote css/js -->
+<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">
+<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js"></script>
+<script src="./assets/scripts/login.js"></script>
+{% endblock %}
 </body>
 </html>
