@@ -17,7 +17,7 @@ class UserManager
      *                              check if it's the same as $password
      * @param mixed $email          Email entered by the user on the form
      *
-     * @return Array 
+     * @return Array
      * => $errors | If errors are found, then the process fail and send AJAX datas
      * => true | If no errors found, then the user is registred into the database
      */
@@ -125,7 +125,7 @@ class UserManager
             return $errors;
         } else {
             $_SESSION['username'] = $result['username'];
-            $_SESSION['at_username'] = $result['at_username'];
+            $_SESSION['rank_id'] = $result['rank_id'];
             $_SESSION['id'] = $result['id'];
             return true;
         }
@@ -152,6 +152,7 @@ class UserManager
         $data = $stmt->fetch(\PDO::FETCH_BOUND);
         return $data;
     }
+
     /**
      * Checks if this emails is already existing
      *

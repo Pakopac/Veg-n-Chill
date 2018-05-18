@@ -31,8 +31,10 @@ h1{
     flex-direction: row;
     background: #AEFBFF;
     margin: 0 -8px;
+    width: 100vw;
+}
+.adminNav > *:nth-child(1){
     padding-left: 5%;
-    width: 100%;
 }
 .adminNav a{
     font-family: "Montserrat-Regular";

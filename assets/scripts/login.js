@@ -63,7 +63,7 @@ window.addEventListener('load', () => {
         .then(json)
         .then((data) => {
             console.log('Request succeeded with JSON response', data);
-            if(data.status){
+            if(data.status === "ok"){
                 let el = document.querySelector('.overlay');
                 let btnAccount = document.querySelector('.btn');
                 btnAccount.href = "#TODO-ACCOUNT";
