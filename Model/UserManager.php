@@ -1,9 +1,35 @@
 <?php
+/**
+ * UserManager
+ *
+ * All logic associated for all user actions
+ *
+ * PHP Version 7.2
+ *
+ * @category Recipe
+ * @package  Recipe
+ * @author   Yanis Bendahmane <vegnchill@yanisbendahmane.fr>
+ * @author   Lilian Pacaud <lilian.pacaud@supinternet.fr>
+ * @license  http://unlicense.org/ The Unlicense
+ * @link     https://localhost/
+ */
 
 namespace Model;
 use Cool\BaseController;
 use Cool\DBManager;
 
+/**
+ * UserManager Class Doc Comment
+ * 
+ * @category Class
+ * @package  UserManager
+ * @author   Yanis Bendahmane <twttr@yanisbendahmane.fr>
+ * @author   Lilian Pacaud <lilian.pacaud@supinternet.fr>
+ * @license  http://unlicense.org/ The Unlicense
+ * @link     https://localhost/
+ * 
+ * @since 1.0.0
+ */
 class UserManager
 {
     /**

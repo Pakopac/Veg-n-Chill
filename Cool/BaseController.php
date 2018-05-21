@@ -26,4 +26,9 @@ class BaseController
             $url .= '&'.$args;
         $this->redirect($url);
     }
+
+    protected function countAllUsersOnSite()
+    {
+        return count($_SERVER['REMOTE_ADDR']);
+    }
 }
