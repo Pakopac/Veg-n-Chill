@@ -3,6 +3,7 @@
 namespace Controller;
 
 use Cool\BaseController;
+use Model\AdminManager;
 
 class AdminController extends BaseController
 {
@@ -11,10 +12,13 @@ class AdminController extends BaseController
         if($_SESSION['rank_id'] != 3){
             $this->redirectToRoute('home');
         }
+        $adminManager = new AdminManager();
+        $totalUsers = $adminManager->getTotalOfUsers();
         $arr = [
-            'user' => $_SESSION
+            'user' => $_SESSION,
+            'totalUsers' => $totalUsers
         ];
-        return $this->render('admin/home.html.twig',$arr);
+        return $this->render('admin/home.html.twig', $arr);
     }
     public function generalAction()
     {
@@ -24,7 +28,7 @@ class AdminController extends BaseController
         $arr = [
             'user' => $_SESSION
         ];
-        return $this->render('admin/general.html.twig',$arr);
+        return $this->render('admin/general.html.twig', $arr);
     }
     public function displayAction()
     {
@@ -34,7 +38,7 @@ class AdminController extends BaseController
         $arr = [
             'user' => $_SESSION
         ];
-        return $this->render('admin/display.html.twig',$arr);
+        return $this->render('admin/display.html.twig', $arr);
     }
     public function usersAction()
     {
@@ -44,6 +48,6 @@ class AdminController extends BaseController
         $arr = [
             'user' => $_SESSION
         ];
-        return $this->render('admin/users.html.twig',$arr);
+        return $this->render('admin/users.html.twig', $arr);
     }
 }

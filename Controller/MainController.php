@@ -14,66 +14,70 @@ class MainController extends BaseController
         ];
         return $this->render('home.html.twig', $arr);
     }
-    
+
     public function registerAction()
     {
-        if (isset($_SESSION['username'])){
-            $this->redirectToRoute('home');
-        }
-        else {
-            if (!empty($_POST['firstname']) && !empty($_POST['lastname'])
-                && !empty($_POST['pseudo']) && !empty($_POST['email'])
-                && !empty($_POST['password']) && !empty($_POST['repeatPassword'])) {
-                $firstname = htmlentities($_POST['firstname']);
-                $lastname = htmlentities($_POST['lastname']);
-                $pseudo = htmlentities($_POST['pseudo']);
-                $email = htmlentities($_POST['email']);
-                $password = $_POST['password'];
-                $repeatPassword = $_POST['repeatPassword'];
-
-                $UserManager = new UserManager();
-                $errors = $UserManager->registerUser($firstname, $lastname, $pseudo, $email, $password, $repeatPassword);
-                if ($errors === []) {
-                    return $this->redirectToRoute('home');
-                } else {
-                    $data = ['errors' => $errors];
-                    return $this->render('register.html.twig', $data);
-                }
+        if (!empty($_POST['firstname']) || !empty($_POST['lastname'])
+            || !empty($_POST['username']) || !empty($_POST['email'])
+            || !empty($_POST['password']) || !empty($_POST['password_repeat'])
+        ) {
+            $UserManager = new UserManager();
+            $login = $UserManager->registerUser(
+                htmlentities($_POST['firstname']),
+                htmlentities($_POST['lastname']),
+                htmlentities($_POST['username']),
+                $_POST['password'], $_POST['password_repeat'],
+                htmlentities($_POST['email'])
+            );
+            if ($login === true) {
+                $data = [
+                    'status' => 'ok',
+                    'message' => 'The user has been registred'
+                ];
+                return json_encode($data);
+            } else {
+                $data = [$login];
+                return json_encode($data);
             }
-            return $this->render('register.html.twig');
+        } else {
+            $data = ['message' => "Input's not filled"];
+            return json_encode($data);
         }
     }
 
+    /**
+     * Call for logging in a user
+     *
+     * @return Array $arr Returns datas on JSON for AJAX login
+     */
     public function loginAction()
     {
-        if(isset($_SESSION['username'])){
-            return $this->redirectToRoute('home');
-        }
-        if(isset($_POST['pseudo']) && isset($_POST['password'])
-        && $_SERVER['REQUEST_METHOD'] === 'POST')
-        {
-            $username = htmlentities($_POST['pseudo']);
+        if (isset($_POST['username']) && isset($_POST['password'])
+            || $_SERVER['REQUEST_METHOD'] === 'POST'
+        ) {
+            $userManager = new UserManager();
+            $username = htmlentities($_POST['username']);
             $password = $_POST['password'];
-            $manager = new UserManager();
-            $getUserData = $manager->loginUser($username, $password);
-            if ($getUserData === "Invalid username or password"){
+            $getUserData = $userManager->loginUser($username, $password);
+            if ($getUserData !== true) {
                 $arr = [
-                    'errors' => $getUserData
+                    'status' => 'failed',
+                    'message' => 'There was a problem loggin in the user'
                 ];
-                return $this->render('login.html.twig', $arr);
+                return json_encode($arr);
             } else {
                 $arr = [
-                    'user' => $_SESSION
+                    'status' => 'ok',
+                    'message' => 'The user has successfully been logged in'
                 ];
-                $this->redirectToRoute('home');
-                return $this->render('login.html.twig', $arr);
+                return json_encode($arr);
             }
         }
-        return $this->render('login.html.twig');
     }
 
-    public function logoutAction(){
+    public function logoutAction()
+    {
         session_destroy();
-        return $this->redirect('?action=home');
+        return $this->redirectToRoute('home');
     }
 }
