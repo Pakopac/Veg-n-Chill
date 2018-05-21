@@ -448,7 +448,8 @@ header{
     font-weight: bold;
     background: #EBFEFF;
     display: grid;
-    grid-template-columns: repeat(2, 50vw)
+    grid-template-columns: repeat(2, 50vw);
+    grid-template-rows: 42vw;
 }
 .blockLink1 {
     background-image: url('./images/supervegan.svg');
@@ -470,19 +471,22 @@ header{
     text-align: center;
 }
 .textSuperVegan{
-    padding-top: 60px;
+    width: 90%;
+    padding-top: 5%;
 }
 .textPointOfSale{
+    width: 75%;
     padding-left: 2vw;
-    padding-top: 5vh;
+    padding-top: 5%;
 }
 .textTips{
     padding-left: 2vw;
-    padding-top: 30vh;
+    padding-top: 20%;
 }
 .blockLinksHomeRight {
     display: grid;
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 20.5vw);
+    grid-template-columns: 61vw;
 }
 .blockLink2{
     background-image: url('./images/pointOfSale.svg');
@@ -491,6 +495,10 @@ header{
 .blockLink3 {
     background-image: url("./images/tip.svg");
     background-repeat: no-repeat;
+}
+.blockLink1:hover, .blockLink2:hover, .blockLink3:hover{
+    font-size: 1.5em;
+    text-decoration: none;
 }
 .blockNewsletter{
     display: flex;
