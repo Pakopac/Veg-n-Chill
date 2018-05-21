@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        clip-path: url(#clip-path);
+      }
+
+      .cls-3 {
+        fill: none;
+        stroke: #7c7c7c;
+        stroke-linejoin: round;
+        stroke-width: 2.699px;
+      }
+    </style>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_53" data-name="Rectangle 53" class="cls-1" width="50" height="50" transform="translate(209 2024)"/>
+    </clipPath>
+  </defs>
+  <g id="Groupe_de_masques_19" data-name="Groupe de masques 19" class="cls-2" transform="translate(-209 -2024)">
+    <path id="coeur" class="cls-3" d="M26.989,47.144C23.658,44,1.835,34.745,3.406,20.08S14.39,6.251,17.721,6.639c5.938.7,9.268,8.383,9.268,8.383s3.3-7.681,9.241-8.383C39.565,6.251,48.974,5.4,50.544,20.08S30.292,44,26.989,47.144Z" transform="translate(207.025 2022.179)"/>
+  </g>
+</svg>
