@@ -138,26 +138,56 @@ fieldset button{
     color: #AAAAAA;
     background: #AEFBFF;
 }
-header{
+.header{
     display: flex !important;
+    justify-content: space-around;
     flex-direction: row;
     align-items: center;
 }
-.navHeaderMain{
+.title{
+    display: none;
+}
+#navMobile{
+    display: none;
+}
+#navMobile{
     font-family: "Lato-Medium";
     font-size: 1.5em;
     width: 59%;
     margin: 0 5%;
-    display: flex;
     flex-direction: row;
     justify-content: space-around;
 }
-.navHeaderMain a{
+#navMobile:target{
+    border: 10px solid #AEFBFF;
+    border-radius: 10px;
+    background: white;
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    width: 100vw;
+    margin-top: 80px;
+}
+.closeMenuMobile{
+    font-size: 30px !important;
+}
+#navHeaderMain{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+#navHeaderMain a{
     text-decoration: none;
     color: #707070;
 }
-.navHeaderMain a:hover{
+#navHeaderMain a:hover{
     text-decoration: underline green;
+}
+.fa-bars{
+    font-size: 3em;
+    color: #00ACC1;
 }
 .headerProfil{
     font-family: "Lato-Medium";
@@ -166,6 +196,7 @@ header{
     flex-direction: row;
 }
 .headerProfil a{
+    display: none;
     font-size: 1.5em;
     margin: 10px;
     text-decoration: none;
@@ -173,6 +204,46 @@ header{
 }
 .headerProfil a:hover{
     text-decoration: underline green;
+}
+.popup{
+    width: 80vw !important;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+.popup h2{
+    color: #00ACC1 !important;
+}
+.backgroundInputLogin{
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+    background: #AEFBFF;
+}
+.popup input{
+    width: 100%;
+    background: #AEFBFF;
+    border: 0;
+    border-bottom: 1px solid black;
+}
+.ForgetPasswordLogin{
+    font-family: annabelle;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.loginWithArrow{
+    width: 10vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.btnLogin{
+    width: 9vh;
+}
+.btnRegister{
+    font-family: annabelle;
+    width: 9vh;
+    margin-left: 20vw;
 }
 .statsContent{
     border-collapse: collapse;
@@ -314,19 +385,21 @@ header{
     width: 300px;
 }
 .imgBurgerHome{
+    z-index: -1;
     font-family: "Montserrat-Regular";
     justify-content: center;
     display: flex;
     flex-direction: column;
     color: #ffffff;
     width: 150vw;
-    height: 100vh;
+    height: 42vw;
     background-image: url("./images/Vegan-Black-Bean-Burger-with-Beets-and-Quinoa%20copie.svg");
     background-repeat: no-repeat;
     margin: 0 -8px;
     position: relative;
 }
 .blockTextBurger{
+    display: none;
     margin-left: 50px;
 }
 .TextImgBurger1{
@@ -575,4 +648,21 @@ header{
 }
 .aboutHomeBtn:hover{
     cursor: pointer;
+}
+@media (min-width: 480px) {
+    .fa-bars{
+        display: none;
+    }
+    .title, .headerProfil a, .blockTextBurger{
+        display: block;
+    }
+    #navMobile{
+        display: flex;
+    }
+    #navHeaderMain{
+        flex-direction: row;
+    }
+    .closeMenuMobile{
+        display: none;
+    }
 }
