@@ -49,13 +49,13 @@
                 <table>
                 <tr class="statsContent">
                     <td>Commentaires</td>
-                    <td>14</td>
+                    <td>{{ totalComments[0] }}</td>
                     <td>Commentaires par jours</td>
                     <td>5</td>
                 </tr>
                 <tr class="statsContent">
                     <td>Nombres d'utilisateurs</td>
-                    <td>10</td>
+                    <td>{{ countEveryone[0] }}</td>
                     <td>Articles par jours</td>
                     <td>4</td>
                 </tr>
@@ -67,7 +67,7 @@
                 </tr>
                 <tr class="statsContent">
                     <td>Nombres d'articles</td>
-                    <td>10</td>
+                    <td>{{ countEveryArticle[0] }}</td>
                     <td></td>
                     <td></td>
                 </tr>
@@ -76,7 +76,7 @@
             <fieldset>
                 <legend>Qui est en ligne?</legend>
                 <div class="textInligne">Il y a en tout <span class="bold">{{ totalUsers }}</span> utilisateur en ligne :
-                <span class="bold">1</span> membre <span class="bold">0</span> invisibles <span class="bold">0</span> invités</div>
+                <span class="bold">{{ loggedIn[0] }}</span> membre <span class="bold">0</span> invisibles <span class="bold">{{ nonLogged }}</span> invités</div>
                     <ul class="headersAdmin inLigne">
                         <li></li>
                         <li>Connexion</li>
@@ -84,13 +84,15 @@
                         <li>Localisation sur le site</li>
                         <li>Adresse IP</li>
                     </ul>
+                    {% for datas in userdata %}
                     <ul class="InligneContent">
-                        <li>Pseudo</li>
-                        <li>lundi 30 avril 2018 - 15:35</li>
-                        <li>lundi 30 avril 2018 16:04</li>
-                        <li>Est sur la page d'accueil</li>
-                        <li>163.5.220.21</li>
+                    <li>{{ datas['pseudo'] }}</li>
+                    <li>{{ datas['log_date'] }}</li>
+                    <li>{{ datas['log_date'] }}</li>
+                    <li>{{ page }}</li>
+                    <li>{{ datas['session_ip'] }}</li>
                     </ul>
+                    {% endfor %}
             </fieldset>
         </div>
     </div>

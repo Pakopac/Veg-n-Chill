@@ -3,12 +3,18 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le :  ven. 27 avr. 2018 à 14:33
+-- Généré le :  lun. 21 mai 2018 à 22:56
 -- Version du serveur :  5.6.38
 -- Version de PHP :  7.2.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Base de données :  `projet-transversal`
@@ -27,14 +33,18 @@ CREATE TABLE `comments` (
   `type` varchar(255) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
+-- --------------------------------------------------------
+
 --
--- Déchargement des données de la table `comments`
+-- Structure de la table `logged_users`
 --
 
-INSERT INTO `comments` (`id`, `post_id`, `message`, `type`) VALUES
-(95, 14, 'Comment', 'comment'),
-(94, 14, 'Comment', 'comment'),
-(97, 96, 'dazdaz', 'reply');
+CREATE TABLE `logged_users` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `session_id` int(11) NOT NULL,
+  `log_date` datetime NOT NULL,
+  `session_ip` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -51,14 +61,6 @@ CREATE TABLE `posts` (
   `dislikes` int(255) DEFAULT '0'
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
---
--- Déchargement des données de la table `posts`
---
-
-INSERT INTO `posts` (`id`, `title`, `content`, `author_id`, `likes`, `dislikes`) VALUES
-(15, 'article', 'article', 14, 2, 0),
-(16, 'dzadza', 'Edited', 15, 1, 0);
-
 -- --------------------------------------------------------
 
 --
@@ -69,16 +71,6 @@ CREATE TABLE `ranks` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Déchargement des données de la table `ranks`
---
-
-INSERT INTO `ranks` (`id`, `name`) VALUES
-(1, 'Member'),
-(2, 'Redactor'),
-(3, 'Admin'),
-(4, 'Premium');
 
 -- --------------------------------------------------------
 
@@ -97,15 +89,6 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Déchargement des données de la table `users`
---
-
-INSERT INTO `users` (`id`, `pseudo`, `password`, `firstname`, `lastname`, `email`, `rank_id`) VALUES
-(13, 'Strikes', '$2y$10$aNQtd56qYi6cALDwIlt0zupS/VEeqxYIoQcXmtJpRoQkuaC4HKDd.', 'Yanis', 'Yanis', 'yanis@yanis.com', 3),
-(14, 'Yanis', '$2y$10$KhTcQ3P1mHbnGe5YxLo/lOw4fularXuOlCOWZSg76wO9A1KqfQZwS', 'Yanis', 'Bendahmane', 'yanis.bendahmane@supinternet.fr', 3),
-(15, 'R&eacute;dac', '$2y$10$b5.z4gcxap278Nw5qvlCrueopmALHgl2zezRnjiqknYan6Z1Tp0pe', 'R&eacute;dac1', 'R&eacute;dac', 'redacteur@yanisbendahmane.fr', 2);
-
---
 -- Index pour les tables déchargées
 --
 
@@ -113,6 +96,12 @@ INSERT INTO `users` (`id`, `pseudo`, `password`, `firstname`, `lastname`, `email
 -- Index pour la table `comments`
 --
 ALTER TABLE `comments`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `logged_users`
+--
+ALTER TABLE `logged_users`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -142,13 +131,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pour la table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
+
+--
+-- AUTO_INCREMENT pour la table `logged_users`
+--
+ALTER TABLE `logged_users`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT pour la table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT pour la table `ranks`
@@ -160,7 +155,7 @@ ALTER TABLE `ranks`
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- Contraintes pour les tables déchargées
@@ -171,3 +166,7 @@ ALTER TABLE `users`
 --
 ALTER TABLE `users`
   ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`rank_id`) REFERENCES `ranks` (`id`);
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
