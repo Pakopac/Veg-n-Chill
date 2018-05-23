@@ -164,7 +164,7 @@ class UserManager
      *
      * @return boolean $data Returns true if a username has been found, false if not
      */
-    public function usernameExists(string $username)
+    public static function usernameExists(string $username)
     {
         $dbm = DBManager::getInstance();
         $pdo = $dbm->getPdo();
@@ -186,7 +186,7 @@ class UserManager
      *
      * @return boolean $data Returns an array for AJAX requests
      */
-    public function emailExists(string $email)
+    public static function emailExists(string $email)
     {
         $dbm = DBManager::getInstance();
         $pdo = $dbm->getPdo();

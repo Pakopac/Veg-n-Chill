@@ -34,6 +34,11 @@ use Model\AdminManager;
  */
 class MainController extends BaseController
 {
+    /**
+     * Call for loading home
+     *
+     * @return Render Rendering homepage
+     */
     public function homeAction()
     {
         $arr = [
@@ -42,6 +47,11 @@ class MainController extends BaseController
         return $this->render('home.html.twig', $arr);
     }
 
+    /**
+     * Call for registering a user
+     *
+     * @return JSON for AJAX datas
+     */
     public function registerAction()
     {
         if (!empty($_POST['firstname']) || !empty($_POST['lastname'])
@@ -75,7 +85,7 @@ class MainController extends BaseController
     /**
      * Call for logging in a user
      *
-     * @return Array $arr Returns datas on JSON for AJAX login
+     * @return JSON Returns datas on JSON for AJAX login
      */
     public function loginAction()
     {
@@ -107,6 +117,11 @@ class MainController extends BaseController
         }
     }
 
+    /**
+     * Call for logging out a user
+     *
+     * @return Redirect Redirect to home after logout
+     */
     public function logoutAction()
     {
         $adminManager = new AdminManager();

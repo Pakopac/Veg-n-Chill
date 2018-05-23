@@ -29,12 +29,7 @@ window.addEventListener('load', () => {
         .then(json)
         .then((data) => {
             console.log('Request succeeded with JSON response', data);
-            firstname.value = "";
-            lastname.value = "";
-            user.value = "";
-            pass.value = "";
-            passwordRepeat.value = "";
-            email.value = "";
+            register.reset();
         })
         .catch((error) => {
             console.log('Request failed', error);

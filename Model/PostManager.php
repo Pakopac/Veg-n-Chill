@@ -18,7 +18,7 @@ class PostManager
         return $posts;
     }
 
-    public function addPost($title, $content, $authorID)
+    public function addPost($title, $content, $authorID): void
     {
         $dbm = DBManager::getInstance();
         $pdo = $dbm->getPdo();
@@ -44,7 +44,7 @@ class PostManager
         return $post;
     }
 
-    public function deletePost($id)
+    public function deletePost($id): void
     {
         $dbm = DBManager::getInstance();
         $pdo = $dbm->getPdo();
