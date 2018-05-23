@@ -238,7 +238,11 @@ fieldset button{
     justify-content: space-between;
 }
 .btnLogin{
+    background: inherit;
     width: 9vh;
+}
+.btnRegister{
+    background: inherit;
 }
 .btnRegister{
     font-family: annabelle;
@@ -384,6 +388,14 @@ fieldset button{
 .searchUserAdminUser{
     width: 300px;
 }
+footer{
+    display: none;
+    flex-direction: row;
+    justify-content: space-around;
+    background: #EEEEEE;
+    width: 100vw;
+    height: 20vh;
+}
 .imgBurgerHome{
     z-index: -1;
     font-family: "Montserrat-Regular";
@@ -403,18 +415,18 @@ fieldset button{
     margin-left: 50px;
 }
 .TextImgBurger1{
-    font-size: 30px;
+    font-size: 2.3em;
     font-weight: bold;
 }
 .TextImgBurger2{
     margin: 20px 0;
-    font-size: 20px;
+    font-size: 2.3em;
 }
 .btnImgBurger{
+    font-size: 2em;
     padding: 15px 10px;
     color: #ffffff;
     background: inherit;
-    width: 10%;
 }
 .headerOnTheFrontPage{
     width: 100vw;
@@ -426,12 +438,18 @@ fieldset button{
 .btnImgBurger:hover{
     cursor: pointer;
 }
+.backgroundOnTheFrontPage{
+    position: absolute;
+    background-image: url("./images/bgOnFrontPage.svg");
+    width: 100vw;
+    height: 80vh;
+    z-index: -1;
+}
 .blockOnTheFrontPage{
     position: absolute;
     z-index: -1;
     width: 100vw;
     height: 119vh;
-    background-image: url("./images/bgOnFrontPage.svg");
     margin-top: -100px;
 }
 .lineSeparateLeft, .lineSeparateRight{
@@ -441,9 +459,9 @@ fieldset button{
 }
 .titleOnTheFrontPage{
     font-family: "Courgette-Regular";
-    font-size: 1em;
+    font-size: 2em;
     padding: 0 2vw;
-    margin-top: -10px;
+    margin-top: -21px;
 }
 .articlesOnTheFrontPage{
     display: grid;
@@ -454,6 +472,7 @@ fieldset button{
     display: none;
 }
 .blockArticleOnTheFrontPage{
+    font-size: 2em;
     border-radius: 6.4vw;
     margin-left: 20vw;
     margin-top: 20px;
@@ -493,7 +512,7 @@ fieldset button{
     background: white;
     border-radius: 10px;
     margin: 5vh 0;
-    width: 100vw;
+    width: 90vw;
 }
 .novice img{
     display: none;
@@ -529,9 +548,27 @@ fieldset button{
 .blockLinksHome{
     font-family: Bahnschrift;
     font-weight: bold;
-    background: #EBFEFF;
     display: grid;
     grid-template-rows: 80vw;
+}
+.backgroundHomeMobile1, .backgroundHomeMobile2, .backgroundHomeMobile3{
+    background-image: url("./images/bgOnFrontPage.svg");
+    position: absolute;
+    z-index: 0;
+    width: 100vw;
+    height: 80vh;
+}
+.backgroundHomeMobile1{
+    z-index: -1;
+    margin-top: 500px;
+}
+.backgroundHomeMobile2{
+    height: 79vh;
+    z-index: -1;
+}
+.backgroundHomeMobile3{
+    margin-top: 545vw;
+    z-index: -1;
 }
 .blockLink1 {
     background-image: url('./images/supervegan.svg');
@@ -590,12 +627,12 @@ fieldset button{
 .blockNewsletter{
     display: flex;
     flex-direction: column;
-    width: 100vw;
+    width: 95vw;
     align-items: center;
 }
 .titleNewsletter{
     font-family: "Courgette-Regular";
-    font-size: 1.5em;
+    font-size: 2em;
     margin-top: 10px;
     margin-bottom: 5px;
 }
@@ -608,6 +645,7 @@ fieldset button{
     margin-top: 30px;
 }
 .textNewsletter1, .textNewsletter2{
+    font-size: 2em;
     font-family: "Lato-Regular";
     width: 100vw;
     text-align: center;
@@ -616,15 +654,15 @@ fieldset button{
     margin: 15px 0;
 }
 .newsletterBtn{
+    background: inherit;
     font-size: 30px;
     font-family: annabelle;
-    background: white;
     border: 0;
     margin-left: 10px;
 }
 .inputNewsletter{
     width: 75%;
-    background: white;
+    background: inherit;
     border: 0;
     border-bottom: 1px solid #707070;
     color: #B2B2B2;
@@ -637,7 +675,7 @@ fieldset button{
     width: 100vw;
 }
 .titleAboutHome{
-    font-size: 2em;
+    font-size: 3em;
     color: #666666;
     font-family: "Courgette-Regular";
     text-align: center;
@@ -662,7 +700,7 @@ fieldset button{
     cursor: pointer;
 }
 @media (min-width: 480px) {
-    .fa-bars{
+    .fa-bars, .closeMenuMobile, .backgroundHomeMobile1, .backgroundHomeMobile2{
         display: none;
     }
     .title, .headerProfil a, .blockTextBurger, .articleOnTheFrontPage2, .articleOnTheFrontPage3, .articleOnTheFrontPage4,
@@ -675,15 +713,13 @@ fieldset button{
     #navHeaderMain{
         flex-direction: row;
     }
-    .closeMenuMobile {
-        display: none;
-    }
     .blockArticleOnTheFrontPage{
         margin-left: 1vw;
         width: 22vw;
         border-radius: 2.5vw;
     }
     .novice{
+        font-size: 3rem;
         margin: 5vh 5vw;
         padding: 20px 100px;
         background: #EBFEFF;
@@ -714,5 +750,11 @@ fieldset button{
         margin-top: 18%;
         margin-bottom: 0;
         padding: 0.7vw 8vw;
+    }
+    .blockLinksHome{
+        background: #EBFEFF;
+    }
+    footer{
+        display: flex !important;
     }
 }

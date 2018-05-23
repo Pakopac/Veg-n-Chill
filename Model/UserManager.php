@@ -150,7 +150,7 @@ class UserManager
             $errors = 'Invalid username or password';
             return $errors;
         } else {
-            $_SESSION['username'] = $result['username'];
+            $_SESSION['username'] = $result['pseudo'];
             $_SESSION['rank_id'] = $result['rank_id'];
             $_SESSION['id'] = $result['id'];
             return true;
