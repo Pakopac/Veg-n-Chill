@@ -421,6 +421,7 @@ fieldset button{
     margin-top: 40px;
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
 }
 .btnImgBurger:hover{
     cursor: pointer;
@@ -438,13 +439,10 @@ fieldset button{
     height: 1px;
     background: #000;
 }
-.lineSeparateLeft{
-    margin-left: 10px;
-}
 .titleOnTheFrontPage{
     font-family: "Courgette-Regular";
-    font-size: 1.5em;
-    padding: 0 100px;
+    font-size: 1em;
+    padding: 0 2vw;
     margin-top: -10px;
 }
 .articlesOnTheFrontPage{
@@ -452,13 +450,17 @@ fieldset button{
     grid-template-columns: repeat(4, 1fr);
     margin: 0 1.5vw;
 }
+.articleOnTheFrontPage2, .articleOnTheFrontPage3, .articleOnTheFrontPage4{
+    display: none;
+}
 .blockArticleOnTheFrontPage{
-    border: 1px solid black;
-    border-radius: 2.4vw;
-    margin-left: 1vw;
+    border-radius: 6.4vw;
+    margin-left: 20vw;
     margin-top: 20px;
-    width: 22vw;
+    width: 60vw;
     background: white;
+    border: 1px solid black;
+    box-shadow: 2px 5px 14px;
 }
 .titleArticle{
     font-family: "Lato-Medium";
@@ -474,6 +476,7 @@ fieldset button{
     font-style: italic;
 }
 .iconHeart{
+    display: none;
     margin-left: 10px;
 }
 .divLikeCommentArticle{
@@ -487,28 +490,35 @@ fieldset button{
 .novice{
     display: flex;
     flex-direction: row;
-    padding: 20px 100px;
-    background: #EBFEFF;
+    background: white;
     border-radius: 10px;
-    margin: 5vh 5vw;
-    width: 90vw;
+    margin: 5vh 0;
+    width: 100vw;
+}
+.novice img{
+    display: none;
 }
 .noviceLeft{
+    margin-left: 5vw;
     width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 .titleNovice{
     font-family: "Courgette-Regular";
-    margin-left: 50%;
     font-size: 1.5em;
     color: #5E6666;
+    align-self: center;
+}
+.textNovice{
+    width: 90%;
 }
 .textHowToVegNovice{
-    margin-left: 45%;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin: 20px 0;
+    align-self: center;
 }
 .btnNovice{
-    margin-left: 39%;
+    align-self: center;
     background: #A7FFEB;
     border-radius: 20px;
     padding: 10px 50px;
@@ -521,17 +531,22 @@ fieldset button{
     font-weight: bold;
     background: #EBFEFF;
     display: grid;
-    grid-template-columns: repeat(2, 50vw);
-    grid-template-rows: 42vw;
+    grid-template-rows: 80vw;
 }
 .blockLink1 {
     background-image: url('./images/supervegan.svg');
     background-repeat: no-repeat;
-    width: 51vw;
-    height: 90vh;
+
+}
+.blockLink1, .blockLink2, .blockLink3{
+    width: 100vw;
 }
 .blockLink1 .textSuperVegan{
     text-align: center;
+}
+.blockLink2 .textLinksHome{
+    padding-left: 2vw;
+    padding-top: 25%;
 }
 .textLinksHome{
     background: rgba(255, 255, 255, 0.2);
@@ -554,11 +569,11 @@ fieldset button{
 }
 .textTips{
     padding-left: 2vw;
-    padding-top: 20%;
+    padding-top: 30%;
 }
 .blockLinksHomeRight {
     display: grid;
-    grid-template-rows: repeat(2, 20.5vw);
+    grid-template-rows: repeat(2, 41vw);
     grid-template-columns: 61vw;
 }
 .blockLink2{
@@ -570,7 +585,6 @@ fieldset button{
     background-repeat: no-repeat;
 }
 .blockLink1:hover, .blockLink2:hover, .blockLink3:hover{
-    font-size: 1.5em;
     text-decoration: none;
 }
 .blockNewsletter{
@@ -586,15 +600,17 @@ fieldset button{
     margin-bottom: 5px;
 }
 .separateNewsletter1{
-    width: 550px;
+    width: 83vw;
     margin-bottom: 30px;
 }
 .separateNewsletter2{
-    width: 550px;
+    width: 83vw;
     margin-top: 30px;
 }
 .textNewsletter1, .textNewsletter2{
     font-family: "Lato-Regular";
+    width: 100vw;
+    text-align: center;
 }
 .textNewsletter2{
     margin: 15px 0;
@@ -607,7 +623,7 @@ fieldset button{
     margin-left: 10px;
 }
 .inputNewsletter{
-    width: 20vw;
+    width: 75%;
     background: white;
     border: 0;
     border-bottom: 1px solid #707070;
@@ -632,19 +648,15 @@ fieldset button{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url("./images/imageShadows.png");
-    background-repeat: no-repeat;
-    background-size: 100vw 27vw;
-    height: 27vw;
 }
 .aboutHomeBtn{
     font-family: "Montserrat-Regular";
     color: #000;
-    padding: 0.7vw 8vw;
+    padding: 1.7vw 21vw;
     font-size: 1.5em;
     background: #A7FFEB;
     border-radius: 50px;
-    margin-top: 18%;
+    margin: 10% 0;
 }
 .aboutHomeBtn:hover{
     cursor: pointer;
@@ -653,7 +665,8 @@ fieldset button{
     .fa-bars{
         display: none;
     }
-    .title, .headerProfil a, .blockTextBurger{
+    .title, .headerProfil a, .blockTextBurger, .articleOnTheFrontPage2, .articleOnTheFrontPage3, .articleOnTheFrontPage4,
+    .iconHeart{
         display: block;
     }
     #navMobile{
@@ -662,7 +675,44 @@ fieldset button{
     #navHeaderMain{
         flex-direction: row;
     }
-    .closeMenuMobile{
+    .closeMenuMobile {
         display: none;
+    }
+    .blockArticleOnTheFrontPage{
+        margin-left: 1vw;
+        width: 22vw;
+        border-radius: 2.5vw;
+    }
+    .novice{
+        margin: 5vh 5vw;
+        padding: 20px 100px;
+        background: #EBFEFF;
+    }
+    .novice img{
+        display: block;
+    }
+    .blockLinksHome{
+        grid-template-columns: repeat(3, 50vw);
+        grid-template-rows: 42vw;
+    }
+    .blockLink1, .blockLink2, .blockLink3{
+        width: 51vw;
+    }
+    .blockLink1:hover, .blockLink2:hover, .blockLink3:hover{
+        font-size: 1.5em;
+    }
+    .blockLinksHomeRight{
+        grid-template-rows: repeat(2, 20.5vw);
+    }
+    .blockShadows{
+        background-image: url("./images/imageShadows.png");
+        background-repeat: no-repeat;
+        background-size: 100vw 27vw;
+        height: 27vw;
+    }
+    .aboutHomeBtn{
+        margin-top: 18%;
+        margin-bottom: 0;
+        padding: 0.7vw 8vw;
     }
 }
