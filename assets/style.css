@@ -389,7 +389,7 @@ fieldset button{
     width: 300px;
 }
 footer{
-    display: none;
+    display: none !important;
     background: #EEEEEE;
     width: 100vw;
 }
@@ -714,6 +714,19 @@ footer{
 .aboutHomeBtn:hover{
     cursor: pointer;
 }
+.imgTitleHowToVegan{
+    width: 100vw;
+    height: 44vw;
+    background-repeat: no-repeat;
+    background-image: url("./images/imgTitleHowTo.svg");
+}
+.divHowToVegan{
+    margin-left: 10%;
+    width: 80%;
+}
+.divHowToVegan h3{
+    margin-top: 15%;
+}
 @media (min-width: 480px) {
     .fa-bars, .closeMenuMobile, .backgroundHomeMobile1, .backgroundHomeMobile2{
         display: none;
@@ -769,7 +782,10 @@ footer{
     .blockLinksHome{
         background: #EBFEFF;
     }
+    footer{
+        display: block !important;
+    }
     .contentFooter{
-        display: flex !important;
+        display: flex;
     }
 }

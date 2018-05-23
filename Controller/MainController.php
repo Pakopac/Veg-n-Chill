@@ -114,4 +114,8 @@ class MainController extends BaseController
         session_destroy();
         return $this->redirectToRoute('home');
     }
+    public function howToVeganAction()
+    {
+        return $this -> render('howToVegan.html.twig');
+    }
 }
