@@ -19,3 +19,4 @@ routes:
     displayAdmin: "Admin:display"
     usersAdmin: "Admin:users"
     howToVegan: "Main:howToVegan"
+    news : "Main:news"

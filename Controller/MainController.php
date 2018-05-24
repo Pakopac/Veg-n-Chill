@@ -118,4 +118,8 @@ class MainController extends BaseController
     {
         return $this -> render('howToVegan.html.twig');
     }
+    public function newsAction()
+    {
+        return $this -> render('news.html.twig');
+    }
 }
