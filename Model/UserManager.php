@@ -150,7 +150,7 @@ class UserManager
             $errors = 'Invalid username or password';
             return $errors;
         } else {
-            $_SESSION['username'] = $result['username'];
+            $_SESSION['username'] = $result['pseudo'];
             $_SESSION['rank_id'] = $result['rank_id'];
             $_SESSION['id'] = $result['id'];
             return true;
@@ -164,7 +164,7 @@ class UserManager
      *
      * @return boolean $data Returns true if a username has been found, false if not
      */
-    public static function usernameExists(string $username)
+    public function usernameExists(string $username)
     {
         $dbm = DBManager::getInstance();
         $pdo = $dbm->getPdo();
@@ -186,7 +186,7 @@ class UserManager
      *
      * @return boolean $data Returns an array for AJAX requests
      */
-    public static function emailExists(string $email)
+    public function emailExists(string $email)
     {
         $dbm = DBManager::getInstance();
         $pdo = $dbm->getPdo();

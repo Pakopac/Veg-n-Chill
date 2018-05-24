@@ -129,4 +129,14 @@ class MainController extends BaseController
         session_destroy();
         return $this->redirectToRoute('home');
     }
+
+    /**
+     * Call actions on forgotten password
+     * 
+     * @return JSON Returns JSON for AJAX calls
+     */
+    public function forgottenPasswordAction()
+    {
+        $UserManager = new UserManager();
+    }
 }

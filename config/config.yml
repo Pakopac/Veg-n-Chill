@@ -5,6 +5,7 @@ routes:
     login: "Main:login"
     logout: "Main:logout"
     article: "Article:article"
+    forgottenPassword: "User:forgottenPassword"
     addArticle: "Article:addArticle"
     viewArticle: "Article:viewArticle"
     deleteArticle: "Article:deleteArticle"

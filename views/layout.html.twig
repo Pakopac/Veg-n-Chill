@@ -7,6 +7,7 @@
     <title>{% block page_title %}{% endblock %}</title>
     <link rel="stylesheet" href="assets/style.css">
     <link rel="stylesheet" href="./assets/login.css">
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 </head>
 <body>
 <header class="header">
@@ -54,7 +55,7 @@
                     <div class="backgroundInputLogin"><input type="password" name="password" placeholder="Mot de Passe"><br></div>
                     <div class="ForgetPasswordLogin">
                         <div class="forgetPassword">Mot de passe oublié?</div>
-                        <div class="btn btnLogin">Connexion <img src="./assets/images/arrow"></div>
+                        <button class="btn btnLogin">Connexion <img src="./assets/images/arrow.svg"></button>
                     </div>
                     <img src="./assets/images/logo_sloth.svg" width="200px">
                 </form>
@@ -70,7 +71,7 @@
                     <div class="backgroundInputLogin"><input type="text" name="pseudo" placeholder="Identifiant"><br></div>
                     <div class="backgroundInputLogin"><input type="password" name="password" placeholder="Mot de Passe"><br></div>
                     <div class="backgroundInputLogin"><input type="password" name="repeatPassword" placeholder="Répétition Mot De Passe"><br></div>
-                    <div class="btn btnRegister">On y go les cocos <img src="./assets/images/arrow"></div>
+                    <button class="btn btnRegister">On y go les cocos <img src="./assets/images/arrow"></button>
                 </form>
             </div>
         </div>
@@ -78,6 +79,26 @@
     </div>
 </div>
 {% block content %}{% endblock %}
+<footer>
+    <ul class="footerItems1">
+        <li>Plan du Site</li>
+        <li>Actualités</li>
+        <li>How To Vegan</li>
+        <li>#FoodAddict</li>
+    </ul>
+    <ul class="footerItems2">
+        <li>On se retrouve</li>
+        <li><img src="./assets/images/instagram.svg" width="20px">@VeganChill</li>
+        <li><img src="./assets/images/facebook.svg" width="20px">@VeganChill</li>
+        <li><img src="./assets/images/youtube.svg" width="20px">@VeganChill</li>
+    </ul>
+    <ul class="footerItems3">
+        <li>A propos</li>
+        <li>La Team</li>
+        <li>Contact</li>
+    </ul>
+    <img src="./assets/images/rs.svg" width="100px" height="50px">
+</footer>
 {% block script %}
 <!-- include libraries(jQuery, bootstrap) -->
 <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet">
