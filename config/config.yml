@@ -23,4 +23,5 @@ routes:
     news : "Main:news"
     petition: "Main:petition"
     about: "Main:about"
+    contactUs: "Main:contactUs"
     interview: "Main:interview"

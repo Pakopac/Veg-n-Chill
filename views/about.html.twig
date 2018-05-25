@@ -15,17 +15,17 @@
             </p>
             <div class="mail">
                 <img src="./assets/images/emailImg.svg" width="30px">
-                <div class="textMail">veganandchill@gmail.com</div>
+                <div class="textMail">contact@vegnchill.com</div>
             </div>
         </div>
     </div>
     <div class="blockFormContact">
         <div class="bgFormContact"></div>
-        <form>
+        <form method="POST" action="?action=contactUs" name="contact">
             <h3>Nous contacter</h3>
-            <input class="emailFormContact" type="email" placeholder="E-mail">
-            <input class="objectFormContact" type="text" placeholder="Objet">
-            <input class="messageFormContact" type="text" placeholder="Votre message...">
+            <input class="emailFormContact" type="email" placeholder="E-mail" name="email" required>
+            <input class="objectFormContact" type="text" placeholder="Objet" name="mailObj" required>
+            <input class="messageFormContact" type="text" placeholder="Votre message..." name="message" required>
             <button><img src="./assets/images/arrow.svg" width="50px"></button>
         </form>
     </div>
@@ -54,10 +54,13 @@
             <li>- a</li>
             <li>- b</li>
             <li>- c</li>
-            <li>Et enfin : Vous !</li>
+            <li>Et enfin : Vous ! (svp augmentez notre note &hearts;)</li>
         </ul>
     </div>
     <div class="blockImgHowToVeganBot">
         <img class="imgNewsBot" src="./assets/images/imgHowToVeganBot.svg">
     </div>
+{% endblock %}
+{% block script %}
+<script src="./assets/scripts/sendMail.js"></script>
 {% endblock %}

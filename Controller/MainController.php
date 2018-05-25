@@ -19,6 +19,7 @@ namespace Controller;
 use Cool\BaseController;
 use Model\UserManager;
 use Model\AdminManager;
+use Model\MailManager;
 
 /**
  * MainController Class Doc Comment
@@ -164,18 +165,30 @@ class MainController extends BaseController
         ];
         return $this -> render('petition.html.twig', $arr);
     }
+
     public function aboutAction()
     {
         $arr = [
             'user' => $_SESSION
         ];
-        return $this -> render('about.html.twig',$arr);
+        return $this -> render('about.html.twig', $arr);
+    }
+
+    public function contactUsAction()
+    {
+        $mail = new MailManager();
+        $result = $mail->contact(
+            $_POST['mail'], 
+            $_POST['object'],
+            $_POST['message']
+        );
+        return json_encode($result);
     }
     public function interviewAction()
     {
         $arr = [
             'user' => $_SESSION
         ];
-        return $this -> render('interview.html.twig',$arr);
+        return $this -> render('interview.html.twig', $arr);
     }
 }
