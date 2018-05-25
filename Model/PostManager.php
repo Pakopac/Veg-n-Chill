@@ -81,4 +81,22 @@ class PostManager
 
         return $result;
     }
+
+    public function searchPostByName($query)
+    {
+        $dbm = DBManager::getInstance();
+        $pdo = $dbm->getPdo();
+        $pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+
+        $stmt = $pdo->prepare(
+            "SELECT *
+            FROM posts
+            WHERE title LIKE ?"
+        );
+        $params = array("%$query%");
+        $stmt->execute($params);
+        $result = $stmt->fetchAll();
+
+        return $result;
+    }
 }

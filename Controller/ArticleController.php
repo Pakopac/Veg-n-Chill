@@ -12,14 +12,22 @@ class ArticleController extends BaseController
     public function articleAction()
     {
         $manager = new PostManager();
-        $posts = $manager->getAllPosts();
-
-        $data = [
-            'posts' => $posts,
-            'user' => $_SESSION
-        ];
-
-        return $this->render('article.html.twig', $data);
+        if (!empty($_POST)) {
+            $posts = $manager->searchPostByName($_POST['searchbox']);
+            var_dump($posts);
+            $arr = [
+                'posts' => $posts,
+                'user' => $_SESSION
+            ];
+            return $this->render('article.html.twig', $arr);
+        } else {
+            $posts = $manager->getAllPosts();
+            $data = [
+                'posts' => $posts,
+                'user' => $_SESSION
+            ];
+            return $this->render('article.html.twig', $data);
+        }
     }
     public function viewArticleAction()
     {
@@ -39,10 +47,9 @@ class ArticleController extends BaseController
 
     public function addArticleAction()
     {
-        if($_SESSION['rank_id'] == 1 || empty($_SESSION['rank_id'])){
+        if ($_SESSION['rank_id'] == 1 || empty($_SESSION['rank_id'])) {
             $this->redirectToRoute('home');
-        }
-        else {
+        } else {
             if (isset($_POST['title']) && isset($_POST['content'])) {
                 $title = $_POST['title'];
                 $content = $_POST['content'];
@@ -60,10 +67,9 @@ class ArticleController extends BaseController
 
     public function deleteArticleAction()
     {
-        if($_SESSION['rank_id'] == 1 || !isset($_SESSION['rank_id'])){
+        if ($_SESSION['rank_id'] == 1 || !isset($_SESSION['rank_id'])) {
             $this->redirectToRoute('article');
-        }
-        else {
+        } else {
             $postManager = new PostManager();
             $post = $postManager->deletePost(intval($_GET['id']));
             $data = [
@@ -93,7 +99,10 @@ class ArticleController extends BaseController
     public function rateArticleAction()
     {
         $ratingManager = new RatingManager();
-        $rateArticle = $ratingManager->rateArticle($_POST['rating'], intval($_GET['id']));
+        $rateArticle = $ratingManager->rateArticle(
+            $_POST['rating'], 
+            intval($_GET['id'])
+        );
 
         return $rateArticle;
     }

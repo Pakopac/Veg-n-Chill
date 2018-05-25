@@ -143,15 +143,25 @@ class MainController extends BaseController
 
     public function howToVeganAction()
     {
-        return $this -> render('howToVegan.html.twig');
+        $arr = [
+            'user' => $_SESSION
+        ];
+        return $this -> render('howToVegan.html.twig', $arr);
     }
 
     public function newsAction()
     {
-        return $this -> render('news.html.twig');
+        $arr = [
+        'user' => $_SESSION
+        ];
+        return $this -> render('news.html.twig', $arr);
     }
+
     public function petitionAction()
     {
-        return $this -> render('petition.html.twig');
+        $arr = [
+            'user' => $_SESSION
+        ];
+        return $this -> render('petition.html.twig', $arr);
     }
 }
