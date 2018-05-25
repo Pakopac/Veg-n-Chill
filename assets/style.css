@@ -389,12 +389,25 @@ fieldset button{
     width: 300px;
 }
 footer{
-    display: none;
-    flex-direction: row;
-    justify-content: space-around;
+    display: none !important;
     background: #EEEEEE;
     width: 100vw;
-    height: 20vh;
+}
+.contentFooter{
+    font-size: 1.5em;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 0 10%;
+    padding: 30px 0;
+    width: 80%;
+}
+.contentFooter > img{
+    width: 250px;
+    height: 80px;
+}
+.titleFooter{
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 .imgBurgerHome{
     z-index: -1;
@@ -403,7 +416,7 @@ footer{
     display: flex;
     flex-direction: column;
     color: #ffffff;
-    width: 150vw;
+    width: 100vw;
     height: 42vw;
     background-image: url("./images/Vegan-Black-Bean-Burger-with-Beets-and-Quinoa%20copie.svg");
     background-repeat: no-repeat;
@@ -411,6 +424,8 @@ footer{
     position: relative;
 }
 .blockTextBurger{
+    width: 90%;
+    height: 50%;
     display: none;
     margin-left: 50px;
 }
@@ -699,6 +714,76 @@ footer{
 .aboutHomeBtn:hover{
     cursor: pointer;
 }
+.imgTitlePage{
+    width: 100vw;
+    height: 44vw;
+    background-repeat: no-repeat;
+}
+.imgTitleArticle{
+    background-image: url('./images/imageTitleNews.svg');
+}
+.imgTitleHowToVegan{
+    background-image: url("./images/imgTitleHowTo.svg");
+}
+.blockTitlePage{
+    display: none;
+}
+.divHowToVegan{
+    font-size: 1.5em;
+    margin-left: 20%;
+    width: 60%;
+}
+.divHowToVegan h3{
+    font-size: 1.5em;
+    margin-top: 15%;
+}
+.blockImgHowToVeganBot{
+    display: none;
+}
+.blockNews{
+    width: 80vw;
+    margin-left: 10vw;
+}
+.blockNews img{
+    margin: 50px 0;
+}
+.blockCommentsMobile{
+    background: #D6FCFF;
+}
+.blockComments{
+    display: none;
+}
+.flexImgInputComments{
+    margin-left: 15%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+.buttonComments{
+    background: inherit;
+    border: 0;
+}
+.blockCommentsMobile h3{
+    margin-left: 15%;
+}
+.blockCommentsMobile input{
+    border: 0;
+    border-bottom: 1px solid black;
+    border-radius: 20px;
+    margin-left: 10px;
+    height: 30px;
+}
+.blockCommentsMobile button{
+    margin-top: 10%;
+}
+.viewAllComments{
+    padding: 5% 18%;
+    display: flex;
+    flex-direction: row;
+}
+.similarArticle{
+    display: none;
+}
 @media (min-width: 480px) {
     .fa-bars, .closeMenuMobile, .backgroundHomeMobile1, .backgroundHomeMobile2{
         display: none;
@@ -755,6 +840,157 @@ footer{
         background: #EBFEFF;
     }
     footer{
-        display: flex !important;
+        display: block !important;
+    }
+    .contentFooter{
+        display: flex;
+    }
+    .imgTitlePage h1{
+        margin-top: 20%;
+        color: rgba(43, 43, 43, 0.66);
+    }
+    .flexHowToVegan1, .flexHowToVegan3{
+        margin-top: 40px;
+        display: flex;
+        flex-direction: row-reverse;
+    }
+    .flexHowToVegan2{
+        margin-top: 40px;
+        display: flex;
+        flex-direction: row;
+    }
+    .flexHowToVegan1Content, .flexHowToVegan2Content, .flexHowToVegan3Content{
+        width: 100%;
+    }
+    .flexHowToVegan1Content p, .flexHowToVegan2Content p, .flexHowToVegan3Content p{
+        width: 100%;
+    }
+    .imgHowToVegan6{
+        padding: 10% 0;
+    }
+    .blockTitlePage{
+        display: flex;
+        flex-direction: column;
+        width: 55%;
+        height: 100%;
+        margin-left: 48%;
+        background: rgba(255, 255, 255, 0.5);
+        padding: 0 7%;
+        font-size: 1.5em;
+    }
+    .blockImgHowToVeganBot{
+        display: block;
+        text-align: center;
+    }
+    .imgHowToVeganBot{
+        width: 10%;
+        margin-bottom: 5%;
+        text-align: center;
+    }
+    .imgNewsBot{
+        margin-top: 5%;
+        width: 7%;
+        margin-bottom: 5%;
+        text-align: center;
+    }
+    .greenHeart{
+        width: 40px;
+        margin-right: 20px;
+    }
+    .imgBurgerHome{
+        z-index: 0;
+    }
+    .blockNews{
+        font-size: 1.5em;
+        width: 70%;
+        margin-left: 10vw;
+    }
+    .blockNews h3{
+        margin-bottom: 50px;
+    }
+    .flexNews{
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+    }
+    .flexNews img{
+        height: 50vh;
+    }
+    .blockArticleSimilarArticle{
+        display: flex;
+        flex-direction: row;
+    }
+    .titleSimilarArticle{
+        margin-left: 10px;
+        margin-bottom: 20px;
+    }
+    .similarArticle{
+        font-size: 1.5em;
+        display: block;
+        margin-left: 2vw;
+        margin-top: 100vh;
+        width: 15vw;
+    }
+    .itemSimilarArticle{
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        padding-bottom: 10px;
+        height: 25vh;
+        background-image: url("./images/supervegan.svg");
+        background-repeat: no-repeat;
+    }
+    .textItemSimilarArticletext{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 30px;
+        background: rgba(255, 255, 255, 0.5);
+    }
+    .blockCommentsMobile{
+        display: none;
+    }
+    .blockComments{
+        font-size: 1.5em;
+        text-align: center;
+        display: block;
+        background: #D6FCFF;
+    }
+    .formComment{
+        align-items: center;
+        padding: 30px;
+        display: flex;
+        justify-content: center;
+    }
+    .commentsInputButton{
+        width: 25%;
+    }
+    .blockComments input{
+        width: 70%;
+        margin-left: 20px;
+        text-align: center;
+        border-radius: 10px;
+        border: 0;
+        border-bottom: 1px solid black;
+    }
+    .separateComments{
+        width: 40%;
+    }
+    .blockCommentImg{
+        display: flex;
+        flex-direction: row;
+        width: 100vw;
+        margin-left: 36%;
+    }
+    .comment{
+        margin: 50px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .dateComment{
+        height: 50%;
+        margin-top: 3%;
     }
 }

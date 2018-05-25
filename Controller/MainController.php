@@ -138,5 +138,16 @@ class MainController extends BaseController
     public function forgottenPasswordAction()
     {
         $UserManager = new UserManager();
+        
+    }
+
+    public function howToVeganAction()
+    {
+        return $this -> render('howToVegan.html.twig');
+    }
+
+    public function newsAction()
+    {
+        return $this -> render('news.html.twig');
     }
 }

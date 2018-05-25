@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 66 15">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        clip-path: url(#clip-path);
+      }
+
+      .cls-3 {
+        fill: #1de9b6;
+      }
+    </style>
+    <clipPath id="clip-path">
+      <rect class="cls-1" width="66" height="15"/>
+    </clipPath>
+  </defs>
+  <g id="Grille_de_répétition_8" data-name="Grille de répétition 8" class="cls-2">
+    <g transform="translate(-274 -3179)">
+      <circle id="Ellipse_1" data-name="Ellipse 1" class="cls-3" cx="7.5" cy="7.5" r="7.5" transform="translate(274 3179)"/>
+    </g>
+    <g transform="translate(-254 -3179)">
+      <circle id="Ellipse_1-2" data-name="Ellipse 1" class="cls-3" cx="7.5" cy="7.5" r="7.5" transform="translate(274 3179)"/>
+    </g>
+    <g transform="translate(-234 -3179)">
+      <circle id="Ellipse_1-3" data-name="Ellipse 1" class="cls-3" cx="7.5" cy="7.5" r="7.5" transform="translate(274 3179)"/>
+    </g>
+  </g>
+</svg>

@@ -20,7 +20,7 @@
         <nav id="navHeaderMain">
             <a href="?action=home">Accueil</a>
             <a href="?action=article">Actualités</a>
-            <a href="#">How to vegan?</a>
+            <a href="?action=howToVegan">How to vegan?</a>
             <a href="#">#FoodAddict</a>
             <a href="#">A propos</a>
             {% if user['username'] is defined %}
@@ -80,24 +80,26 @@
 </div>
 {% block content %}{% endblock %}
 <footer>
-    <ul class="footerItems1">
-        <li>Plan du Site</li>
-        <li>Actualités</li>
-        <li>How To Vegan</li>
-        <li>#FoodAddict</li>
-    </ul>
-    <ul class="footerItems2">
-        <li>On se retrouve</li>
-        <li><img src="./assets/images/instagram.svg" width="20px">@VeganChill</li>
-        <li><img src="./assets/images/facebook.svg" width="20px">@VeganChill</li>
-        <li><img src="./assets/images/youtube.svg" width="20px">@VeganChill</li>
-    </ul>
-    <ul class="footerItems3">
-        <li>A propos</li>
-        <li>La Team</li>
-        <li>Contact</li>
-    </ul>
-    <img src="./assets/images/rs.svg" width="100px" height="50px">
+    <div class="contentFooter">
+        <ul class="footerItems1">
+            <li class="titleFooter">Plan du Site</li>
+            <li>Actualités</li>
+            <li>How To Vegan</li>
+            <li>#FoodAddict</li>
+        </ul>
+        <ul class="footerItems2">
+            <li class="titleFooter">On se retrouve</li>
+            <li><img src="./assets/images/instagram.svg" width="20px">@VeganChill</li>
+            <li><img src="./assets/images/facebook.svg" width="20px">@VeganChill</li>
+            <li><img src="./assets/images/youtube.svg" width="20px">@VeganChill</li>
+        </ul>
+        <ul class="footerItems3">
+            <li class="titleFooter">A propos</li>
+            <li>La Team</li>
+            <li>Contact</li>
+        </ul>
+        <img src="./assets/images/rs.svg">
+    </div>
 </footer>
 {% block script %}
 <!-- include libraries(jQuery, bootstrap) -->
