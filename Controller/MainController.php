@@ -122,4 +122,8 @@ class MainController extends BaseController
     {
         return $this -> render('news.html.twig');
     }
+    public function petitionAction()
+    {
+        return $this -> render('petition.html.twig');
+    }
 }

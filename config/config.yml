@@ -20,3 +20,4 @@ routes:
     usersAdmin: "Admin:users"
     howToVegan: "Main:howToVegan"
     news : "Main:news"
+    petition: "Main:petition"
