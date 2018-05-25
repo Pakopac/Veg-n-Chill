@@ -14,7 +14,6 @@ class ArticleController extends BaseController
         $manager = new PostManager();
         if (!empty($_POST)) {
             $posts = $manager->searchPostByName($_POST['searchbox']);
-            var_dump($posts);
             $arr = [
                 'posts' => $posts,
                 'user' => $_SESSION
@@ -54,7 +53,7 @@ class ArticleController extends BaseController
                 $title = $_POST['title'];
                 $content = $_POST['content'];
                 $manager = new PostManager();
-                $posts = $manager->addPost($title, $content, $_SESSION['author_id']);
+                $posts = $manager->addPost($title, $content, $_SESSION['id']);
 
                 $this->redirectToRoute('article');
             }
