@@ -18,14 +18,22 @@ class PostManager
         return $posts;
     }
 
-    public function addPost($title, $content, $authorID): void
+    public function addPost($title, $desc, $content, $authorID): void
     {
         $dbm = DBManager::getInstance();
         $pdo = $dbm->getPdo();
         $pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
 
-        $stmt = $pdo->prepare("INSERT INTO posts (id, title, content, author_id) VALUES (NULL, :title, :content, :author)");
+        $stmt = $pdo->prepare(
+            "INSERT INTO posts 
+            (id, title, description,
+            content, author_id)
+            VALUES 
+            (NULL, :title, :desc,
+            :content, :author)"
+        );
         $stmt->bindParam(':title', $title);
+        $stmt->bindParam(':desc', $desc);
         $stmt->bindParam(':content', $content);
         $stmt->bindParam(':author', $authorID);
 
@@ -68,14 +76,20 @@ class PostManager
         return $result;
     }
 
-    public function editArticle($content, $id)
+    public function editArticle($desc, $content, $id)
     {
         $dbm = DBManager::getInstance();
         $pdo = $dbm->getPdo();
         $pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
 
-        $stmt = $pdo->prepare("UPDATE posts SET content = :content WHERE id = :id");
+        $stmt = $pdo->prepare(
+            "UPDATE posts 
+            SET content = :content, 
+            description = :desc 
+            WHERE id = :id"
+        );
         $stmt->bindParam(":id", $id);
+        $stmt->bindParam(":desc", $desc);
         $stmt->bindParam(":content", $content);
         $result = $stmt->execute();
 

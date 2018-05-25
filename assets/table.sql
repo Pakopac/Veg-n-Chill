@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le :  lun. 21 mai 2018 à 22:56
+-- Généré le :  ven. 25 mai 2018 à 12:10
 -- Version du serveur :  5.6.38
 -- Version de PHP :  7.2.1
 
@@ -55,6 +55,7 @@ CREATE TABLE `logged_users` (
 CREATE TABLE `posts` (
   `id` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
+  `description` varchar(255) NOT NULL,
   `content` text NOT NULL,
   `author_id` int(255) NOT NULL,
   `likes` int(255) DEFAULT '0',
@@ -71,6 +72,16 @@ CREATE TABLE `ranks` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `ranks`
+--
+
+INSERT INTO `ranks` (`id`, `name`) VALUES
+(1, 'Member'),
+(2, 'Redactor'),
+(3, 'Admin'),
+(4, 'Premium');
 
 -- --------------------------------------------------------
 
@@ -137,13 +148,13 @@ ALTER TABLE `comments`
 -- AUTO_INCREMENT pour la table `logged_users`
 --
 ALTER TABLE `logged_users`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT pour la table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT pour la table `ranks`
@@ -155,7 +166,7 @@ ALTER TABLE `ranks`
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- Contraintes pour les tables déchargées

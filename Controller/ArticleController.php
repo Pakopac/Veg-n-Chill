@@ -51,9 +51,10 @@ class ArticleController extends BaseController
         } else {
             if (isset($_POST['title']) && isset($_POST['content'])) {
                 $title = $_POST['title'];
+                $desc = $_POST['desc'];
                 $content = $_POST['content'];
                 $manager = new PostManager();
-                $posts = $manager->addPost($title, $content, $_SESSION['id']);
+                $posts = $manager->addPost($title, $desc, $content, $_SESSION['id']);
 
                 $this->redirectToRoute('article');
             }
@@ -83,13 +84,20 @@ class ArticleController extends BaseController
 
     public function editArticleAction()
     {
+        if ($_SESSION['rank_id'] == 1 || !isset($_SESSION['rank_id'])) {
+            $this->redirectToRoute('article');
+        }
         $postManager = new PostManager();
         $showPost = $postManager->showArticle(intval($_GET['id']));
         $datas = [
             'datas' => $showPost
         ];
-        if(isset($_POST['submitEditArticle']) && isset($_GET['id'])){
-            $postManager->editArticle($_POST['editArticle'], intval($_GET['id']));
+        if (isset($_POST['submitEditArticle']) && isset($_GET['id'])) {
+            $postManager->editArticle(
+                $_POST['editDesc'],
+                $_POST['editArticle'], 
+                intval($_GET['id'])
+            );
             return $this->redirectToRoute('viewArticle', "id=".$_GET['id']);
         }
         return $this->render('editArticle.html.twig', $datas);

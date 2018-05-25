@@ -4,10 +4,24 @@
 
 {% block content %}
     <h1>Editing : {{ datas['title']|raw }}</h1>
-    <article>
+    <article class="form-group">
         <form action="?action=editArticle&amp;id={{ datas['id'] }}" method="POST">
-            <textarea name="editArticle">{{ datas['content']|raw|nl2br }}</textarea>
+            <textarea name="editDesc" class="form-control">{{ datas['description']|raw|nl2br }}</textarea><br>
+            <textarea name="editArticle" id="summernote">{{ datas['content']|raw|nl2br }}</textarea>
             <button name="submitEditArticle">Submit the edition</button>
         </form>
     </article>
+{% endblock %}
+{% block script %}
+<!-- include libraries(jQuery, bootstrap) -->
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet">
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script> 
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script> 
+
+<!-- include summernote css/js -->
+<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">
+<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js"></script>
+
+<!-- include summenote load -->
+<script src="./assets/scripts/addArticle.js"></script>
 {% endblock %}
