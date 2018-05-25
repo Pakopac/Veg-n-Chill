@@ -39,9 +39,9 @@ class AdminManager
      * @param mixed $sessionId ID of the Session created by the user
      * @param mixed $sessionIP IP of the user
      *
-     * @return None
+     * @return Void
      */
-    public function addLoggedUser($sessionId, $sessionIP)
+    public function addLoggedUser($sessionId, $sessionIP): void
     {
         date_default_timezone_set('Europe/Paris');
         $logDate = date('Y-m-d H:i:s');
@@ -65,9 +65,9 @@ class AdminManager
      *
      * @param mixed $sessionId ID of the Session created by the user
      *
-     * @return None
+     * @return Void
      */
-    public function removeLoggedUser($sessionId)
+    public function removeLoggedUser($sessionId): void
     {
         $dbm = DBManager::getInstance();
         $pdo = $dbm->getPdo();
@@ -144,5 +144,22 @@ class AdminManager
         $page = $_SERVER['QUERY_STRING'];
         $result = str_replace('action=', '', $page);
         return $result;
+    }
+
+    /**
+     * Converts date format to another one
+     * 
+     * @param mixed $data The first date format
+     * @param mixed $date The dates we want to format
+     * 
+     * @return string Converted date format
+     */
+    public function convertDate($data, $date)
+    {
+        foreach ($data as $i) {
+            $timestamp = strtotime($i[$date]);
+            $converted = date("F j, Y, g:i a", $timestamp);
+            return $converted;
+        }
     }
 }

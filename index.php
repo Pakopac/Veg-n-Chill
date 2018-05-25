@@ -1,19 +1,24 @@
 <?php
 session_start();
 
-require_once('vendor/autoload.php');
+require_once 'vendor/autoload.php';
 
 use Symfony\Component\Yaml\Yaml;
 use Routing\Router;
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
 $config = Yaml::parseFile('config/config.yml');
 $params = Yaml::parseFile('config/parameters.yml');
 
 $loader = new Twig_Loader_Filesystem('views');
-$twig = new Twig_Environment($loader, array(
+$twig = new Twig_Environment(
+    $loader, 
+    array(
     //'cache' => 'cache/twig',
     'cache' => false,
-));
+    ) 
+);
 
 $request = empty($_GET['action']) ? $config['homepage_route'] : $_GET['action'];
 $router = new Router();

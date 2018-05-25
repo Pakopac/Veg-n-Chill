@@ -18,7 +18,7 @@ class PostManager
         return $posts;
     }
 
-    public function addPost($title, $content, $authorID)
+    public function addPost($title, $content, $authorID): void
     {
         $dbm = DBManager::getInstance();
         $pdo = $dbm->getPdo();
@@ -44,7 +44,7 @@ class PostManager
         return $post;
     }
 
-    public function deletePost($id)
+    public function deletePost($id): void
     {
         $dbm = DBManager::getInstance();
         $pdo = $dbm->getPdo();
@@ -78,6 +78,24 @@ class PostManager
         $stmt->bindParam(":id", $id);
         $stmt->bindParam(":content", $content);
         $result = $stmt->execute();
+
+        return $result;
+    }
+
+    public function searchPostByName($query)
+    {
+        $dbm = DBManager::getInstance();
+        $pdo = $dbm->getPdo();
+        $pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+
+        $stmt = $pdo->prepare(
+            "SELECT *
+            FROM posts
+            WHERE title LIKE ?"
+        );
+        $params = array("%$query%");
+        $stmt->execute($params);
+        $result = $stmt->fetchAll();
 
         return $result;
     }

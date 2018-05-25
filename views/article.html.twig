@@ -3,7 +3,12 @@
 {% block page_title %}{{ parent() }} - Home{% endblock %}
 
 {% block content %}
-
+    <div class="searchbox">
+        <form action="?action=article" method="POST" name="search">
+            <input type="text" name="searchbox">
+            <input type="submit" name="submit" value="Search article">
+        </form>
+    </div>
     {% for article in posts %}
         <article>
             <h2>{{ loop.index }} <a href="?action=viewArticle&amp;id={{ article['id'] }}">{{ article['title'] }}</a></h2>

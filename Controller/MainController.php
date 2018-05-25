@@ -34,6 +34,11 @@ use Model\AdminManager;
  */
 class MainController extends BaseController
 {
+    /**
+     * Call for loading home
+     *
+     * @return Render Rendering homepage
+     */
     public function homeAction()
     {
         $arr = [
@@ -42,6 +47,11 @@ class MainController extends BaseController
         return $this->render('home.html.twig', $arr);
     }
 
+    /**
+     * Call for registering a user
+     *
+     * @return JSON for AJAX datas
+     */
     public function registerAction()
     {
         if (!empty($_POST['firstname']) || !empty($_POST['lastname'])
@@ -75,7 +85,7 @@ class MainController extends BaseController
     /**
      * Call for logging in a user
      *
-     * @return Array $arr Returns datas on JSON for AJAX login
+     * @return JSON Returns datas on JSON for AJAX login
      */
     public function loginAction()
     {
@@ -107,6 +117,11 @@ class MainController extends BaseController
         }
     }
 
+    /**
+     * Call for logging out a user
+     *
+     * @return Redirect Redirect to home after logout
+     */
     public function logoutAction()
     {
         $adminManager = new AdminManager();
@@ -114,17 +129,40 @@ class MainController extends BaseController
         session_destroy();
         return $this->redirectToRoute('home');
     }
+
+    /**
+     * Call actions on forgotten password
+     * 
+     * @return JSON Returns JSON for AJAX calls
+     */
+    public function forgottenPasswordAction()
+    {
+        $UserManager = new UserManager();
+        
+    }
+
     public function howToVeganAction()
     {
-        return $this -> render('howToVegan.html.twig');
+        $arr = [
+            'user' => $_SESSION
+        ];
+        return $this -> render('howToVegan.html.twig', $arr);
     }
+
     public function newsAction()
     {
-        return $this -> render('news.html.twig');
+        $arr = [
+        'user' => $_SESSION
+        ];
+        return $this -> render('news.html.twig', $arr);
     }
+
     public function petitionAction()
     {
-        return $this -> render('petition.html.twig');
+        $arr = [
+            'user' => $_SESSION
+        ];
+        return $this -> render('petition.html.twig', $arr);
     }
     public function aboutAction()
     {

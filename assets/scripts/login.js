@@ -29,12 +29,7 @@ window.addEventListener('load', () => {
         .then(json)
         .then((data) => {
             console.log('Request succeeded with JSON response', data);
-            firstname.value = "";
-            lastname.value = "";
-            user.value = "";
-            pass.value = "";
-            passwordRepeat.value = "";
-            email.value = "";
+            register.reset();
         })
         .catch((error) => {
             console.log('Request failed', error);
@@ -64,11 +59,9 @@ window.addEventListener('load', () => {
         .then((data) => {
             console.log('Request succeeded with JSON response', data);
             if(data.status === "ok"){
-                let el = document.querySelector('.overlay');
-                let btnAccount = document.querySelector('.btn');
-                btnAccount.href = "#TODO-ACCOUNT";
-                btnAccount.textContent = 'Mon Espace';
-                el.style.opacity = 0;
+                let link = window.location.href;
+                let baseLink = link.substr(0, link.lastIndexOf('#'));
+                window.location.replace(`${baseLink}`);
             }
         })
         .catch((error) => {
