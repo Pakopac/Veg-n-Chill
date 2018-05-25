@@ -964,19 +964,24 @@ footer{
     margin-top: 7%;
 }
 .titleArticlePage{
-    width: 100vw;
     background-image: url("images/imgTitleArticle.svg");
+}
+.titleFoodAddictPage{
+    background-image: url("images/bg-recette.svg");
+}
+.titleFoodAddictArticle{
+    width: 100vw;
     background-repeat: no-repeat;
     height: 44vw;
 }
-.titleArticlePage h1{
+.titleFoodAddictArticle h1{
     font-size: 5em;
     display: none;
     color: white;
     padding-top: 3%;
     margin-left: 3%;
 }
-.titleArticlePage button{
+.titleFoodAddictArticle button{
     font-size: 2em;
     display: none;
     margin-left: 65%;
@@ -1307,13 +1312,13 @@ footer{
     .bgFormContact{
         display: block;
     }
-    .titleArticlePage{
+    .titleFoodAddictArticle{
         display: block;
     }
-    .titleArticlePage h1, .titleArticlePage button{
+    .titleFoodAddictArticle h1, .titleFoodAddictArticle button{
         display: block;
     }
-    .titleArticlePage button{
+    .titleFoodAddictArticle button{
         padding: 10px 50px;
     }
     .blockArticlePage{
