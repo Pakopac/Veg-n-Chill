@@ -35,12 +35,12 @@ class ArticleController extends BaseController
         $post = $postManager->getPostById(intval($_GET['id']));
         $getComments = $commentManager->getCommentsByPost(intval($_GET['id']));
         $getReply = $commentManager->getReplyByComments();
-            $arr = [
-                'article' => $post,
-                'user' => $_SESSION,
-                'reply' => $getReply,
-                'comments' => $getComments
-            ];
+        $arr = [
+            'article' => $post,
+            'user' => $_SESSION,
+            'reply' => $getReply,
+            'comments' => $getComments
+        ];
         return $this->render('viewArticle.html.twig', $arr);
     }
 
@@ -49,12 +49,18 @@ class ArticleController extends BaseController
         if ($_SESSION['rank_id'] == 1 || empty($_SESSION['rank_id'])) {
             $this->redirectToRoute('home');
         } else {
-            if (isset($_POST['title']) && isset($_POST['content'])) {
+            if (isset($_POST['title']) && isset($_POST['content'])
+                && isset($_POST['desc']) && isset($_POST['img'])
+            ) {
+                $manager = new PostManager();
+                $img = $_POST['img']; 
                 $title = $_POST['title'];
                 $desc = $_POST['desc'];
                 $content = $_POST['content'];
-                $manager = new PostManager();
-                $posts = $manager->addPost($title, $desc, $content, $_SESSION['id']);
+                $posts = $manager->addPost(
+                    $title, $desc, $img,
+                    $content, $_SESSION['id']
+                );
 
                 $this->redirectToRoute('article');
             }

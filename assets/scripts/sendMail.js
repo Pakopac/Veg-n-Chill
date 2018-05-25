@@ -22,7 +22,10 @@ window.addEventListener('load', () => {
         .then(json)
         .then((data) => {
             console.log('Request succeeded with JSON response', data);
-            sendMail.reset();
+            if(data.success == "ok"){
+                sendMail.reset();
+                alert('Mail sent !');
+            }
         })
         .catch((error) => {
             console.log('Request failed', error);
