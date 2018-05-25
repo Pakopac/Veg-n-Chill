@@ -25,3 +25,4 @@ routes:
     about: "Main:about"
     contactUs: "Main:contactUs"
     interview: "Main:interview"
+    foodAddict: "Main:foodAddict"

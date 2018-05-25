@@ -192,4 +192,11 @@ class MainController extends BaseController
         ];
         return $this -> render('interview.html.twig', $arr);
     }
+    public function foodAddictAction()
+    {
+        $arr = [
+            'user' => $_SESSION
+        ];
+        return $this -> render('foodAddict.html.twig', $arr);
+    }
 }
