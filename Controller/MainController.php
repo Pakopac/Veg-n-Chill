@@ -126,4 +126,11 @@ class MainController extends BaseController
     {
         return $this -> render('petition.html.twig');
     }
+    public function aboutAction()
+    {
+        $arr = [
+            'user' => $_SESSION
+        ];
+        return $this -> render('about.html.twig',$arr);
+    }
 }

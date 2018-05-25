@@ -1,0 +1,27 @@
+{% extends 'layout.html.twig' %}
+
+{% block page_title %}A propos{% endblock %}
+
+{% block content %}
+    <div class="imgTitlePage aboutTitleImg">
+        <div class="blockTitlePage">
+            <h1>L'Equipe</h1>
+            <h3>La réforme de la chasse a commencé</h3>
+            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <div class="mail">
+                <img src="./assets/images/emailImg.svg" width="30px">
+                <div class="textMail">veganandchill@gmail.com</div>
+            </div>
+        </div>
+    </div>
+    <div class="blockFormContact">
+        <form>
+            <h3>Nous contacter</h3>
+            <input class="emailFormContact" type="email" placeholder="E-mail">
+            <input class="objectFormContact" type="text" placeholder="Objet">
+            <input class="messageFormContact" type="text" placeholder="Votre message...">
+            <button><img src="./assets/images/arrow.svg" width="50px"></button>
+        </form>
+
+    </div>
+{% endblock %}
