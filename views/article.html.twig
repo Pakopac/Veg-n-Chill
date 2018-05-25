@@ -3,12 +3,88 @@
 {% block page_title %}{{ parent() }} - Home{% endblock %}
 
 {% block content %}
-    <div class="searchbox">
-        <form action="?action=article" method="POST" name="search">
-            <input type="text" name="searchbox">
-            <input type="submit" name="submit" value="Search article">
-        </form>
+    <div class="titleArticlePage">
+        <h1>Titre D'article</h1>
+        <button>DECOUVRIR</button>
     </div>
+    <div class="blockArticlePage">
+        <div class="divSearchArticle">
+            <div class="searchbox">
+                <form class="formSearchArticle" action="?action=article" method="POST" name="search">
+                    <input class="searchboxArticle" type="text" name="searchbox" placeholder="Recherche">
+                    <input class="buttonSumitSearchArticle" type="submit" name="submit" value="OK">
+                    <div class="advanceSearchArticle">Recherche Avancée<img src="./assets/images/down-arrow.svg" width="20px"></div>
+                </form>
+            </div>
+        </div>
+        <div class="lastNewsWithNav">
+            <div class="LastNews">Les Dernières Nouvelles</div>
+            <nav class="navArticlePage">
+                <div>Pétitions</div>
+                <div>Articles</div>
+                <div>news</div>
+            </nav>
+        </div>
+        <div class="allArticlesPageArticle">
+            <a href="?action=news" class="blockArticleOnTheFrontPage articleOnTheFrontPage1">
+                <img src="./assets/images/exampleImage">
+                <div class="titleArticle">titre</div>
+                <div class="userArticle">par <span class="nameUserArticle">nom</span> le ../..</div>
+                <img class="iconHeart" src="./assets/images/iconHeart.svg" width="40px">
+                <div class="divLikeCommentArticle">
+                    <div class="likeArticle">12 likes</div>
+                    <div class="commentArticle">26 comments</div>
+                </div>
+            </a>
+            <a href="?action=news" class="blockArticleOnTheFrontPage articleOnTheFrontPage1">
+                <img src="./assets/images/exampleImage">
+                <div class="titleArticle">titre</div>
+                <div class="userArticle">par <span class="nameUserArticle">nom</span> le ../..</div>
+                <img class="iconHeart" src="./assets/images/iconHeart.svg" width="40px">
+                <div class="divLikeCommentArticle">
+                    <div class="likeArticle">12 likes</div>
+                    <div class="commentArticle">26 comments</div>
+                </div>
+            </a>
+            <a href="?action=news" class="blockArticleOnTheFrontPage articleOnTheFrontPage1">
+                <img src="./assets/images/exampleImage">
+                <div class="titleArticle">titre</div>
+                <div class="userArticle">par <span class="nameUserArticle">nom</span> le ../..</div>
+                <img class="iconHeart" src="./assets/images/iconHeart.svg" width="40px">
+                <div class="divLikeCommentArticle">
+                    <div class="likeArticle">12 likes</div>
+                    <div class="commentArticle">26 comments</div>
+                </div>
+            </a>
+            <a href="?action=news" class="blockArticleOnTheFrontPage articleOnTheFrontPage1">
+                <img src="./assets/images/exampleImage">
+                <div class="titleArticle">titre</div>
+                <div class="userArticle">par <span class="nameUserArticle">nom</span> le ../..</div>
+                <img class="iconHeart" src="./assets/images/iconHeart.svg" width="40px">
+                <div class="divLikeCommentArticle">
+                    <div class="likeArticle">12 likes</div>
+                    <div class="commentArticle">26 comments</div>
+                </div>
+            </a>
+            <a href="?action=news" class="blockArticleOnTheFrontPage articleOnTheFrontPage1">
+                <img src="./assets/images/exampleImage">
+                <div class="titleArticle">titre</div>
+                <div class="userArticle">par <span class="nameUserArticle">nom</span> le ../..</div>
+                <img class="iconHeart" src="./assets/images/iconHeart.svg" width="40px">
+                <div class="divLikeCommentArticle">
+                    <div class="likeArticle">12 likes</div>
+                    <div class="commentArticle">26 comments</div>
+                </div>
+            </a>
+        </div>
+        <div class="changePageArticleMobile">
+            <img src="./assets/images/btnChangePage1" width="50px">
+            <img src="./assets/images/btnChangePage2" width="50px">
+            <img src="./assets/images/btnChangePage2" width="50px">
+            <img src="./assets/images/btnChangePage2" width="50px">
+        </div>
+    </div>
+    <div class="botArticlePageMobile"></div>
     {% for article in posts %}
         <article>
             <h2>{{ loop.index }} <a href="?action=viewArticle&amp;id={{ article['id'] }}">{{ article['title'] }}</a></h2>
