@@ -455,7 +455,7 @@ footer{
 }
 .backgroundOnTheFrontPage{
     position: absolute;
-    background-image: url("./images/bgOnFrontPage.svg");
+    background-image: url("./images/bgFoods.svg");
     width: 100vw;
     height: 80vh;
     z-index: -1;
@@ -474,9 +474,9 @@ footer{
 }
 .titleOnTheFrontPage{
     font-family: "Courgette-Regular";
-    font-size: 2em;
+    font-size: 1em;
     padding: 0 2vw;
-    margin-top: -21px;
+    margin-top: -10px;
 }
 .articlesOnTheFrontPage{
     display: grid;
@@ -552,6 +552,7 @@ footer{
     align-self: center;
 }
 .btnNovice{
+    color: #000;
     align-self: center;
     background: #A7FFEB;
     border-radius: 20px;
@@ -567,7 +568,7 @@ footer{
     grid-template-rows: 80vw;
 }
 .backgroundHomeMobile1, .backgroundHomeMobile2, .backgroundHomeMobile3{
-    background-image: url("./images/bgOnFrontPage.svg");
+    background-image: url("./images/bgFoods.svg");
     position: absolute;
     z-index: 0;
     width: 100vw;
@@ -688,6 +689,10 @@ footer{
 }
 .aboutHome{
     width: 100vw;
+}
+.aboutHome button{
+    background: inherit;
+    border: 0;
 }
 .titleAboutHome{
     font-size: 3em;
@@ -812,6 +817,7 @@ footer{
     margin-bottom: 5%;
 }
 .blockFormContact form{
+    z-index: 1;
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -833,6 +839,35 @@ footer{
 .messageFormContact{
     padding: 10px;
     padding-bottom: 100px;
+}
+.blockImgTeam{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    width: 80%;
+    margin-left: 10%;
+}
+.blockImgTeam img{
+    width: 35vw;
+    padding: 10px;
+}
+.blockTextListThanks{
+    margin-top: 20px;
+    width: 80%;
+    font-size: 2em;
+    margin-left: 10%;
+}
+.listThanks{
+    margin: 20px 0;
+}
+.bgFormContact{
+    display: none;
+    margin-left: -70%;
+    width: 30%;
+    height: 70%;
+    transform: rotate(-25deg);
+    position: absolute;
+    background-image: url("./images/bgFoods.svg");
 }
 @media (min-width: 480px) {
     .fa-bars, .closeMenuMobile, .backgroundHomeMobile1, .backgroundHomeMobile2{
@@ -858,6 +893,10 @@ footer{
         margin: 5vh 5vw;
         padding: 20px 100px;
         background: #EBFEFF;
+    }
+    .novice button{
+        background: inherit;
+        border: 0;
     }
     .novice img{
         display: block;
@@ -1046,5 +1085,23 @@ footer{
     .blockItemsOthersPetition{
         display: flex;
         flex-direction: row;
+    }
+    .titleTeam{
+        margin-left: 25%;
+    }
+    .blockImgTeam{
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+    .blockImgTeam img{
+        width: 20vw;
+        padding: 10px;
+    }
+    .titleOnTheFrontPage{
+        font-size: 2em;
+        margin-top: -21px;
+    }
+    .bgFormContact{
+        display: block;
     }
 }
