@@ -483,6 +483,15 @@ footer{
     grid-template-columns: repeat(4, 1fr);
     margin: 0 1.5vw;
 }
+.articlesOnTheFrontPage a{
+    text-decoration: none;
+    color: #000;
+}
+.articlesOnTheFrontPage a:hover{
+    background: #D6FCFF;
+    text-decoration: none;
+    color: #000;
+}
 .articleOnTheFrontPage2, .articleOnTheFrontPage3, .articleOnTheFrontPage4{
     display: none;
 }
@@ -733,6 +742,20 @@ footer{
 .aboutTitleImg{
     background-image: url("./images/aboutTitleImg.svg");
 }
+.imgTitleInterview{
+    background-image: url("./images/imgTitleInterview.svg");
+}
+.imgTitleInterview h1{
+    font-size: 5em;
+    margin-bottom: 20px;
+}
+.imgGalas{
+    width: 300px;
+    margin-left: 3%;
+    margin-top: 13%;
+    position: absolute;
+    z-index: 1;
+}
 .blockTitlePage{
     display: none;
 }
@@ -868,6 +891,25 @@ footer{
     transform: rotate(-25deg);
     position: absolute;
     background-image: url("./images/bgFoods.svg");
+}
+.blockInterview{
+    width: 80%;
+    margin-left: 10%;
+}
+.question, .answer{
+    height: 120px;
+    display: flex;
+    flex-direction: row;
+}
+.question img{
+    margin-top: 20px;
+}
+.bubbleQuestion{
+    background: #AEFBFF;
+    border: 2px solid #6CDDE7;
+    border-radius: 10px;
+    margin-bottom: 7%;
+    padding: 10px;
 }
 @media (min-width: 480px) {
     .fa-bars, .closeMenuMobile, .backgroundHomeMobile1, .backgroundHomeMobile2{

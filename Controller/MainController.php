@@ -133,4 +133,11 @@ class MainController extends BaseController
         ];
         return $this -> render('about.html.twig',$arr);
     }
+    public function interviewAction()
+    {
+        $arr = [
+            'user' => $_SESSION
+        ];
+        return $this -> render('interview.html.twig',$arr);
+    }
 }
