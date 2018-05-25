@@ -5,8 +5,6 @@ require_once 'vendor/autoload.php';
 
 use Symfony\Component\Yaml\Yaml;
 use Routing\Router;
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
 
 $config = Yaml::parseFile('config/config.yml');
 $params = Yaml::parseFile('config/parameters.yml');
