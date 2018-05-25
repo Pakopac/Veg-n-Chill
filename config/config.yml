@@ -24,3 +24,4 @@ routes:
     petition: "Main:petition"
     about: "Main:about"
     contactUs: "Main:contactUs"
+    interview: "Main:interview"

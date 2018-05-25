@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1005 468.269">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-3 {
+        fill: #d5eeef;
+      }
+
+      .cls-1 {
+        stroke: #6cdde7;
+      }
+
+      .cls-1, .cls-2 {
+        stroke-width: 4px;
+      }
+
+      .cls-2 {
+        stroke: rgba(0,172,193,0.38);
+      }
+
+      .cls-4 {
+        stroke: none;
+      }
+
+      .cls-5 {
+        fill: none;
+      }
+    </style>
+  </defs>
+  <g id="Groupe_8" data-name="Groupe 8" transform="translate(-189 -1130)">
+    <path id="Tracé_7" data-name="Tracé 7" class="cls-1" d="M8497.9,1626.917s-15.242,72.427,40.2,111.474-97.021-21.856-120.585-111.474S8497.9,1626.917,8497.9,1626.917Z" transform="translate(-7386.735 -154.149)"/>
+    <g id="Rectangle_10" data-name="Rectangle 10" class="cls-2" transform="translate(189 1130)">
+      <rect class="cls-4" width="1005" height="342.768" rx="68"/>
+      <rect class="cls-5" x="2" y="2" width="1001" height="338.768" rx="66"/>
+    </g>
+    <rect id="Rectangle_11" data-name="Rectangle 11" class="cls-3" width="75.293" height="41.501" transform="translate(1033.593 1431.267)"/>
+  </g>
+</svg>

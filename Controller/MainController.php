@@ -184,4 +184,11 @@ class MainController extends BaseController
         );
         return json_encode($result);
     }
+    public function interviewAction()
+    {
+        $arr = [
+            'user' => $_SESSION
+        ];
+        return $this -> render('interview.html.twig',$arr);
+    }
 }
