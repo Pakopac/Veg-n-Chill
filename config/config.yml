@@ -22,3 +22,4 @@ routes:
     howToVegan: "Main:howToVegan"
     news : "Main:news"
     petition: "Main:petition"
+    about: "Main:about"
