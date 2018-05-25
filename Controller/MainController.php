@@ -139,7 +139,8 @@ class MainController extends BaseController
     public function forgottenPasswordAction()
     {
         $UserManager = new UserManager();
-        
+        $result = $UserManager->forgotPassword($_POST['email']);
+        return json_encode($result);
     }
 
     public function howToVeganAction()
