@@ -14,12 +14,13 @@
     font-family: "Lato-Medium";
     src: url("fonts/Lato-Medium.ttf");
 }
+li{
+    list-style: none
+}
 body{
     overflow-x: hidden;
 }
-li{
-    list-style-type: none;
-}
+
 a{
     text-decoration: none;
 }
@@ -1083,22 +1084,51 @@ footer{
     display: none;
 }
 .proportion{
-    margin-left: 25vw;
+    text-align: center;
     margin-bottom: 40px;
 }
-.ingredient{
+.ingredientWithImg{
     justify-content: center;
     display: flex;
     flex-direction: row;
 }
-.ingredient li{
-    font-size: 1.5em;
-}
 .titleIngredient{
+    display: flex;
+    flex-direction: row;
+}
+.titleIngredient:hover{
+    cursor: pointer;
+}
+#scroll1,#scroll2,#scroll3{
+    width: 20px;
+    margin-left: 5px;
+}
+.imgIngredient{
+    width: 50%;
+    margin-left: -10px;
+}
+.ingredient{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 45%;
+    font-size: 0.7em;
+}
+.ingredient h3{
+  margin-left: 20px;
+}
+.ingredient li{
+    margin-left: -15px;
+    list-style: url("./images/list.svg");
+}
+#ingredient2, #ingredient3{
+    display: none;
+}
+.titleingredientWithImg{
     margin-top: 20px;
     font-size: 2em;
 }
-.ingredient img{
+.ingredientWithImg img{
     width: 250px
 }
 .blockImgRecipe{

@@ -15,32 +15,42 @@
     <h3 class="proportion">
         Portion pour 6 personnes
     </h3>
-    <div class="ingredient">
-        <img src="./assets/images/biscuitTiramisu.svg">
-        <ul>
-            <h3 class="titleIngredient">Génoise</h3>
-            <li>215g de farine</li>
-            <li>120g de sucre en poudre</li>
-            <li>11g de levure chimique</li>
-            <li>1 c. à café de bicarbonate</li>
-            <li>1 pincé de sel</li>
-            <li>33g d'huile végétale neutre</li>
-            <li>200ml de lait végétale</li>
-            <li>100ml d'eau</li>
-            <li>10ml de vinaigre de cidre</li>
-        </ul>
-        <ul>
-            <h3 class="titleIngredient">Crème</h3>
-            <li>4g d'Agar-agar + 250ml d'eau</li>
-            <li>125g de tofu ferme</li>
-            <li>100g de sirop d'agave</li>
-            <li>100ml d'eau</li>
-            <li>400ml de lait de coco</li>
-            <h3 class="titleIngredient">Montage</h3>
-            <li>250ml de café fort</li>
-            <li>3 cuillère à soupe de cognac</li>
-            <li>cacao en poudre non sucré</li>
-        </ul>
+    <div class="ingredientWithImg">
+        <img class="imgIngredient" src="./assets/images/biscuitTiramisu.svg">
+        <div class="ingredient">
+            <div class="blockIngredient1">
+                <h3 class="titleIngredient" id="titleIngredient1">Génoise <img id="scroll1" src="./assets/images/scroll-bot.svg"></h3>
+                <ul id="ingredient1">
+                    <li>215g de farine</li>
+                    <li>120g de sucre en poudre</li>
+                    <li>11g de levure chimique</li>
+                    <li>1 c. à café de bicarbonate</li>
+                    <li>1 pincé de sel</li>
+                    <li>33g d'huile végétale neutre</li>
+                    <li>200ml de lait végétale</li>
+                    <li>100ml d'eau</li>
+                    <li>10ml de vinaigre de cidre</li>
+                </ul>
+            </div>
+            <div class="blockIngredient2">
+                <h3 class="titleIngredient" id="titleIngredient2">Crème <img id="scroll2" src="./assets/images/scroll-top.svg"></h3>
+                <ul id="ingredient2">
+                    <li>4g d'Agar-agar + 250ml d'eau</li>
+                    <li>125g de tofu ferme</li>
+                    <li>100g de sirop d'agave</li>
+                    <li>100ml d'eau</li>
+                    <li>400ml de lait de coco</li>
+                </ul>
+            </div>
+            <div class="blockIngredient3">
+                <h3 class="titleIngredient" id="titleIngredient3">Montage <img id="scroll3" src="./assets/images/scroll-top.svg"></h3>
+                <ul id="ingredient3">
+                    <li>250ml de café fort</li>
+                    <li>3 cuillère à soupe de cognac</li>
+                    <li>cacao en poudre non sucré</li>
+                </ul>
+            </div>
+        </div>
     </div>
     <div class="blockImgRecipe">
         <div class="blockRecipe">
@@ -93,4 +103,7 @@
     <div class="blockImgHowToVeganBot">
         <img class="imgNewsBot" src="./assets/images/imgHowToVeganBot.svg">
     </div>
+{% endblock %}
+{% block script %}
+    <script src="./assets/scripts/scroll.js"></script>
 {% endblock %}
