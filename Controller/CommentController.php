@@ -48,11 +48,4 @@ class CommentController extends BaseController
 
         return $this->render('deleteArticle.html.twig', $data);
     }
-
-    public function rateCommentAction()
-    {
-        $ratingManager = new RatingManager();
-        $rateComment = $ratingManager->rateComment($_POST['rating'], $_POST['id']);
-        return $rateComment;
-    }
 }

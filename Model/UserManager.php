@@ -17,6 +17,7 @@
 namespace Model;
 use Cool\BaseController;
 use Cool\DBManager;
+use PHPMailer\PHPMailer\PHPMailer;
 
 /**
  * UserManager Class Doc Comment
@@ -199,5 +200,81 @@ class UserManager
         $stmt->execute();
         $data = $stmt->fetch(\PDO::FETCH_BOUND);
         return $data;
+    }
+
+    public function generateRandomStr($length)
+    {
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $charactersLength = strlen($characters);
+        $randomString = '';
+        for ($i = 0; $i < $length; $i++) {
+            $randomString .= $characters[rand(0, $charactersLength - 1)];
+        }
+        return $randomString;
+    }
+
+    public function newPassword($email)
+    {
+        $randomStr = $this->generateRandomStr(10);
+        $newPass = password_hash($randomStr);
+        $dbm = DBManager::getInstance();
+        $pdo = $dbm->getPdo();
+        $stmt = $pdo->prepare(
+            "UPDATE users 
+            SET password = :newPass
+            WHERE email = :email"
+        );
+        $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':newPass', $newPass);
+        $stmt->execute();
+        return $randomStr;
+    }
+
+    public function forgotPassword($email)
+    {
+        $emailExists = $this->emailExists($email);
+        $newPassword = $this->newPassword($email);
+        $mail = new PHPMailer();
+        $mail->isSMTP();
+        $mail->SMTPAuth = true;
+        $mail->SMTPSecure = 'ssl';
+        $mail->SMTPOptions = array(
+            'ssl' => array(
+                'verify_peer' => false,
+                'verify_peer_name' => false,
+                'allow_self_signed' => true,
+            ),
+        );
+        $mail->Host = 'smtp.gmail.com';
+        $mail->Port = '465';
+        if ($emailExists) {
+            $mail->isHTML();
+            $mail->Username = "contact@vegnchill.com";
+            $mail->Password = "<&ur8RdeY";
+            $mail->setFrom('contact@vegnchill.com');
+            $mail->Subject = "Your new password";
+            $mail->Body = $newPassword;
+            $mail->addAddress($email);
+            $result = $mail->send();
+            if ($result == true) {
+                $arr = [
+                    'success' => "ok",
+                    'message' => "Sent new password at your mail"
+                ];
+                return $arr;
+            } else {
+                $arr = [
+                    'success' => "failed",
+                    'message' => "The mail was not sent"
+                ];
+                return $arr;
+            }
+        } else {
+            $arr = [
+                'success' => "failed",
+                'message' => "Mail not found"
+            ];
+            return $arr;
+        }
     }
 }

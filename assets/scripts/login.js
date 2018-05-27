@@ -68,4 +68,32 @@ window.addEventListener('load', () => {
             console.log('Request failed', error);
         });
     });
+
+    let newPassword = document.querySelector('.new-pass');
+
+    newPassword.addEventListener('click', (ev) => {
+        ev.preventDefault();
+        let datas = prompt("Enter your email here");
+        let url = '?action=forgottenPassword';
+        fetch(url, {
+            method: 'post',
+            headers: {
+            "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
+            },
+            body: `email=${datas}`,
+            credentials: 'include'
+        })
+        .then(json)
+        .then((data) => {
+            console.log('Request succeeded with JSON response', data);
+            if(data.status === "ok"){
+                let link = window.location.href;
+                let baseLink = link.substr(0, link.lastIndexOf('#'));
+                window.location.replace(`${baseLink}`);
+            }
+        })
+        .catch((error) => {
+            console.log('Request failed', error);
+        });
+    });
 });
