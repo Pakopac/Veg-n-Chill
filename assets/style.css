@@ -428,19 +428,19 @@ footer{
     width: 90%;
     height: 50%;
     display: none;
-    margin-left: 50px;
+    margin-left: 7vw;
 }
 .TextImgBurger1{
-    font-size: 2.3em;
+    font-size: 3vw;
     font-weight: bold;
 }
 .TextImgBurger2{
-    margin: 20px 0;
-    font-size: 2.3em;
+    margin: 2vw 0;
+    font-size: 3vw;
 }
 .btnImgBurger{
-    font-size: 2em;
-    padding: 15px 10px;
+    font-size: 3vw;
+    padding: 1vw 1.3vw;
     color: #ffffff;
     background: inherit;
 }
@@ -565,7 +565,7 @@ footer{
     color: #000;
     align-self: center;
     background: #A7FFEB;
-    border-radius: 20px;
+    border-radius: 2vw;
     padding: 10px 50px;
 }
 .btnNovice:hover{
@@ -738,8 +738,14 @@ footer{
     height: 44vw;
     background-repeat: no-repeat;
 }
+.imgTitlePage h1, .likeTitlePage, .imgTitlePage h3, .imgTitlePage p{
+    font-size: 2vw;
+}
 .imgTitleArticle{
     background-image: url('./images/imageTitleNews.svg');
+}
+.imgTitleRecipe{
+    background-image: url("./images/grandTiramisu.svg");
 }
 .imgTitleHowToVegan{
     background-image: url("./images/imgTitleHowTo.svg");
@@ -747,19 +753,14 @@ footer{
 .aboutTitleImg{
     background-image: url("./images/aboutTitleImg.svg");
 }
+.aboutTitleImg p{
+    width: 70%;
+}
 .imgTitleInterview{
     background-image: url("./images/imgTitleInterview.svg");
 }
 .imgTitleInterview h1{
-    font-size: 5em;
     margin-bottom: 20px;
-}
-.imgGalas{
-    width: 300px;
-    margin-left: 3%;
-    margin-top: 13%;
-    position: absolute;
-    z-index: 1;
 }
 .blockTitlePage{
     display: none;
@@ -819,6 +820,11 @@ footer{
     display: flex;
     flex-direction: row;
 }
+.btnPetition{
+    font-size: 2vw;
+    padding: 1vw 5vw;
+    margin-bottom: 1vw;
+}
 .similarArticle{
     font-family: "Lato-Medium";
     display: none;
@@ -833,6 +839,7 @@ footer{
     margin-bottom: 100px;
 }
 .mail{
+    font-size: 3vw;
     display: flex;
     flex-direction: row;
 }
@@ -966,6 +973,9 @@ footer{
 .titleArticlePage{
     background-image: url("images/imgTitleArticle.svg");
 }
+.titleArticlePage{
+    font-size: 1vw;
+}
 .titleFoodAddictPage{
     background-image: url("images/bg-recette.svg");
 }
@@ -975,7 +985,7 @@ footer{
     height: 44vw;
 }
 .titleFoodAddictArticle h1{
-    font-size: 5em;
+    font-size: 4vw;
     display: none;
     color: white;
     padding-top: 3%;
@@ -1072,6 +1082,37 @@ footer{
 .changePageArticleDesktop{
     display: none;
 }
+.proportion{
+    margin-left: 25vw;
+    margin-bottom: 40px;
+}
+.ingredient{
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+}
+.ingredient li{
+    font-size: 1.5em;
+}
+.titleIngredient{
+    margin-top: 20px;
+    font-size: 2em;
+}
+.ingredient img{
+    width: 250px
+}
+.blockImgRecipe{
+    font-size: 1em;
+    padding-top: 10%;
+    background-image: url("./images/farine.svg");
+    background-repeat: no-repeat;
+    height: 150vh;
+}
+.blockRecipe{
+    margin-left: 10%;
+    width: 30%;
+    background: white;
+}
 @media (min-width: 480px) {
     .fa-bars, .closeMenuMobile, .backgroundHomeMobile1, .backgroundHomeMobile2{
         display: none;
@@ -1142,6 +1183,9 @@ footer{
         margin-top: 20%;
         color: rgba(43, 43, 43, 0.66);
     }
+    .aboutTitleImg h1{
+        margin-top: 5%;
+    }
     .flexHowToVegan1, .flexHowToVegan3{
         margin-top: 40px;
         display: flex;
@@ -1174,6 +1218,10 @@ footer{
     .blockTitlePage h3, .likeTitlePage, .blockTitlePage p{
         font-family: "Lato-Medium";
     }
+    .blockTitlePage h3{
+        margin-top: 1vw;
+        margin-bottom: 0.5vw;
+    }
     .blockImgHowToVeganBot{
         display: block;
         text-align: center;
@@ -1190,8 +1238,8 @@ footer{
         text-align: center;
     }
     .greenHeart{
-        width: 40px;
-        margin-right: 20px;
+        width:  4vw;
+        margin-right: 1vw;
     }
     .imgBurgerHome{
         z-index: 0;
@@ -1319,7 +1367,8 @@ footer{
         display: block;
     }
     .titleFoodAddictArticle button{
-        padding: 10px 50px;
+        font-size: 2vw;
+        padding: 1vw 4vw;
     }
     .blockArticlePage{
         background: #D6FCFF;

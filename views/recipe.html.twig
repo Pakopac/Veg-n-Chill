@@ -1,0 +1,96 @@
+{% extends 'layout.html.twig' %}
+
+{% block page_title %}Recette{% endblock %}
+
+{% block content %}
+    <div class="imgTitlePage imgTitleRecipe">
+        <div class="blockTitlePage">
+            <h1>Recette</h1>
+            <h3>Tiramisu </h3>
+            <div class="likeTitlePage"><img class="greenHeart" src="./assets/images/greenHeart.svg">35 personnes aiment</div>
+            <p>Aujourd'hui après de multiples essais de différentes recettes nous vous livrons enfin la version finale de ce tiramisu! Une délicieuse alternance de couche de génoise et de crème au lait de coco pour un résultat moelleux crémeux et léger!</p>
+        </div>
+    </div>
+
+    <h3 class="proportion">
+        Portion pour 6 personnes
+    </h3>
+    <div class="ingredient">
+        <img src="./assets/images/biscuitTiramisu.svg">
+        <ul>
+            <h3 class="titleIngredient">Génoise</h3>
+            <li>215g de farine</li>
+            <li>120g de sucre en poudre</li>
+            <li>11g de levure chimique</li>
+            <li>1 c. à café de bicarbonate</li>
+            <li>1 pincé de sel</li>
+            <li>33g d'huile végétale neutre</li>
+            <li>200ml de lait végétale</li>
+            <li>100ml d'eau</li>
+            <li>10ml de vinaigre de cidre</li>
+        </ul>
+        <ul>
+            <h3 class="titleIngredient">Crème</h3>
+            <li>4g d'Agar-agar + 250ml d'eau</li>
+            <li>125g de tofu ferme</li>
+            <li>100g de sirop d'agave</li>
+            <li>100ml d'eau</li>
+            <li>400ml de lait de coco</li>
+            <h3 class="titleIngredient">Montage</h3>
+            <li>250ml de café fort</li>
+            <li>3 cuillère à soupe de cognac</li>
+            <li>cacao en poudre non sucré</li>
+        </ul>
+    </div>
+    <div class="blockImgRecipe">
+        <div class="blockRecipe">
+            <p>Faire bouillir l’eau avec l’agar-agar pendant 1 minute puis verser le mélange sur une ou deux plaques en mince couche (pour que la gelée prenne rapidement).
+                En attendant que l'agar-agar se solidifie, vous pouvez réaliser la génoise.</p>
+            <p>Une fois que l'agar-agar est solidifiée, transférer tous les ingrédients dans le bol d'un blender et mixer jusqu'à obtenir une texture bien lisse. La crème obtenue est plutôt liquide, elle va figer grâce au temps de repos au frais. </p>
+            <p>Dans un cul de poule, mélanger les ingrédients secs. Dans un autre récipient, mélanger les liquides puis les verser sur les ingrédients secs. Bien mélanger jusqu'à obtenir une préparation lisse et homogène.</p>
+            <p>Vérifier la cuisson si besoin. Laisser refroidir avant d'enlever le papier sulfurisé. Couper la génoise dans l'épaisseur afin d'obtenir deux parties à peu près identiques.</p>
+            <p>Verser le café dans un grand plat creux et ajouter l'alcool. Tremper les génoises en les laissant quelques secondes pour qu'elles soient bien imbibées mais qu'elles ne se délitent pas. Couvrir le fond du plat avec une moitié de génoise.</p>
+            <p>Ajouter la moitié de la crème, recouvrir avec la seconde moitié de génoise imbibée puis le reste de crème.
+                Laisser reposer au réfrigérateur au moins 6 heures, idéalement une nuit.
+                Saupoudrer de cacao au moment de servir.</p>
+        </div>
+    </div>
+    <div class="blockComments">
+        <form class="formComment">
+            <img src="./assets/images/logo_sloth.svg" width="50px">
+            <div class="commentsInputButton">
+                <input type="text" placeholder="Qu'en avez vous pensé? ...">
+                <button class="buttonComments">Publier</button>
+            </div>
+        </form>
+        <img class="separateComments" src="./assets/images/separateNewsletter.svg">
+        <div class="blockCommentImg">
+            <img src="./assets/images/logo_sloth.svg" width="50px">
+            <div class="comment">
+                <div class="commentPseudo">
+                    Chilly:
+                </div>
+                <div class="commentContent">
+                    Quel article wow ! Merci pour le tuyau :)
+                </div>
+            </div>
+            <div class="dateComment">2j  <img src="./assets/images/dateCommentImg.svg" width="50px"></div>
+        </div>
+        <img class="separateComments" src="./assets/images/separateNewsletter.svg">
+        <div class="blockCommentImg">
+            <img src="./assets/images/logo_sloth.svg" width="50px">
+            <div class="comment">
+                <div class="commentPseudo">
+                    Chilly:
+                </div>
+                <div class="commentContent">
+                    Incroyable !
+                </div>
+            </div>
+            <div class="dateComment">3j  <img src="./assets/images/dateCommentImg.svg" width="50px"></div>
+        </div>
+    </div>
+    <div class="blockImgHowToVeganBot">
+        <img class="imgNewsBot" src="./assets/images/imgHowToVeganBot.svg">
+    </div>
+{% endblock %}

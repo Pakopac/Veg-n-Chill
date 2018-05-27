@@ -26,3 +26,4 @@ routes:
     contactUs: "Main:contactUs"
     interview: "Main:interview"
     foodAddict: "Main:foodAddict"
+    recipe: "Main:recipe"
