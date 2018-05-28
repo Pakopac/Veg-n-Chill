@@ -21,7 +21,7 @@ window.addEventListener('load', () => {
                 ingredientNone1.style.display = 'none';
                 ingredientNone2.style.display = 'none';
                 scroll = 'yes';
-                arrow.setAttribute('src', './assets/images/scroll-bot.svg');x
+                arrow.setAttribute('src', './assets/images/scroll-bot.svg');
                 otherArrow1.setAttribute('src', './assets/images/scroll-top.svg');
                 otherArrow2.setAttribute('src', './assets/images/scroll-top.svg');
             }

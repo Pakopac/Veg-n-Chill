@@ -14,7 +14,7 @@
     font-family: "Lato-Medium";
     src: url("fonts/Lato-Medium.ttf");
 }
-li{
+.listThanks li, .flexHowToVegan2Content li, footer li, .board li, .blockTitlePagesSubPages li{
     list-style: none
 }
 body{
@@ -735,6 +735,7 @@ footer{
     cursor: pointer;
 }
 .imgTitlePage{
+    margin-left: -8px;
     width: 100vw;
     height: 44vw;
     background-repeat: no-repeat;
@@ -789,6 +790,9 @@ footer{
 }
 .blockCommentsMobile{
     background: #D6FCFF;
+    margin-left: -8px;
+    width: 100vw;
+    margin-bottom: -8px;
 }
 .blockComments{
     display: none;
@@ -1083,9 +1087,11 @@ footer{
 .changePageArticleDesktop{
     display: none;
 }
-.proportion{
+.titleRecipe{
     text-align: center;
-    margin-bottom: 40px;
+}
+.proportion{
+    margin-bottom: 20px;
 }
 .ingredientWithImg{
     justify-content: center;
@@ -1133,15 +1139,65 @@ footer{
 }
 .blockImgRecipe{
     font-size: 1em;
-    padding-top: 10%;
     background-image: url("./images/farine.svg");
     background-repeat: no-repeat;
-    height: 150vh;
+    background-size: auto 100%;
+    padding: 5%;
 }
 .blockRecipe{
-    margin-left: 10%;
-    width: 30%;
-    background: white;
+    color: white;
+    background: rgba(255, 255, 255, 0);
+    width: 80%;
+    padding: 10px;
+    margin: 0 7vw;
+    border: 1px solid white;
+}
+.titlePréparation{
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-left: 5vw;
+    color: #0DAFC2;
+}
+.blockTipWithImg{
+    display: flex;
+    flex-direction: row;
+}
+.blockTip{
+    margin: 4% 3%;
+    display: flex;
+    flex-direction: column;
+}
+.blockTip ul{
+    width: 100%;
+}
+.blockTip li{
+    margin-left: -10%;
+    list-style: url("./images/list.svg");
+}
+.titleTip{
+    margin-top: 30px;
+}
+.imgTip{
+    margin-top: 10px;
+    align-self: flex-start;
+    width: 50%;
+}
+.imgRecipeBot{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("./images/imgRecipeBot.svg");
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 47vw;
+    margin-left: -8px;
+}
+.textImgRecipeBot{
+    padding: 15px 0;
+    background: rgba(255, 255, 255, 0.51);
+    color: black;
+    text-align: center;
+    width: 100%;
 }
 @media (min-width: 480px) {
     .fa-bars, .closeMenuMobile, .backgroundHomeMobile1, .backgroundHomeMobile2{
@@ -1468,4 +1524,11 @@ footer{
     .page1, .page2, .page3, .page4, .pageEtc, .page8{
         margin: 10px;
     }
+    .blockTitleRecipeMobile{
+        display: block;
+    }
+    .blockRecipe{
+        width: 30%;
+    }
+
 }

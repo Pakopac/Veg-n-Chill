@@ -12,9 +12,12 @@
         </div>
     </div>
 
-    <h3 class="proportion">
-        Portion pour 6 personnes
+    <h3 class="titleRecipe">
+        Recette
     </h3>
+    <div class="proportion">
+        proportion pour 6 personnes
+    </div>
     <div class="ingredientWithImg">
         <img class="imgIngredient" src="./assets/images/biscuitTiramisu.svg">
         <div class="ingredient">
@@ -52,6 +55,7 @@
             </div>
         </div>
     </div>
+    <div class="titlePréparation">Préparation</div>
     <div class="blockImgRecipe">
         <div class="blockRecipe">
             <p>Faire bouillir l’eau avec l’agar-agar pendant 1 minute puis verser le mélange sur une ou deux plaques en mince couche (pour que la gelée prenne rapidement).
@@ -64,6 +68,24 @@
                 Laisser reposer au réfrigérateur au moins 6 heures, idéalement une nuit.
                 Saupoudrer de cacao au moment de servir.</p>
         </div>
+    </div>
+    <div class="blockTipWithImg">
+        <div class="blockTip">
+            <h3 class="titleTip">Astuce</h3>
+            <div class="textTip">
+                Il vous est possible de remplacer certains ingrédients
+                par des équivalents :
+            </div>
+            <ul>
+                <li>Le vinaigre peut-être remplacé par du cidre ou du jus de citron</li>
+                <li>Le lait de soja peut-être remplacé par du lait d'amande ou d'avoine</li>
+                <li>Le cognac peut-être remplacé par du marsala</li>
+            </ul>
+        </div>
+        <img class="imgTip" src="./assets/images/logo_sloth.svg">
+    </div>
+    <div class="imgRecipeBot">
+        <div class="textImgRecipeBot">Et voila le résultat</div>
     </div>
     <div class="blockComments">
         <form class="formComment">
@@ -102,6 +124,22 @@
     </div>
     <div class="blockImgHowToVeganBot">
         <img class="imgNewsBot" src="./assets/images/imgHowToVeganBot.svg">
+    </div>
+    <div class="blockCommentsMobile">
+        <h3 class="titleCommentsMobile">Commentaires</h3>
+        <form>
+            <div class="flexImgInputComments">
+                <img src="./assets/images/logo_sloth.svg" width="50px">
+                <input type="text" placeholder="Commentaires">
+                <button class="buttonComments">
+                    <img class="arrowComments" src="./assets/images/arrow.svg" width="30px">
+                </button>
+            </div>
+        </form>
+        <div class="viewAllComments">
+            <div class="viewAllCommentsText">Voir tous les commentaires</div>
+            <img src="./assets/images/scroll-top.svg" class="scroll-top" width="20px">
+        </div>
     </div>
 {% endblock %}
 {% block script %}
