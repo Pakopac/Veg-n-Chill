@@ -1127,6 +1127,10 @@ footer{
     margin-left: -15px;
     list-style: url("./images/list.svg");
 }
+.blockIngredient2-3{
+    display: flex;
+    flex-direction: column;
+}
 #ingredient2, #ingredient3{
     display: none;
 }
@@ -1144,13 +1148,16 @@ footer{
     background-size: auto 100%;
     padding: 5%;
 }
-.blockRecipe{
-    color: white;
+.backgroundBlockRecipe{
     background: rgba(255, 255, 255, 0);
+    border: 1px solid white;
+}
+.blockRecipe{
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
     width: 80%;
     padding: 10px;
     margin: 0 7vw;
-    border: 1px solid white;
 }
 .titlePréparation{
     font-weight: bold;
@@ -1524,11 +1531,40 @@ footer{
     .page1, .page2, .page3, .page4, .pageEtc, .page8{
         margin: 10px;
     }
+    .ingredient{
+        flex-direction: row;
+    }
+    #ingredient1, #ingredient2, #ingredient3{
+        display: block;
+    }
+    #scroll1, #scroll2, #scroll3{
+        display: none;
+    }
     .blockTitleRecipeMobile{
         display: block;
     }
-    .blockRecipe{
-        width: 30%;
+    .backgroundBlockRecipe{
+        width: 40%;
+        background: white;
     }
-
+    .blockRecipe{
+        background: white;
+        border: 1px solid black;
+        color: #000;
+        width: 80%;
+        padding: 10px;
+        margin: 7% 8%;
+    }
+    .ingredient{
+        font-size: 1.3em;
+    }
+    .blockTipWithImg{
+        justify-content: center;
+    }
+    .imgTip{
+        width: 20%;
+    }
+    .textImgRecipeBot{
+        font-size: 3em;
+    }
 }
