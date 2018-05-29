@@ -206,4 +206,11 @@ class MainController extends BaseController
         ];
         return $this -> render('recipe.html.twig', $arr);
     }
+    public function profileAction()
+    {
+        $arr = [
+            'user' => $_SESSION
+        ];
+        return $this -> render('profile.html.twig', $arr);
+    }
 }

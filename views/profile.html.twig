@@ -1,0 +1,114 @@
+{% extends 'layout.html.twig' %}
+
+{% block page_title %}profil{% endblock %}
+
+{% block content %}
+    <div class="blocksProfileTop">
+      <h1 class="titleProfile">profil</h1>
+        <div class="blockProfile1">
+            <div class="blockProfile1Top">
+                <img class="logoProfile" src="./assets/images/imgHowToVeganBot.svg">
+                <div class="blockProfile1TopText">
+                    <h4>Chilly</h4>
+                    <div class="sentenceProfile">"Mens sana in corpore sano."</div>
+                    <ul>
+                        <li><span class="infoProfil">Localisation:</span> Paris </li>
+                        <li><span class="infoProfil">Date de Naissance:</span> 20/04/2018 </li>
+                        <li><span class="infoProfil">Aime:</span> les gauffres</li>
+                        <li><span class="infoProfil">Déteste:</span> Le tramway</li>
+                    </ul>
+                    <div class="registerDateProfile"> Inscription le: 20/04/2018</div>
+                </div>
+            </div>
+            <img src="./assets/images/separateProfile.svg">
+            <h4 class="titleDescription">Description</h4>
+            <div class="textDescription">
+                Alors... Moi c'est Chilly!
+                <br><br>
+                Je suis un paresseux parisiens.
+                Je suis très gourmand mais je suis aussi vegan et comme vous le savez peut-être, c'est pas toujours facile de trouver des trucs sympatiques à grignotter qui soient vegan-friendly sans se prendre la tête.
+                C'est là que Vegan&Chill entre en jeux : grace à ce site, je peux avoir des idées et des avis très simple sur toute sorte de pêcher mignons gourmands.
+                <br><br>
+                Dans la vie j'aime bien blogger, buller et prendre le temps de regarder les nuages.
+                N'hésitez pas à me suivre sur Twitter :P
+            </div>
+        </div>
+        <div class="blockProfile2">
+            <div class="headerBlockProfil2">
+                <img class="imgheaderBlockProfil2" src="./assets/images/greenHeart.svg">
+                <div class="lastCommentsProfile">Les derniers commentaires de Chilly</div>
+                <div class="allCommentsProfile">(42 commentaires au total)</div>
+            </div>
+            <img src="./assets/images/separateProfile.svg">
+            <div class="titleArticleBlockCommentProfile">Sur Tiramitsu: </div>
+            <div class="blockCommentImg">
+                <img src="./assets/images/logo_sloth.svg" width="50px">
+                <div class="comment">
+                    <div class="commentPseudo">
+                        Chilly:
+                        <div class="dateComment">2j  <img src="./assets/images/dateCommentImg.svg" width="50px"></div>
+                    </div>
+                    <div class="commentContent">
+                        Quel article wow ! Merci pour le tuyau :)
+                    </div>
+                </div>
+            </div>
+            <img class="separateComments" src="./assets/images/separateNewsletter.svg">
+            <div class="titleArticleBlockCommentProfile">Sur réforme de la chasse: </div>
+            <div class="blockCommentImg">
+                <img src="./assets/images/logo_sloth.svg" width="50px">
+                <div class="comment">
+                    <div class="commentPseudo">
+                        Chilly:
+                        <div class="dateComment">2j  <img src="./assets/images/dateCommentImg.svg" width="50px"></div>
+                    </div>
+                    <div class="commentContent">
+                        Incroyable !
+                    </div>
+                </div>
+            </div>
+            <img class="separateComments" src="./assets/images/separateNewsletter.svg">
+        </div>
+        <div class="blockProfile3">
+            <div class="headerBlockProfil2">
+                <img class="imgheaderBlockProfil2" src="./assets/images/greenHeart.svg">
+                <div class="lastCommentsProfile">Les favoris Chilly</div>
+                <div class="allCommentsProfile">(3 posts au total)</div>
+            </div>
+            <img src="./assets/images/separateProfile.svg">
+            <div class="favoritesProfile">
+                <div class="allArticlesPageArticle">
+                    <a href="?action=news" class="blockArticleOnTheFrontPage articleOnTheFrontPage1">
+                        <img src="./assets/images/exampleImage.svg">
+                        <div class="titleArticle">Réforme de la chasse</div>
+                        <div class="userArticle">par <span class="nameUserArticle">nom</span> le ../..</div>
+                        <img class="iconHeart" src="./assets/images/iconHeart.svg" width="40px">
+                        <div class="divLikeCommentArticle">
+                            <div class="likeArticle">12 likes</div>
+                            <div class="commentArticle">26 comments</div>
+                        </div>
+                    </a>
+                    <a href="?action=news" class="blockArticleOnTheFrontPage articleOnTheFrontPage1">
+                        <img src="./assets/images/imgTiramitsu.svg">
+                        <div class="titleArticle">Tiramitsu</div>
+                        <div class="userArticle">par <span class="nameUserArticle">nom</span> le ../..</div>
+                        <img class="iconHeart" src="./assets/images/iconHeart.svg" width="40px">
+                        <div class="divLikeCommentArticle">
+                            <div class="likeArticle">12 likes</div>
+                            <div class="commentArticle">26 comments</div>
+                        </div>
+                    </a>
+                    <a href="?action=news" class="blockArticleOnTheFrontPage articleOnTheFrontPage1">
+                        <img src="./assets/images/madelaines.svg">
+                        <div class="titleArticle">Madelaines</div>
+                        <div class="userArticle">par <span class="nameUserArticle">nom</span> le ../..</div>
+                        <img class="iconHeart" src="./assets/images/iconHeart.svg" width="40px">
+                        <div class="divLikeCommentArticle">
+                            <div class="likeArticle">12 likes</div>
+                            <div class="commentArticle">26 comments</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+{% endblock %}

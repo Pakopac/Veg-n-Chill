@@ -27,3 +27,4 @@ routes:
     interview: "Main:interview"
     foodAddict: "Main:foodAddict"
     recipe: "Main:recipe"
+    profile: "Main:profile"

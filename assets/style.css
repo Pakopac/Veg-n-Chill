@@ -513,12 +513,12 @@ footer{
 .blockArticleOnTheFrontPage{
     font-size: 2em;
     border-radius: 6.4vw;
-    margin-left: 20vw;
+    margin-left: 4vw;
     margin-top: 20px;
     width: 60vw;
     background: white;
     border: 1px solid black;
-    box-shadow: 2px 5px 14px;
+    box-shadow: 1px 3px 5px;
 }
 .titleArticle{
     font-family: "Lato-Medium";
@@ -1072,7 +1072,6 @@ footer{
 .allArticlesPageArticle .blockArticleOnTheFrontPage{
     border-radius: 8.3vw;
     width: 75vw;
-    margin-left: 10vw;
     margin-top: 20px;
 }
 .changePageArticleMobile{
@@ -1263,6 +1262,76 @@ footer{
 .imgPopup{
     display: none;
 }
+.titleProfile{
+    font-size: 50px;
+    color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+.blockProfile1, .blockProfile2, .blockProfile3{
+    border: 5px solid #00ACC1;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+}
+.blockProfile1Top{
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+}
+.logoProfile{
+    z-index: -1;
+    width: 14vw;
+    position: absolute;
+    margin-left: -72vw;
+}
+.imgheaderBlockProfil2{
+    display: none;
+}
+.blockProfile1Top h4{
+    font-size: 2em;
+    text-align: center;
+}
+.infoProfil{
+    font-weight: bold;
+}
+.registerDateProfile{
+    margin-left: 25%;
+}
+.headerBlockProfil2{
+    width: 88vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.allCommentsProfile{
+    display: none;
+}
+.imgheaderBlockProfil2{
+    width: 7%;
+}
+.lastCommentsProfile{
+    width: 100vw;
+    text-align: center;
+}
+.blockCommentImg{
+    display: flex;
+    flex-direction: row;
+}
+.comment{
+    width: 100%;
+}
+.commentPseudo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+.separateComments{
+    margin: 5% 0;
+}
+.lastCommentsProfile{
+    font-size: 1.5em;
+}
 @media (min-width: 480px) {
     .btnPetition{
         margin-top: 10px;
@@ -1294,9 +1363,6 @@ footer{
     .title, .blockTextBurger, .articleOnTheFrontPage2, .articleOnTheFrontPage3, .articleOnTheFrontPage4,
     .iconHeart{
         display: block;
-    }
-    #navHeaderMain{
-        flex-direction: row;
     }
     .blockArticleOnTheFrontPage{
         margin-left: 1vw;
@@ -1490,8 +1556,6 @@ footer{
         width: 40%;
     }
     .blockCommentImg{
-        display: flex;
-        flex-direction: row;
         width: 100vw;
         margin-left: 36%;
     }
@@ -1664,6 +1728,9 @@ footer{
         }
     }
     @media (min-width: 1025px){
+        #navHeaderMain{
+            flex-direction: row;
+        }
         #navMobile{
             display: flex;
         }
