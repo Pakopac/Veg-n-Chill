@@ -511,6 +511,7 @@ footer{
     display: none;
 }
 .blockArticleOnTheFrontPage{
+    font-family: Lato-Medium;
     font-size: 2em;
     border-radius: 6.4vw;
     margin-left: 4vw;
@@ -1263,6 +1264,11 @@ footer{
     display: none;
 }
 .titleProfile{
+    font-family: Courgette-Regular;
+    display: none;
+}
+.titleProfileMobile{
+    font-family: Courgette-Regular;
     font-size: 50px;
     color: rgba(0, 0, 0, 0.5);
     text-align: center;
@@ -1274,6 +1280,7 @@ footer{
     border-radius: 10px;
 }
 .blockProfile1Top{
+    font-family: Bahnschrift;
     justify-content: center;
     display: flex;
     flex-direction: row;
@@ -1285,7 +1292,11 @@ footer{
     margin-left: -72vw;
 }
 .imgheaderBlockProfil2{
+    font-family: Bahnschrift;
     display: none;
+}
+.titleArticleBlockCommentProfile, .blockCommentImg{
+    font-family: Lato-Medium;
 }
 .blockProfile1Top h4{
     font-size: 2em;
@@ -1327,12 +1338,71 @@ footer{
     width: 100%;
 }
 .separateComments{
-    margin: 5% 0;
+    margin: 1% 0;
 }
 .lastCommentsProfile{
     font-size: 1.5em;
 }
 @media (min-width: 480px) {
+    .blockCommentImgProfile{
+        width: 100% !important;
+        margin-left: 0 !important;
+    }
+    .blockCommentImgProfile .comment{
+        margin: 10px 0;
+    }
+    .blockCommentImgProfile .dateComment{
+        margin-top: 0;
+    }
+    .headerBlockProfil2{
+        width: 100%;
+        align-items: center;
+    }
+    .separateProfile{
+        width: 100% !important;
+    }
+    .imgheaderBlockProfil2{
+        width: 8vw;
+    }
+    .allCommentsProfile{
+        width: 50vw;
+    }
+    .imgheaderBlockProfil2, .allCommentsProfile{
+        display: block;
+    }
+    .blockProfile1TopText h4{
+        text-align: left;
+    }
+    .blockProfile1TopText ul{
+        margin-left: -20px;
+    }
+    .logoProfile{
+        margin-left: 0;
+        position: relative;
+    }
+    .blocksProfileTop{
+        display: flex;
+        flex-direction: row;
+    }
+    .blockProfile1, .blockProfile2{
+        width: 50vw;
+    }
+    .titleDescription{
+        font-family: Bahnschrift;
+    }
+    .textDescription{
+        font-family: Lato-Medium;
+    }
+    .titleProfileMobile{
+        display: none;
+    }
+    .titleProfile{
+        text-align: end;
+        margin-right: 10%;
+        font-size: 10em;
+        color: rgba(0, 0, 0, 0.5);
+        display: block;
+    }
     .btnPetition{
         margin-top: 10px;
     }
@@ -1556,8 +1626,8 @@ footer{
         width: 40%;
     }
     .blockCommentImg{
-        width: 100vw;
-        margin-left: 36%;
+        margin-left: 26%;
+        width: 46%;
     }
     .comment{
         margin: 50px 20px;
