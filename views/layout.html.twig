@@ -36,11 +36,12 @@
         <a class="close closeMenuMobile" href="#">&times;</a>
     </div>
     <div class="headerProfil">
-        <img src="./assets/images/mon_compte.svg" width="50px" height="50px">
         {% if user['username'] is defined %}
-        <a class="btn account" href="#TODO-ACCOUNT">Mon Espace</a>
+            <a class="btn account" href="#TODO-ACCOUNT"><img src="./assets/images/mon_compte.svg" width="50px" height="50px"></a>
+            <a class="btn account textBtnAccount" href="#TODO-ACCOUNT">Mon Espace</a>
         {% else %}
-        <a class="btn linkLogin" href="#popup-login">Se connecter</a>
+            <a class="btn linkLogin" href="#popup-login"><img src="./assets/images/mon_compte.svg" width="50px" height="50px"></a>
+            <a class="btn linkLogin textBtnAccount" href="#popup-login">Se connecter</a>
         {% endif %}
         
     </div>
@@ -57,7 +58,7 @@
                         <div class="forgetPassword"><a href="?action=forgottenPassword" class="new-pass">Mot de passe oublié?</a></div>
                         <button class="btn btnLogin">Connexion <img src="./assets/images/arrow.svg"></button>
                     </div>
-                    <img src="./assets/images/logo_sloth.svg" width="200px">
+                    <img class="imgPopup" src="./assets/images/logo_sloth.svg">
                 </form>
             </div>
         </div>
@@ -107,6 +108,15 @@
 <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
 <script src="./assets/scripts/login.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src=“https://www.googletagmanager.com/gtag/js?id=UA-120026285-1“></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag(‘js’, new Date());
+
+        gtag(‘config’, ‘UA-120026285-1’);
+    </script>
 {% endblock %}
 </body>
 </html>

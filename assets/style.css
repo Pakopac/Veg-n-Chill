@@ -14,6 +14,11 @@
     font-family: "Lato-Medium";
     src: url("fonts/Lato-Medium.ttf");
 }
+.title{
+    margin-left: 10px;
+    font-family: annabelle;
+    color: #00ACC1;
+}
 .listThanks li, .flexHowToVegan2Content li, footer li, .board li, .blockTitlePagesSubPages li{
     list-style: none
 }
@@ -196,10 +201,13 @@ fieldset button{
     display: flex;
     flex-direction: row;
 }
+.textBtnAccount {
+    margin-left: 2%;
+    align-self: center;
+    display: none !important;
+}
 .headerProfil a{
-    display: none;
     font-size: 1.5em;
-    margin: 10px;
     text-decoration: none;
     color: #707070;
 }
@@ -207,9 +215,14 @@ fieldset button{
     text-decoration: underline green;
 }
 .popup{
+    overflow-y: auto;
+    border: 20px solid #AEFBFF;
     width: 80vw !important;
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: 1fr;
+}
+.popup:after{
+    border: 10px solid green;
 }
 .popup h2{
     color: #00ACC1 !important;
@@ -764,7 +777,7 @@ footer{
 .imgTitleInterview h1{
     margin-bottom: 20px;
 }
-.blockTitlePage{
+.blockTitlePage h1{
     display: none;
 }
 .divHowToVegan{
@@ -826,7 +839,9 @@ footer{
     flex-direction: row;
 }
 .btnPetition{
-    font-size: 2vw;
+    margin-top: 10vw;
+    order: 4;
+    font-size: 5vw;
     padding: 1vw 5vw;
     margin-bottom: 1vw;
 }
@@ -1145,7 +1160,7 @@ footer{
     font-size: 1em;
     background-image: url("./images/farine.svg");
     background-repeat: no-repeat;
-    background-size: auto 100%;
+    background-size: auto 105%;
     padding: 5%;
 }
 .backgroundBlockRecipe{
@@ -1157,7 +1172,7 @@ footer{
     color: white;
     width: 80%;
     padding: 10px;
-    margin: 0 7vw;
+    margin: 5vw 7vw;
 }
 .titlePréparation{
     font-weight: bold;
@@ -1206,16 +1221,79 @@ footer{
     text-align: center;
     width: 100%;
 }
+.blockTitlePage{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 0 7%;
+    font-size: 1.5em;
+}
+.blockTitlePage h3{
+    font-size: 5vw;
+    align-self: flex-start;
+}
+.blockTitlePage p{
+    align-self: center;
+    font-size: 3vw;
+    order: 2;
+}
+.likeTitlePage{
+    align-self: flex-end;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    font-size: 3vw;
+    width: 50%;
+    order: 3;
+}
+.likeTitlePage img{
+    margin-right: 2%;
+    width: 7vw;
+}
+.blockTitlePage h3, .likeTitlePage, .blockTitlePage p{
+    font-family: "Lato-Medium";
+}
+.blockTitleAbout p{
+    font-size: 2vw;
+}
+.blockTitleAbout p{
+    order: 0;
+}
+.imgPopup{
+    display: none;
+}
 @media (min-width: 480px) {
-    .fa-bars, .closeMenuMobile, .backgroundHomeMobile1, .backgroundHomeMobile2{
-        display: none;
+    .btnPetition{
+        margin-top: 10px;
     }
-    .title, .headerProfil a, .blockTextBurger, .articleOnTheFrontPage2, .articleOnTheFrontPage3, .articleOnTheFrontPage4,
+    .blockTitleAbout{
+        padding: 4% 7%;
+    }
+    .blockTitleAbout p{
+        margin-left: -27%;
+    }
+    .blockTitlePage{
+        padding: 6% 7%;
+    }
+    .blockTitlePage p{
+        font-size: 1.5vw;
+    }
+    .blockTitleRecipe p{
+        font-size: 1.5vw;
+        width: 43vw;
+        margin-left: -29%;
+    }
+    .likeTitlePage img {
+        width: 5vw;
+    }
+    .likeTitlePage{
+        font-size: 2vw;
+        width: 68%;
+    }
+    .title, .blockTextBurger, .articleOnTheFrontPage2, .articleOnTheFrontPage3, .articleOnTheFrontPage4,
     .iconHeart{
         display: block;
-    }
-    #navMobile{
-        display: flex;
     }
     #navHeaderMain{
         flex-direction: row;
@@ -1273,7 +1351,6 @@ footer{
     }
     .imgTitlePage h1{
         font-family: "Courgette-Regular";
-        margin-top: 20%;
         color: rgba(43, 43, 43, 0.66);
     }
     .aboutTitleImg h1{
@@ -1305,13 +1382,10 @@ footer{
         height: 100%;
         margin-left: 48%;
         background: rgba(255, 255, 255, 0.5);
-        padding: 0 7%;
         font-size: 1.5em;
     }
-    .blockTitlePage h3, .likeTitlePage, .blockTitlePage p{
-        font-family: "Lato-Medium";
-    }
     .blockTitlePage h3{
+        font-size: 3vw;
         margin-top: 1vw;
         margin-bottom: 0.5vw;
     }
@@ -1566,5 +1640,35 @@ footer{
     }
     .textImgRecipeBot{
         font-size: 3em;
+    }
+    .blockImgRecipe{
+        width: 105vw;
+        margin-left: -11px;
+    }
+    .blockTitlePage h1{
+        display: block;
+    }
+    .btnPetition{
+        font-size: 2vw;
+    }
+    .textBtnAccount {
+        display: block !important;
+    }
+    @media (min-width: 641px){
+        .popup{
+            grid-template-columns: repeat(2,1fr);
+        }
+        .imgPopup{
+            display: block;
+            width: 200px;
+        }
+    }
+    @media (min-width: 1025px){
+        #navMobile{
+            display: flex;
+        }
+        .fa-bars, .closeMenuMobile, .backgroundHomeMobile1, .backgroundHomeMobile2{
+            display: none;
+        }
     }
 }
