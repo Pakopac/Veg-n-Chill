@@ -64,10 +64,10 @@
         </div>
     </div>
     <div class="blockComments">
-        <form class="formComment">
+        <form method="POST" action="?action=addComment&amp;id={{ article['id'] }}&amp;idComment={{ comment[0] }}">
             <img src="./assets/images/logo_sloth.svg" width="50px">
             <div class="commentsInputButton">
-                <input type="text" placeholder="Qu'en avez vous pensé? ...">
+                <input name="comment" type="text" placeholder="Qu'en avez vous pensé? ...">
                 <button class="buttonComments">Publier</button>
             </div>
         </form>
