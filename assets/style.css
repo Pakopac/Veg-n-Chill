@@ -1365,6 +1365,65 @@ footer{
 .lastCommentsProfile{
     font-size: 1.5em;
 }
+.blockImgTeam{
+
+}
+.itemTeam{
+    font-size: 1vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20vw;
+    background-size: 100% 100%;
+    background-image: url("./images/imgHowToVeganBot.svg");
+}
+.descriptionTeam{
+    width: 80%;
+    display: none;
+}
+.itemTeam:hover{
+    border-radius: 100%;
+    background: #AEFBFF;
+}
+.itemTeam:hover .descriptionTeam{
+    display: block;
+}
+#TODO-ACCOUNT{
+    display: none;
+}
+#TODO-ACCOUNT:target{
+    justify-content: flex-end;
+    display: flex;
+    width: 100vw;
+}
+.blockTodo-AccountItems{
+    display: flex;
+    flex-direction: column;
+}
+.blockTodo-AccountItems a{
+  text-decoration: none;
+    color: #707070;
+}
+.blockTodo-AccountItems a:hover{
+    color: #707070;
+    text-decoration: underline green;
+}
+.blockTodo-Account{
+    margin-top: 80px;
+    margin-right: 20px;
+    font-size: 2em;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    background: white;
+    position: absolute;
+    border: 10px solid #AEFBFF;
+    grid-template-columns: 1fr;
+    border-radius: 10px;
+}
+.overlayProfile{
+    background: rgba(0, 0, 0, 0.4) !important;
+}
 @media (min-width: 480px) {
     .blockCommentImgProfile{
         width: 100% !important;
@@ -1673,9 +1732,9 @@ footer{
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: repeat(2, 1fr);
     }
-    .blockImgTeam img{
+    .blockImgTeam .itemTeam{
         width: 20vw;
-        padding: 10px;
+        height: 44vh;
     }
     .titleOnTheFrontPage{
         font-size: 2em;
