@@ -25,9 +25,9 @@
             <a href="?action=about">A propos</a>
             {% if user['username'] is defined %}
             <a href="?action=logout">Logout</a>
-                {% if user['rank_id'] == 3 or user['rank_id'] == 2%}
+                {% if user['rank_id'] == 4 or user['rank_id'] == 3 %}
                 <a href="?action=addArticle">add article</a>
-                {% endif %}{% if user['rank_id'] == 3 %}
+                {% endif %}{% if user['rank_id'] == 4 %}
                 <a href='?action=homeAdmin'>Go to admin panel</a>
                 {% endif %}
             {% else %}

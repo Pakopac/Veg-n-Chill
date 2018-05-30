@@ -26,56 +26,16 @@
             </nav>
         </div>
         <div class="allArticlesPageArticle">
-            <a href="?action=news" class="blockArticleOnTheFrontPage articleOnTheFrontPage1">
-                <img src="./assets/images/exampleImage.svg">
-                <div class="titleArticle">titre</div>
-                <div class="userArticle">par <span class="nameUserArticle">nom</span> le ../..</div>
+        {% for post in posts %}
+            <a href="?action=viewArticle&amp;id={{ post['id'] }}" class="blockArticleOnTheFrontPage articleOnTheFrontPage1">
+                <img src="{{ post['img'] }}">
+                <div class="titleArticle">{{ post['title'] }}</div>
                 <img class="iconHeart" src="./assets/images/iconHeart.svg" width="40px">
                 <div class="divLikeCommentArticle">
-                    <div class="likeArticle">12 likes</div>
-                    <div class="commentArticle">26 comments</div>
+                    <div class="likeArticle">{{ post['likes'] }} likes</div>
                 </div>
             </a>
-            <a href="?action=news" class="blockArticleOnTheFrontPage articleOnTheFrontPage1">
-                <img src="./assets/images/exampleImage.svg">
-                <div class="titleArticle">titre</div>
-                <div class="userArticle">par <span class="nameUserArticle">nom</span> le ../..</div>
-                <img class="iconHeart" src="./assets/images/iconHeart.svg" width="40px">
-                <div class="divLikeCommentArticle">
-                    <div class="likeArticle">12 likes</div>
-                    <div class="commentArticle">26 comments</div>
-                </div>
-            </a>
-            <a href="?action=news" class="blockArticleOnTheFrontPage articleOnTheFrontPage1">
-                <img src="./assets/images/exampleImage.svg">
-                <div class="titleArticle">titre</div>
-                <div class="userArticle">par <span class="nameUserArticle">nom</span> le ../..</div>
-                <img class="iconHeart" src="./assets/images/iconHeart.svg" width="40px">
-                <div class="divLikeCommentArticle">
-                    <div class="likeArticle">12 likes</div>
-                    <div class="commentArticle">26 comments</div>
-                </div>
-            </a>
-            <a href="?action=news" class="blockArticleOnTheFrontPage articleOnTheFrontPage1">
-                <img src="./assets/images/exampleImage.svg">
-                <div class="titleArticle">titre</div>
-                <div class="userArticle">par <span class="nameUserArticle">nom</span> le ../..</div>
-                <img class="iconHeart" src="./assets/images/iconHeart.svg" width="40px">
-                <div class="divLikeCommentArticle">
-                    <div class="likeArticle">12 likes</div>
-                    <div class="commentArticle">26 comments</div>
-                </div>
-            </a>
-            <a href="?action=news" class="blockArticleOnTheFrontPage articleOnTheFrontPage1">
-                <img src="./assets/images/exampleImage.svg">
-                <div class="titleArticle">titre</div>
-                <div class="userArticle">par <span class="nameUserArticle">nom</span> le ../..</div>
-                <img class="iconHeart" src="./assets/images/iconHeart.svg" width="40px">
-                <div class="divLikeCommentArticle">
-                    <div class="likeArticle">12 likes</div>
-                    <div class="commentArticle">26 comments</div>
-                </div>
-            </a>
+        {% endfor %}
         </div>
         <div class="changePageArticleDesktop">
             <img src="./assets/images/back.svg" width="20px">
@@ -95,10 +55,4 @@
         </div>
     </div>
     <div class="botArticlePageMobile"></div>
-    {% for article in posts %}
-        <article>
-            <h2>{{ loop.index }} <a href="?action=viewArticle&amp;id={{ article['id'] }}">{{ article['title'] }}</a></h2>
-            <div>{{ article['description']|nl2br }}</div>
-        </article>
-    {% endfor %}
 {% endblock %}
