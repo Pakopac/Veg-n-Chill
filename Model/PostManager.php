@@ -18,7 +18,7 @@ class PostManager
         return $posts;
     }
 
-    public function addPost($title, $desc, $img, $content, $authorID): void
+    public function addPost($title, $desc, $img, $content, $authorID, $type): void
     {
         $dbm = DBManager::getInstance();
         $pdo = $dbm->getPdo();
@@ -27,16 +27,19 @@ class PostManager
         $stmt = $pdo->prepare(
             "INSERT INTO posts 
             (id, title, description,
-            img, content, author_id)
+            img, content, author_id,
+            type)
             VALUES 
             (NULL, :title, :desc,
-            :img, :content, :author)"
+            :img, :content, :author,
+            :type)"
         );
         $stmt->bindParam(':title', $title);
         $stmt->bindParam(':desc', $desc);
         $stmt->bindParam(':img', $img);
         $stmt->bindParam(':content', $content);
         $stmt->bindParam(':author', $authorID);
+        $stmt->bindParam(':type', $type);
 
         $stmt->execute();
     }

@@ -51,15 +51,18 @@ class ArticleController extends BaseController
         } else {
             if (isset($_POST['title']) && isset($_POST['content'])
                 && isset($_POST['desc']) && isset($_POST['img'])
+                && isset($_POST['articleType'])
             ) {
                 $manager = new PostManager();
                 $img = $_POST['img']; 
                 $title = $_POST['title'];
                 $desc = $_POST['desc'];
                 $content = $_POST['content'];
+                $type = $_POST['articleType'];
                 $posts = $manager->addPost(
                     $title, $desc, $img,
-                    $content, $_SESSION['id']
+                    $content, $_SESSION['id'],
+                    $type
                 );
 
                 $this->redirectToRoute('article');
