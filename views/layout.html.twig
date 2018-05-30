@@ -23,15 +23,6 @@
             <a href="?action=howToVegan">How to vegan?</a>
             <a href="?action=foodAddict">#FoodAddict</a>
             <a href="?action=about">A propos</a>
-            {% if user['username'] is defined %}
-            <a href="?action=logout">Logout</a>
-                {% if user['rank_id'] == 3 or user['rank_id'] == 2%}
-                <a href="?action=addArticle">add article</a>
-                {% endif %}{% if user['rank_id'] == 3 %}
-                <a href='?action=homeAdmin'>Go to admin panel</a>
-                {% endif %}
-            {% else %}
-            {% endif %}
         </nav>
         <a class="close closeMenuMobile" href="#">&times;</a>
     </div>
@@ -79,6 +70,23 @@
         <a class="close" href="#">&times;</a>
     </div>
 </div>
+<div id="TODO-ACCOUNT" class="overlay overlayProfile">
+    <div class="blockTodo-Account">
+        <div class="blockTodo-AccountItems">
+            {% if user['username'] is defined %}
+                <a href="?action=profile">Profile</a>
+                <a href="?action=logout">Logout</a>
+                {% if user['rank_id'] == 3 or user['rank_id'] == 2%}
+                    <a href="?action=addArticle">add article</a>
+                {% endif %}{% if user['rank_id'] == 3 %}
+                <a href='?action=homeAdmin'>Go to admin panel</a>
+            {% endif %}
+            {% else %}
+            {% endif %}
+        </div>
+        <a href="#" class="close">x</a>
+    </div>
+</div>
 {% block content %}{% endblock %}
 <footer>
     <div class="contentFooter">
@@ -91,8 +99,8 @@
         <ul class="footerItems2">
             <li class="titleFooter">On se retrouve</li>
             <li><img src="./assets/images/instagram.svg" width="20px">@VeganChill</li>
-            <li><img src="./assets/images/facebook.svg" width="20px">@VeganChill</li>
-            <li><img src="./assets/images/youtube.svg" width="20px">@VeganChill</li>
+            <li><img src="./assets/images/facebook.svg" width="20px">VeganChill</li>
+            <li><img src="./assets/images/youtube.svg" width="20px">VeganChill</li>
         </ul>
         <ul class="footerItems3">
             <li class="titleFooter">A propos</li>
