@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le :  ven. 25 mai 2018 à 12:10
+-- Généré le :  mer. 30 mai 2018 à 11:11
 -- Version du serveur :  5.6.38
 -- Version de PHP :  7.2.1
 
@@ -56,11 +56,21 @@ CREATE TABLE `posts` (
   `id` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL,
+  `img` varchar(255) NOT NULL,
   `content` text NOT NULL,
   `author_id` int(255) NOT NULL,
+  `type` varchar(255) NOT NULL,
   `likes` int(255) DEFAULT '0',
   `dislikes` int(255) DEFAULT '0'
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `posts`
+--
+
+INSERT INTO `posts` (`id`, `title`, `description`, `img`, `content`, `author_id`, `type`, `likes`, `dislikes`) VALUES
+(21, 'Yanis n\'est pas vegan ????', 'Révélation, Yanis découvert avec un pot de KFC dans sa main', 'https://media.discordapp.net/attachments/371375865118064640/390818177279590420/zbpvr.png', '<p>Ouch<br></p>', 24, '', 0, 0),
+(22, 'Type: News', 'This article has type News', 'http://localhost/projet-tranversal/assets/images/logo_sloth.svg', '<p>article<br></p>', 24, 'news', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -79,9 +89,9 @@ CREATE TABLE `ranks` (
 
 INSERT INTO `ranks` (`id`, `name`) VALUES
 (1, 'Member'),
-(2, 'Redactor'),
-(3, 'Admin'),
-(4, 'Premium');
+(2, 'Premium'),
+(3, 'Redactor'),
+(4, 'Admin');
 
 -- --------------------------------------------------------
 
@@ -148,13 +158,13 @@ ALTER TABLE `comments`
 -- AUTO_INCREMENT pour la table `logged_users`
 --
 ALTER TABLE `logged_users`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT pour la table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT pour la table `ranks`
@@ -166,7 +176,7 @@ ALTER TABLE `ranks`
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- Contraintes pour les tables déchargées
