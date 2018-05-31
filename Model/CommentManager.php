@@ -7,29 +7,26 @@ use Cool\BaseController;
 
 class CommentManager
 {
-    public function addComment($id, $comment){
+    public function addComment($contentComment, $idNews){
+        var_dump($_SESSION['username']);
         $dbm = DBManager::getInstance();
         $pdo = $dbm->getPdo();
         $pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
-
-        if(isset($_GET['idComment'])    ) {
-            $stmt = $pdo->prepare("INSERT INTO comments (id, post_id, message, `type`) VALUES (NULL, :id, :comment, 'reply')");
-        }
-        else{
-            $stmt = $pdo->prepare("INSERT INTO comments (id, post_id, message, `type`) VALUES (NULL, :id, :comment, 'comment')");
-        }
-        $stmt->bindParam(':id', $id);
-        $stmt->bindParam(':comment', $comment);
+        $stmt = $pdo->prepare("INSERT INTO comments (id, post_id, message, `type`, `user`, `date`) VALUES (NULL, :idNews, :content, 'comment', :user, :date)");
+        $stmt->bindParam(':content', $contentComment);
+        $stmt->bindParam(':idNews', $idNews);
+        $stmt->bindParam(':user', $_SESSION['username']);
+        $stmt->bindParam(':date', date('y-m-d'));
 
         $stmt->execute();
     }
-    public function getCommentsByPost($id)
+    public function getCommentsByPost()
     {
         $dbm = DBManager::getInstance();
         $pdo = $dbm->getPdo();
 
-        $result = $pdo->prepare("SELECT * FROM comments WHERE post_id = :id AND `type` = 'comment'");
-        $result->execute([':id' => $id]);
+        $result = $pdo->prepare("SELECT * FROM comments WHERE post_id = 1 AND `type` = 'comment'");
+        $result -> execute();
         $comment = $result->fetchall();
 
         return $comment;

@@ -33,58 +33,21 @@
             <div class="textItemSimilarArticletext">Le SuperVegan</div>
         </div>
     </div>
-</div>
-<div class="blockCommentsMobile">
-    <h3 class="titleCommentsMobile">Commentaires</h3>
-    <form>
-        <div class="flexImgInputComments">
-            <img src="./assets/images/logo_sloth.svg" width="50px">
-            <input type="text" placeholder="Commentaires">
-            <button class="buttonComments">
-                <img class="arrowComments" src="./assets/images/arrow.svg" width="30px">
-            </button>
-        </div>
-    </form>
-    <div class="viewAllComments">
-        <div class="viewAllCommentsText">Voir tous les commentaires</div>
-        <img src="./assets/images/scroll-top.svg" class="scroll-top" width="20px">
-    </div>
-</div>
-<div class="blockComments">
-    <form method="POST" action="?action=addComment&amp;id={{ article['id'] }}&amp;idComment={{ comment[0] }}">
+    <div class="addComment">
         <img src="./assets/images/logo_sloth.svg" width="50px">
         <div class="commentsInputButton">
-            <input name="comment" type="text" placeholder="Qu'en avez vous pensé? ...">
+            <input id="inputComment" name="comment" type="text" placeholder="Qu'en avez vous pensé? ...">
             <button class="buttonComments">Publier</button>
-        </div>
-    </form>
-    <img class="separateComments" src="./assets/images/separateNewsletter.svg">
-    <div class="blockCommentImg">
-        <img src="./assets/images/logo_sloth.svg" width="50px">
-        <div class="comment">
-            <div class="commentPseudo">
-                Chilly:
-            </div>
-            <div class="commentContent">
-                Quel article wow ! Merci pour le tuyau :)
-            </div>
-        </div>
-        <div class="dateComment">2j  <img src="./assets/images/dateCommentImg.svg" width="50px"></div>
-    </div>
-    <img class="separateComments" src="./assets/images/separateNewsletter.svg">
-    <div class="blockCommentImg">
-        <img src="./assets/images/logo_sloth.svg" width="50px">
-        <div class="comment">
-            <div class="commentPseudo">
-                Chilly:
-            </div>
-            <div class="commentContent">
-                Incroyable !
-            </div>
         </div>
         <div class="dateComment">3j  <img src="./assets/images/dateCommentImg.svg" width="50px"></div>
     </div>
-</div>
-<div class="blockImgHowToVeganBot">
-    <img class="imgNewsBot" src="./assets/images/imgHowToVeganBot.svg">
-</div>
+    <div class="blockComments">
+
+    </div>
+    <div class="blockImgHowToVeganBot">
+        <img class="imgNewsBot" src="./assets/images/imgHowToVeganBot.svg">
+    </div>
+{% endblock %}
+{% block script %}
+    <script src="./assets/scripts/comment.js"></script>
+{% endblock %}

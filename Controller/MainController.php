@@ -17,6 +17,7 @@
 namespace Controller;
 
 use Cool\BaseController;
+use Model\CommentManager;
 use Model\UserManager;
 use Model\AdminManager;
 use Model\MailManager;
@@ -153,8 +154,12 @@ class MainController extends BaseController
 
     public function newsAction()
     {
+        $commentManager = new CommentManager();
+        $comment =  $commentManager -> getCommentsByPost();
         $arr = [
-        'user' => $_SESSION
+        'date' => date('d-m-y'),
+        'user' => $_SESSION,
+        'comment' => $comment
         ];
         return $this -> render('news.html.twig', $arr);
     }
