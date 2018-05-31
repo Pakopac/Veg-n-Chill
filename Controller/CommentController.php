@@ -10,15 +10,10 @@ class CommentController extends BaseController
 {
     public function addCommentAction()
     {
-        if(isset($_POST['btn-comment']) && isset($_POST['comment'])) {
+        if(isset($_POST['contentComment']) && isset($_POST['idNews'])) {
             $commentsManager = new CommentManager();
-            $commentsManager->addComment(intval($_GET['id']), $_POST['comment']);
-            return $this->redirectToRoute('viewArticle', 'id='.intval($_GET['id']));
-        }
-        else if(isset($_POST['btn-subComment']) && isset($_POST['subComment'])) {
-            $commentsManager = new CommentManager();
-            $commentsManager->addComment(intval($_GET['idComment']), $_POST['subComment']);
-            return $this->redirectToRoute('viewArticle', 'id='.intval($_GET['id']));
+            $commentsManager->addComment(($_GET['contentComment']), $_GET['idNews']);
+            return $this;
         }
     }
 
@@ -47,5 +42,11 @@ class CommentController extends BaseController
         $this->redirectToRoute("article");
 
         return $this->render('deleteArticle.html.twig', $data);
+    }
+    public function getCommentsAction()
+    {
+        $commentManager = new CommentManager();
+        $comment = $commentManager->getCommentsByPost();
+        return json_encode($comment);
     }
 }

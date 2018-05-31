@@ -510,19 +510,12 @@ footer{
     text-decoration: none;
     color: #000;
 }
-.articleOnTheFrontPage2, .articleOnTheFrontPage3, .articleOnTheFrontPage4{
+.articlesOnTheFrontPage{
     display: none;
 }
 .blockArticleOnTheFrontPage{
     font-family: Lato-Medium;
     font-size: 2em;
-    border-radius: 6.4vw;
-    margin-left: 4vw;
-    margin-top: 20px;
-    width: 60vw;
-    background: white;
-    border: 1px solid black;
-    box-shadow: 1px 3px 5px;
 }
 .titleArticle{
     font-family: "Lato-Medium";
@@ -1424,7 +1417,54 @@ footer{
 .overlayProfile{
     background: rgba(0, 0, 0, 0.4) !important;
 }
+.item{
+    background: inherit;
+}
+.item a{
+    color: #000;
+}
+.item a:hover{
+    text-decoration: none;
+}
+.left .carousel-control{
+    background: inherit;
+}
+.glyphicon{
+    color: #000;
+}
+.carousel-control{
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 100%) !important;
+}
+.carousel-inner{
+    font-size: 0.7em;
+    width: 70% !important;
+    margin-left: 15vw;
+    border: 1px solid black;
+    border-radius: 7vw;
+    box-shadow: 1px 3px 5px;
+    background: white;
+}
+.item .iconHeart{
+    display: none !important;
+}
+.carousel-inner img{
+    height: 30%;
+}
 @media (min-width: 480px) {
+    .container{
+        display: none;
+    }
+    .articlesOnTheFrontPage{
+        display: grid;
+    }
+    .blockArticleOnTheFrontPage{
+        border: 1px solid black;
+        background: white;
+    }
+    .blockArticleOnTheFrontPage{
+        width: 60vw;
+        border-radius: 6.4vw;
+    }
     .blockCommentImgProfile{
         width: 100% !important;
         margin-left: 0 !important;
@@ -1509,7 +1549,7 @@ footer{
     }
     .likeTitlePage{
         font-size: 2vw;
-        width: 68%;
+        width: 100%;
     }
     .title, .blockTextBurger, .articleOnTheFrontPage2, .articleOnTheFrontPage3, .articleOnTheFrontPage4,
     .iconHeart{
@@ -1595,7 +1635,7 @@ footer{
     .blockTitlePage{
         display: flex;
         flex-direction: column;
-        width: 55%;
+        width: 41%;
         height: 100%;
         margin-left: 48%;
         background: rgba(255, 255, 255, 0.5);
@@ -1694,7 +1734,8 @@ footer{
         justify-content: center;
     }
     .commentsInputButton{
-        width: 25%;
+        width: 50%;
+        margin-left: 30%;
     }
     .blockComments input{
         width: 70%;

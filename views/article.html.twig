@@ -26,6 +26,15 @@
             </nav>
         </div>
         <div class="allArticlesPageArticle">
+            <a href="?action=news&post_id=1" class="blockArticleOnTheFrontPage articleOnTheFrontPage1">
+                <img src="./assets/images/exampleImage.svg">
+                <div class="titleArticle">La réforme de la chasse</div>
+                <img class="iconHeart" src="./assets/images/iconHeart.svg" width="40px">
+                <div class="divLikeCommentArticle">
+                    <div class="likeArticle">12 likes</div>
+                    <div class="commentArticle">26 comments</div>
+                </div>
+            </a>
         {% for post in posts %}
             <a href="?action=viewArticle&amp;id={{ post['id'] }}" class="blockArticleOnTheFrontPage articleOnTheFrontPage1">
                 <img src="{{ post['img'] }}">

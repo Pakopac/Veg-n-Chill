@@ -28,3 +28,4 @@ routes:
     foodAddict: "Main:foodAddict"
     recipe: "Main:recipe"
     profile: "Main:profile"
+    getComments: "Comment:getComments"

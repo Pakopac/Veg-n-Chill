@@ -76,9 +76,9 @@
             {% if user['username'] is defined %}
                 <a href="?action=profile">Profil</a>
                 <a href="?action=logout">Déconnexion</a>
-                {% if user['rank_id'] == 4 or user['rank_id'] == 3 %}
+                {% if user['rank_id'] == 3 or user['rank_id'] == 2%}
                     <a href="?action=addArticle">Ajouter un article</a>
-                {% endif %}{% if user['rank_id'] == 4 %}
+                {% endif %}{% if user['rank_id'] == 3 %}
                 <a href='?action=homeAdmin'>Aller à l'admin pannel</a>
             {% endif %}
             {% else %}

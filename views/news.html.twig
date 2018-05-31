@@ -64,41 +64,33 @@
         </div>
     </div>
     <div class="blockComments">
-        <form method="POST" action="?action=addComment&amp;id={{ article['id'] }}&amp;idComment={{ comment[0] }}">
+
             <img src="./assets/images/logo_sloth.svg" width="50px">
             <div class="commentsInputButton">
-                <input name="comment" type="text" placeholder="Qu'en avez vous pensé? ...">
+                <input id="inputComment" name="comment" type="text" placeholder="Qu'en avez vous pensé? ...">
                 <button class="buttonComments">Publier</button>
             </div>
-        </form>
-        <img class="separateComments" src="./assets/images/separateNewsletter.svg">
-        <div class="blockCommentImg">
-            <img src="./assets/images/logo_sloth.svg" width="50px">
-            <div class="comment">
-                <div class="commentPseudo">
-                    Chilly:
+
+        {% for currentComment in comment %}
+            <img class="separateComments" src="./assets/images/separateNewsletter.svg">
+            <div class="blockCommentImg">
+                <img src="./assets/images/logo_sloth.svg" width="50px">
+                <div class="comment">
+                    <div class="commentPseudo">
+                        {{ currentComment[4] }}
+                    </div>
+                    <div class="commentContent">
+                        {{ currentComment[2] }}
+                    </div>
                 </div>
-                <div class="commentContent">
-                    Quel article wow ! Merci pour le tuyau :)
-                </div>
+                <div class="dateComment">{{ date }}  <img src="./assets/images/dateCommentImg.svg" width="50px"></div>
             </div>
-            <div class="dateComment">2j  <img src="./assets/images/dateCommentImg.svg" width="50px"></div>
-        </div>
-        <img class="separateComments" src="./assets/images/separateNewsletter.svg">
-        <div class="blockCommentImg">
-            <img src="./assets/images/logo_sloth.svg" width="50px">
-            <div class="comment">
-                <div class="commentPseudo">
-                    Chilly:
-                </div>
-                <div class="commentContent">
-                    Incroyable !
-                </div>
-            </div>
-            <div class="dateComment">3j  <img src="./assets/images/dateCommentImg.svg" width="50px"></div>
-        </div>
+        {% endfor %}
     </div>
     <div class="blockImgHowToVeganBot">
         <img class="imgNewsBot" src="./assets/images/imgHowToVeganBot.svg">
     </div>
+{% endblock %}
+{% block script %}
+    <script src="./assets/scripts/comment.js"></script>
 {% endblock %}
