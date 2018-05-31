@@ -277,4 +277,35 @@ class UserManager
             return $arr;
         }
     }
+
+    public function countAllCommentsOfUser($userID)
+    {
+        $dbm = DBManager::getInstance();
+        $pdo = $dbm->getPdo();
+        $stmt = $pdo->prepare(
+            "SELECT COUNT(*)
+                AS totalComments
+            FROM comments
+            WHERE post_id = :userID"
+        );
+        $stmt->bindParam(":userID", $userID);
+        $stmt->execute();
+        $result = $stmt->fetch();
+        return $result;
+    }
+
+    public function getCommentDatas($userID)
+    {
+        $dbm = DBManager::getInstance();
+        $pdo = $dbm->getPdo();
+        $stmt = $pdo->prepare(
+            "SELECT *
+            FROM comments
+            WHERE post_id = :userID"
+        );
+        $stmt->bindParam(":userID", $userID);
+        $stmt->execute();
+        $result = $stmt->fetch();
+        return $result;
+    }
 }

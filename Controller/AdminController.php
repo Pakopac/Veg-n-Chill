@@ -40,7 +40,7 @@ class AdminController extends BaseController
      */
     public function homeAction()
     {
-        if ($_SESSION['rank_id'] != 3 || !$_SESSION) {
+        if ($_SESSION['rank_id'] != 4 || !$_SESSION) {
             $this->redirectToRoute('home');
         }
         $adminManager = new AdminManager();
@@ -75,7 +75,7 @@ class AdminController extends BaseController
      */
     public function generalAction()
     {
-        if ($_SESSION['rank_id'] != 3) {
+        if ($_SESSION['rank_id'] != 4) {
             $this->redirectToRoute('home');
         }
         $arr = [
@@ -91,7 +91,7 @@ class AdminController extends BaseController
      */
     public function displayAction()
     {
-        if ($_SESSION['rank_id'] != 3) {
+        if ($_SESSION['rank_id'] != 4) {
             $this->redirectToRoute('home');
         }
         $arr = [
@@ -107,7 +107,7 @@ class AdminController extends BaseController
      */
     public function usersAction()
     {
-        if ($_SESSION['rank_id'] != 3) {
+        if ($_SESSION['rank_id'] != 4) {
             $this->redirectToRoute('home');
         }
         $arr = [

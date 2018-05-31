@@ -1,14 +1,15 @@
 {% extends 'layout.html.twig' %}
 
-{% block page_title %}{{ parent() }} - {{ article['title']|raw }}{% endblock %}
+{% block page_title %}Article - {{ article['title']|raw }}{% endblock %}
 
 {% block content %}
-    <h1>{{ article['title']|raw }}</h1>
-    <img src="{{ article['img'] }}" alt="Article image">
-
-    <article>
-        <div>{{ article['content']|raw|nl2br }}</div>
-    </article>
+    {% if article.type == "news" %}
+    {% include 'news.html.twig' %}
+    {% elseif article.type == "interview" %}
+    {% include 'interview.html.twig' %}
+    {% else %}
+    {% include 'petition.html.twig' %}
+    {% endif %}
     <br>
     <div class="ratings">
         <button id="btn-like" value="like"><i class="far fa-thumbs-up"></i></button>

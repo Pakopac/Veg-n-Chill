@@ -208,8 +208,13 @@ class MainController extends BaseController
     }
     public function profileAction()
     {
+        $UserManager = new UserManager();
+        $numberOfComments = $UserManager->countAllCommentsOfUser($_SESSION['id']);
+        $commentData = $UserManager->getCommentDatas($_SESSION['id']);
         $arr = [
-            'user' => $_SESSION
+            'user' => $_SESSION,
+            'numberOfComments' => $numberOfComments,
+            'commentData' => $commentData
         ];
         return $this -> render('profile.html.twig', $arr);
     }

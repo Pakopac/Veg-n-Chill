@@ -28,11 +28,11 @@ class PostManager
             "INSERT INTO posts 
             (id, title, description,
             img, content, author_id,
-            type)
+            type, likes)
             VALUES 
             (NULL, :title, :desc,
             :img, :content, :author,
-            :type)"
+            :type, 0)"
         );
         $stmt->bindParam(':title', $title);
         $stmt->bindParam(':desc', $desc);
@@ -53,7 +53,13 @@ class PostManager
         $result->execute([':id' => $id]);
         $post = $result->fetch();
 
-        return $post;
+        $type = $this->getArticleType($id);
+        $datas = [
+            "post" => $post,
+            "type" => $type
+        ];
+
+        return $datas;
     }
 
     public function deletePost($id): void
@@ -114,6 +120,24 @@ class PostManager
         $params = array("%$query%");
         $stmt->execute($params);
         $result = $stmt->fetchAll();
+
+        return $result;
+    }
+    
+    public static function getArticleType($id)
+    {
+        $dbm = DBManager::getInstance();
+        $pdo = $dbm->getPdo();
+        $pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+
+        $stmt = $pdo->prepare(
+            "SELECT type
+            FROM posts
+            WHERE id = :id"
+        );
+        $stmt->bindParam(":id", $id);
+        $stmt->execute();
+        $result = $stmt->fetch();
 
         return $result;
     }

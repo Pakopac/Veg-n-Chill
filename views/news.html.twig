@@ -1,104 +1,90 @@
-{% extends 'layout.html.twig' %}
-
-{% block page_title %}Home{% endblock %}
-
-{% block content %}
-    <div class="imgTitlePage imgTitleArticle">
-        <div class="blockTitlePage">
-            <h1>Actualité</h1>
-            <div class="likeTitlePage"><img class="greenHeart" src="./assets/images/greenHeart.svg">35 personnes aiment</div>
-            <h3>La réforme de la chasse a commencé</h3>
-            <p>Comme annoncé lors de sa campagne présidentielle, Macro commence dès aujourd’hui sa réforme de la chasse. Son objectif est d’accroitre le nombre de chasseurs et d’inciter les jeunes à rejoindre les plus d’un million de français le pratiquant déjà.</p>
-        </div>
+{% if user['rank_id'] == 4 or user['rank_id'] == 3 and user['author_id'] == article['author_id'] %}
+    <a href="?action=deleteArticle&amp;id={{ article['id'] }}">delete</a>
+    <a href="?action=editArticle&amp;id={{ article['id'] }}">edit</a>
+{% endif %}
+<div class="imgTitlePage imgTitleArticle" style="background-image: url({{ article['img'] }})">
+    <div class="blockTitlePage">
+        <h1>Actualité</h1>
+        <div class="likeTitlePage"><img class="greenHeart" src="./assets/images/greenHeart.svg">{{ article['like'] }} personnes aiment</div>
+        <h3>{{ article['title']|raw }}</h3>
+        <p>{{ article['description'] }}</p>
     </div>
-    <div class="blockArticleSimilarArticle">
-        <article class="blockNews">
-            <h3>Un prix en baisse</h3>
-            <p>Comme annoncé la réforme commence sur chapeau de roue avec une diminution de moitié du permis national de chasse, qui coûte désormais 200€ à la place de 400.
-                Notre président tend donc à rendre l’accessibilité de ce « loisir » plus facile pour tous, activité qu’il qualifie de « formidable ». Il espère même instaurer de nouveau les chasses présidentielles, qu’il trouve « fascinantes ».
-            </p>
-            <div class="flexNews">
-                <div class="flexNewsContent">
-                    <h3>Des problèmes en hausse</h3>
-                    <p>Cette baisse ne va pour autant concerne que le permis de chasse national, soit environs 100.000 personnes, d’après la FNC. Cette baisse, assimilée par la FNC comme un « cadeau financier » de la part du chef d’état, devrait entrer en vigueur le 1er juillet 2019.</p>
-                </div>
-                <img src="./assets/images/imgNews1.svg">
-            </div>
-            <p>
-                Mais à côté de ça l’Office Nationale de la Chasse et de la Faune Sauvage (ONCFS) a publié son bilant sur les accidents de chasse pour l’année 2016-2017. Le bilan est lourd : 80% d’accident mortel en plus, soit 18 mort contre 10 la saison passée.
-                Et pourtant semble satisfaite de ce bilan puisqu’elle affiche fièrement une baisse totale des accidents de chasse. En effet entre le 1er juin 2016 et le 31 mai 2017 un total de 143 accidents ont été comptabilisé contre 146 la saison dernière. Un total impressionnant de 4% de baisse.
-                Mais sachant que le nombre d’accident avait connu une augmentation alarmante de 17% la saison passée, il y a de quoi relativiser.
-            </p>
-            <img src="./assets/images/imgNews2.svg">
-            <p>Mais sachant que le nombre d’accident avait connu une augmentation alarmante de 17% la saison passée, il y a de quoi relativiser. La mauvaise foi est également de la partie quand on sait que la ONCFS ne présente pas le pourcentage de victime non chasseur.</p>
-        </article>
-        <div class="similarArticle">
-            <div class="titleSimilarArticle">
-                ARTICLES SIMILAIRES
-            </div>
-            <div class="itemSimilarArticle">
-                <div class="textItemSimilarArticletext">Le SuperVegan</div>
-            </div>
-            <div class="itemSimilarArticle">
-                <div class="textItemSimilarArticletext">Le SuperVegan</div>
-            </div>
-            <div class="itemSimilarArticle">
-                <div class="textItemSimilarArticletext">Le SuperVegan</div>
+</div>
+<div class="blockArticleSimilarArticle">
+    <article class="blockNews">
+        <div class="flexNews">
+            <div class="flexNewsContent">
+                {{ article['content']|raw|nl2br }}
             </div>
         </div>
-    </div>
-    <div class="blockCommentsMobile">
-        <h3 class="titleCommentsMobile">Commentaires</h3>
-        <form>
-            <div class="flexImgInputComments">
-                <img src="./assets/images/logo_sloth.svg" width="50px">
-                <input type="text" placeholder="Commentaires">
-                <button class="buttonComments">
-                    <img class="arrowComments" src="./assets/images/arrow.svg" width="30px">
-                </button>
-            </div>
-        </form>
-        <div class="viewAllComments">
-            <div class="viewAllCommentsText">Voir tous les commentaires</div>
-            <img src="./assets/images/scroll-top.svg" class="scroll-top" width="20px">
+        <img src="./assets/images/imgNews2.svg">
+    </article>
+    <div class="similarArticle">
+        <div class="titleSimilarArticle">
+            ARTICLES SIMILAIRES
+        </div>
+        <div class="itemSimilarArticle">
+            <div class="textItemSimilarArticletext">Le SuperVegan</div>
+        </div>
+        <div class="itemSimilarArticle">
+            <div class="textItemSimilarArticletext">Le SuperVegan</div>
+        </div>
+        <div class="itemSimilarArticle">
+            <div class="textItemSimilarArticletext">Le SuperVegan</div>
         </div>
     </div>
-    <div class="blockComments">
-        <form method="POST" action="?action=addComment&amp;id={{ article['id'] }}&amp;idComment={{ comment[0] }}">
+</div>
+<div class="blockCommentsMobile">
+    <h3 class="titleCommentsMobile">Commentaires</h3>
+    <form>
+        <div class="flexImgInputComments">
             <img src="./assets/images/logo_sloth.svg" width="50px">
-            <div class="commentsInputButton">
-                <input name="comment" type="text" placeholder="Qu'en avez vous pensé? ...">
-                <button class="buttonComments">Publier</button>
-            </div>
-        </form>
-        <img class="separateComments" src="./assets/images/separateNewsletter.svg">
-        <div class="blockCommentImg">
-            <img src="./assets/images/logo_sloth.svg" width="50px">
-            <div class="comment">
-                <div class="commentPseudo">
-                    Chilly:
-                </div>
-                <div class="commentContent">
-                    Quel article wow ! Merci pour le tuyau :)
-                </div>
-            </div>
-            <div class="dateComment">2j  <img src="./assets/images/dateCommentImg.svg" width="50px"></div>
+            <input type="text" placeholder="Commentaires">
+            <button class="buttonComments">
+                <img class="arrowComments" src="./assets/images/arrow.svg" width="30px">
+            </button>
         </div>
-        <img class="separateComments" src="./assets/images/separateNewsletter.svg">
-        <div class="blockCommentImg">
-            <img src="./assets/images/logo_sloth.svg" width="50px">
-            <div class="comment">
-                <div class="commentPseudo">
-                    Chilly:
-                </div>
-                <div class="commentContent">
-                    Incroyable !
-                </div>
-            </div>
-            <div class="dateComment">3j  <img src="./assets/images/dateCommentImg.svg" width="50px"></div>
+    </form>
+    <div class="viewAllComments">
+        <div class="viewAllCommentsText">Voir tous les commentaires</div>
+        <img src="./assets/images/scroll-top.svg" class="scroll-top" width="20px">
+    </div>
+</div>
+<div class="blockComments">
+    <form method="POST" action="?action=addComment&amp;id={{ article['id'] }}&amp;idComment={{ comment[0] }}">
+        <img src="./assets/images/logo_sloth.svg" width="50px">
+        <div class="commentsInputButton">
+            <input name="comment" type="text" placeholder="Qu'en avez vous pensé? ...">
+            <button class="buttonComments">Publier</button>
         </div>
+    </form>
+    <img class="separateComments" src="./assets/images/separateNewsletter.svg">
+    <div class="blockCommentImg">
+        <img src="./assets/images/logo_sloth.svg" width="50px">
+        <div class="comment">
+            <div class="commentPseudo">
+                Chilly:
+            </div>
+            <div class="commentContent">
+                Quel article wow ! Merci pour le tuyau :)
+            </div>
+        </div>
+        <div class="dateComment">2j  <img src="./assets/images/dateCommentImg.svg" width="50px"></div>
     </div>
-    <div class="blockImgHowToVeganBot">
-        <img class="imgNewsBot" src="./assets/images/imgHowToVeganBot.svg">
+    <img class="separateComments" src="./assets/images/separateNewsletter.svg">
+    <div class="blockCommentImg">
+        <img src="./assets/images/logo_sloth.svg" width="50px">
+        <div class="comment">
+            <div class="commentPseudo">
+                Chilly:
+            </div>
+            <div class="commentContent">
+                Incroyable !
+            </div>
+        </div>
+        <div class="dateComment">3j  <img src="./assets/images/dateCommentImg.svg" width="50px"></div>
     </div>
-{% endblock %}
+</div>
+<div class="blockImgHowToVeganBot">
+    <img class="imgNewsBot" src="./assets/images/imgHowToVeganBot.svg">
+</div>

@@ -9,7 +9,7 @@
             <div class="blockProfile1Top">
                 <img class="logoProfile" src="./assets/images/imgHowToVeganBot.svg">
                 <div class="blockProfile1TopText">
-                    <h4>Chilly</h4>
+                    <h4>{{ user['username'] }}</h4>
                     <div class="sentenceProfile">"Mens sana in corpore sano."</div>
                     <ul>
                         <li><span class="infoProfil">Localisation:</span> Paris </li>
@@ -38,37 +38,26 @@
             <div class="blockProfile2">
                 <div class="headerBlockProfil2">
                     <img class="imgheaderBlockProfil2" src="./assets/images/greenHeart.svg">
-                    <div class="lastCommentsProfile">Les derniers commentaires de Chilly</div>
-                    <div class="allCommentsProfile">(42 commentaires au total)</div>
+                    <div class="lastCommentsProfile">Les derniers commentaires de {{ user['username'] }}</div>
+                    <div class="allCommentsProfile">({{ numberOfComments['totalComments'] }} commentaires au total)</div>
                 </div>
+                {% for comments in commentDatas %}
+                    
                 <img src="./assets/images/separateProfile.svg">
                 <div class="titleArticleBlockCommentProfile">Sur Tiramitsu: </div>
                 <div class="blockCommentImg blockCommentImgProfile">
                     <img src="./assets/images/logo_sloth.svg" width="50px">
                     <div class="comment">
                         <div class="commentPseudo">
-                            Chilly:
+                            {{ user['username'] }}:
                             <div class="dateComment">2j  <img src="./assets/images/dateCommentImg.svg" width="50px"></div>
                         </div>
                         <div class="commentContent">
-                            Quel article wow ! Merci pour le tuyau :)
+                            {{ comments['message'] }}
                         </div>
                     </div>
                 </div>
-                <img class="separateComments separateProfile" src="./assets/images/separateNewsletter.svg">
-                <div class="titleArticleBlockCommentProfile">Sur réforme de la chasse: </div>
-                <div class="blockCommentImg blockCommentImgProfile">
-                    <img src="./assets/images/logo_sloth.svg" width="50px">
-                    <div class="comment">
-                        <div class="commentPseudo">
-                            Chilly:
-                            <div class="dateComment">2j  <img src="./assets/images/dateCommentImg.svg" width="50px"></div>
-                        </div>
-                        <div class="commentContent">
-                            Incroyable !
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
                 <img class="separateComments separateProfile" src="./assets/images/separateNewsletter.svg">
             </div>
         </div>
