@@ -818,6 +818,9 @@ footer{
     background: inherit;
     border: 0;
 }
+.buttonComments:hover{
+    cursor: pointer;
+}
 .blockCommentsMobile h3{
     margin-left: 15%;
 }
@@ -1727,6 +1730,13 @@ footer{
         display: block;
         background: #D6FCFF;
     }
+    .addComment{
+        font-family: "Lato-Medium";
+        font-size: 1.5em;
+        text-align: center;
+        display: block;
+        background: #D6FCFF;
+    }
     .formComment{
         align-items: center;
         padding: 30px;
@@ -1740,6 +1750,13 @@ footer{
     .blockComments input{
         width: 70%;
         margin-left: 20px;
+        text-align: center;
+        border-radius: 10px;
+        border: 0;
+        border-bottom: 1px solid black;
+    }
+    #inputComment{
+        width: 70%;
         text-align: center;
         border-radius: 10px;
         border: 0;
